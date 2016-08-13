@@ -7,7 +7,7 @@ var App = React.createClass({
         return (
             <div className="main-app">
                 <header className="main-header">
-                    <h1><Link to="/"> NAVIGATION STUFFS? </Link></h1>
+                    <h1><Link to="/"> NAVIGATION STUFFS? LOGO?</Link></h1>
                 </header>
                 <main className="main-content">
                     {this.props.children}
