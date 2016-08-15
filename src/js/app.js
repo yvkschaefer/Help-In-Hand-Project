@@ -11,12 +11,13 @@ var Infinite = require('react-infinite');
 
 var App = require('./components/App');
 var Homepage = require('./components/Homepage');
+var Forms = require('./components/Forms');
 
 var routes = (
     <Router history={ReactRouter.browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={Homepage} />
-
+            <Route path="forms" component={Forms} />
         </Route>
     </Router>
 );

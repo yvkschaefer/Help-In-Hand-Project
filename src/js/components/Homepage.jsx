@@ -2,6 +2,9 @@ var React = require('react');
 var $ = require('jquery');
 var Link = require('react-router').Link;
 
+var Forms = require('./Forms');
+
+
 var Homepage = React.createClass({
     setInitialState: function() {
         return {};
@@ -29,11 +32,23 @@ var Homepage = React.createClass({
                     <button> Sign Up! </button>
                 </form>
                 
+                <section> 
+                    <h2> Fill out the form! </h2>
+                    <a href='/forms'> Fill out the form! </a>               
+                </section>
+                
+                
                 
                 <section>
                     <h2> About us </h2>
                     <p> We are a team of volunteer who's gonna help you! </p>
+                </section>                
+                
+                <section>
+                    <h2> Services </h2>
+                    <p> We provide bunch of services </p>
                 </section>
+                
                 
             </div>
         );
