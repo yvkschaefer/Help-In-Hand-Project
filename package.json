@@ -1,0 +1,35 @@
+{
+  "name": "help-in-hand",
+  "version": "1.0.0",
+  "description": "decodeMTL Final Project",
+  "main": "server.js",
+  "scripts": {
+    "dev": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takanarisasaki/help-in-hand.git"
+  },
+  "author": "takanarisasaki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takanarisasaki/help-in-hand/issues"
+  },
+  "homepage": "https://github.com/takanarisasaki/help-in-hand#readme",
+  "dependencies": {
+    "axios": "^0.13.1",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "bcryptjs": "^2.3.0",
+    "express": "^4.14.0",
+    "jquery": "^3.1.0",
+    "mysql": "^2.11.1",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "react-router": "^2.6.1",
+    "secure-random": "^1.1.1",
+    "webpack": "^1.13.1"
+  }
+}
