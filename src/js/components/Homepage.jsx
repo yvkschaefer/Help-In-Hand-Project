@@ -3,7 +3,7 @@ var $ = require('jquery');
 var Link = require('react-router').Link;
 
 
-var mysql = require('mysql');
+//var mysql = require('mysql');
 
 // // create a connection to our Cloud9 server
 // var connection = mysql.createConnection({
@@ -13,7 +13,7 @@ var mysql = require('mysql');
 //   database: 'mentalHelp'
 // });
 
-var mentalHelp = require('../mentalHelp');
+//var mentalHelp = require('../mentalHelp');
 
 
 
