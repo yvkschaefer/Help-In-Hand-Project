@@ -2,16 +2,36 @@ var React = require('react');
 var $ = require('jquery');
 var Link = require('react-router').Link;
 
-var Forms = require('./Forms');
+
+var mysql = require('mysql');
+
+// // create a connection to our Cloud9 server
+// var connection = mysql.createConnection({
+//   host     : 'localhost',
+//   user     : 'takanarisasaki',
+//   password : '',
+//   database: 'mentalHelp'
+// });
+
+var mentalHelp = require('../mentalHelp');
+
+
 
 
 var Homepage = React.createClass({
     setInitialState: function() {
         return {};
     },
-    _handleLoginSubmit: function(e) {
-        e.preventDefault;
-        
+    _handleSignupSubmit: function(e) {
+        e.preventDefault();
+        // mentalHelp.createUser({username: 'Bob', password: 'leponge'}, function(err,response) {
+        //     if (err) {
+        //         console.log(err);
+        //     }
+        //     else {
+        //         console.log(response);
+        //     }
+        // })
         //Need to store these info into database
         
         console.log('comes in here!!!')

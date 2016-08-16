@@ -7,7 +7,6 @@ var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 
 var $ = require('jquery');
-var Infinite = require('react-infinite');
 
 var App = require('./components/App');
 var Homepage = require('./components/Homepage');
