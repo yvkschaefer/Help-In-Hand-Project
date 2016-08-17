@@ -2,117 +2,122 @@ var React = require('react');
 var $ = require('jquery');
 var Link = require('react-router').Link;
 
-var depression = {
-    name: 'depression', 
-    symptoms: ['depression1', 'depression2', 'depression3', 'depression4', 'depression5']
+var ReactCheckboxGroup = require('react-checkbox-group');
+
+var CheckboxGroup = ReactCheckboxGroup.CheckboxGroup;
+var Checkbox = ReactCheckboxGroup.Checkbox;
+
+// a variable illnesses that contain all illnesses, as well as all symptoms of each illness
+var illnesses = {
+    depression: {
+        id: 'depression',
+        name: 'Depression',
+        symptoms: ['dep1', 'dep2', 'dep3']
+    },
+    grief: {
+        id: 'grief',
+        name: 'Grief',
+        symptoms: ['grief1', 'grief2', 'grief3']
+    },
+    suicidalThought: {
+        id: 'suicidalThought',
+        name: 'SuicidalThought',
+        symptoms: ['suicidalThought1', 'suicidalThought2', 'suicidalThought3', 'suicidalThought4']
+    }
 };
-var anger = {
-    name: 'anger',
-    symptoms: ['anger1', 'anger2', 'anger3', 'anger4', 'anger5', 'anger6', 'anger7']
-};
-var divorce = {
-    name: 'divorce',
-    symptoms: ['divorce1', 'divorce2',  'divorce3']
-};
-var grief = {
-    name: 'grief',
-    symptoms: ['grief1', 'grief2', 'grief3', 'grief4', 'grief5']
-};
-var suicidalThought = {
-    name: 'suicidalThought',
-    symptoms: ['suicidalThought1', 'suicidalThought2', 'suicidalThought3', 'suicidalThought4']
-};
-var other = {
-    name: 'other',
-    symptoms: ['other1', 'other2', 'other3', 'other4', 'other5', 'other6', 'other7', 'other8']
-}
+
+// making an array of illnessesList containing each object of illness from variable illnesses
+var illnessesList = [illnesses.depression, illnesses.grief, illnesses.suicidalThought];
 
 var Forms = React.createClass({
     getInitialState: function() {
         return {
-            major_illness: [],
-            main_symptoms: [depression, anger, divorce, grief, suicidalThought, other],
-            users_symptoms: []
+            selectedIllnesses: [],
+            selectedSymptoms: {}
         };
     },
+    // takes care of all user inputs that are text, such as name, nationality, etc. only setState when clicked on submit.
     _handleSubmit: function(e) {
         e.preventDefault();
-          
-        //console.log('AGE:', this.refs.userInputAge.value);
+        
+        // this.refs.userInput.value contains the value that the user entered inside the text box
+        // console.log('AGE:', this.refs.userInputAge.value);
         this.setState({
             age: this.refs.userInputAge.value,
             nationality: this.refs.userInputNationality.value,
-            career: this.refs.userInputCareer.value
+            career: this.refs.userInputCareer.value,
+            userInputDescriptionInOwnWords: this.refs.userInputDescriptionInOwnWords.value
         });
     },
+    // takes care of all user input that are radio button, such as gender, sexual orientation, and income
     _handleChangeRadio: function(e) {
         this.setState({
+            // [e.target.name] is gender, and e.target.value is male, for example
             [e.target.name]: e.target.value
         });
     },
-    _handleChangeCheckbox: function(e) {
+    // next two functions take care of user input checkboxes for illnesses and symptoms of each illness
+    // newValue is an array of objects. Each object is an illness that contains its id and its symptoms
+    // newValue only contains the objects of illnesses that was checked!
+    _handleIllness: function(newValue) {
+        // console.log("newValue:", newValue)
+        var that = this;
+        var newSelectedSymptoms = {};
         
-        var currentCategory = e.target.name;
+        newValue.forEach(function(illness) {
+            // using 'that' rather than 'this' since it is in a new function, and we can't access the properties of 'this' inside.
+            // illness.id contains the name of the illness, so we are storing an object with key being illnessName and value being all the checked symptoms respective to their illness
+            // for example, depression: [depressionSymptom2, depressionSymptom5]
+            newSelectedSymptoms[illness.id] = that.state.selectedSymptoms[illness.id];
+        });
         
-        if (this.state[currentCategory].indexOf(e.target.value) === -1) {
-            //console.log(currentCategory);
-            this.setState({
-                [e.target.name]: this.state[currentCategory].concat(e.target.value)
-            });
+        // At this point, newSelectedSymptoms object will contain illness objects which each containing their respective checked symptoms
+        // console.log("newSelectedSymptoms:", newSelectedSymptoms);
+        
+        this.setState({
+            selectedIllnesses: newValue, 
+            selectedSymptoms: newSelectedSymptoms
             
-        }
-        else if ((this.state[currentCategory].indexOf(e.target.value) > -1)) {
-            
-            // console.log('prints when same box clicked more than once');
-            //console.log('indexToremove', indexToRemove);
-            var filteredArray = this.state[currentCategory].filter(function(categoryValue){
-                return categoryValue !== e.target.value;
-            })
-            this.setState({
-                [e.target.name]: filteredArray
-            });
-        }
-        else {
-            console.log("Something is not working here");
-        }
-        
+        })
     },
-    _getSymptomsOfMainIllness: function() {
+    // illnessId contains the name of the checked illnesses
+    _handleSymptoms: function(illnessId) {
+        // console.log("illnessId:", illnessId);
         
-        var arrayOfMajorIllness = this.state.major_illness;
-        var arrayOfListOfSymptoms = this.state.main_symptoms;
-        //console.log("MAJOR ILLNESS:", arrayOfMajorIllness);
-        //console.log("ARRAY OF LIST OF SYMPTOMS:", arrayOfListOfSymptoms);
-        
-        return (
-            <div>
-                
-                {
-                    arrayOfMajorIllness.map(function(eachIllness) {
-                        //console.log("EACH ILLNESS:", eachIllness);
-                         return arrayOfListOfSymptoms.map(function(eachSymptomList) {
-                            //console.log("EACH SYMPTOMLIST", eachSymptomList);
-                            if (eachIllness === eachSymptomList.name) {
-                                //console.log("MAIN THING TO PRINT!:", eachSymptomList);
-                                
-                                return eachSymptomList.symptoms.map(function(eachSymptom) {
-                                    return (<div> <input type="checkbox" name={eachSymptomList.name} value={eachSymptom}/> {eachSymptom} </div>)
-                                })
-
-                            }
-                        })
-                        
-                    })
-                }
-                
-            </div>
-        )
-        
-        
+        var that = this;
+        return function(newSymptoms) {
+            // newSymptoms is an array of symptoms. It is a different array for different illnesses.
+            // console.log("newSymptoms", newSymptoms)
+            //console.log("HI", that.state.selectedSymptoms)
+            
+            // for next ~6 lines, we store all the selectedSymptoms object in that.state inside a new variable selectedSymptoms.
+            // we then only update the object inside selectedSymptoms that has the name as the illnessId, giving the value of array of checked newSymptoms.
+            // finally, we setState the whole selectedSymptoms object which only the object with specific illnessId was modified.
+            var selectedSymptoms = that.state.selectedSymptoms;
+            selectedSymptoms[illnessId] = newSymptoms;
+            
+            that.setState({
+                selectedSymptoms: selectedSymptoms
+            });
+        }
     },
     render: function() {
+         console.log("PRINT ALL STATE:", this.state);
+        var that = this;
+        // from here on, every time there is a props called key is to avoid the error of the necessity of unique key
         
-        //console.log("PRINT ALL:", this.state);
+        // this part is for Main Symptoms section
+        var symptoms = this.state.selectedIllnesses.map(function(illness) {
+            return (
+                <CheckboxGroup value={that.state.selectedSymptoms[illness.id]} onChange={that._handleSymptoms(illness.id)} key={illness.id}>
+                {
+                    illness.symptoms.map(function(symptom) {
+                        return <div key={symptom}><label><Checkbox value={symptom}/> {symptom}</label></div>;
+                    })
+                }
+                </CheckboxGroup>
+            )
+        });
         
         return (
             <div className="questionnaire_forms">
@@ -150,18 +155,23 @@ var Forms = React.createClass({
                     <input type="radio" onChange={this._handleChangeRadio} name="income" value="100000+" /> $100000+ <br/><br/>
                     
                     Major Illness: (Select all that apply) <br/>
-                    <input type="checkbox" onChange={this._handleChangeCheckbox} name="major_illness" value="depression" /> Depression <br/>
-                    <input type="checkbox" onChange={this._handleChangeCheckbox} name="major_illness" value="suicidalThought" /> Suicidal thought <br/>
-                    <input type="checkbox" onChange={this._handleChangeCheckbox} name="major_illness" value="grief" /> Grief <br/>
-                    <input type="checkbox" onChange={this._handleChangeCheckbox} name="major_illness" value="divorce" /> Divorce <br/>
-                    <input type="checkbox" onChange={this._handleChangeCheckbox} name="major_illness" value="anger" /> Anger <br/>
-                    <input type="checkbox" onChange={this._handleChangeCheckbox} name="major_illness" value="other" /> Other <br/><br/>
+                    <CheckboxGroup value={this.state.selectedIllnesses} onChange={this._handleIllness} name="major_illnesses">
+                        {
+                            Object.keys(illnesses).map(function(illness) {
+                                return <div key={illness}><label><Checkbox value={illnesses[illness]}/> {illness}</label></div>;
+                            })
+                        }
+                    </CheckboxGroup>
                     
-                    Main Symptoms: (Select all that apply) <br/>
-                    {this._getSymptomsOfMainIllness()}
+                    <br/>
+                    Main Symptoms: (Select all that apply) <br/><br/>
+                    {symptoms}
                     
+                    <br/><br/>
+                    Description in your own words: <br/>
+                    <input className="descrip_own_words" type="text" ref="userInputDescriptionInOwnWords" />  <br/><br/>
+
                     <button className="submit_form"> Submit! </button>
-                    
                 </form>
                 
             </div>
@@ -173,17 +183,3 @@ var Forms = React.createClass({
 
 
 module.exports = Forms;
-
-
-// Description in your own words <br/>
-
-
-
-
-                    // Main Symptoms: (Select all that apply) <br/>
-                    // <input type="checkbox" onChange={this._handleChangeCheckbox} name="main_symptoms" value="symptom1" /> Symptom1 <br/>
-                    // <input type="checkbox" onChange={this._handleChangeCheckbox} name="main_symptoms" value="symptom2" /> Symptom2 <br/>
-                    // <input type="checkbox" onChange={this._handleChangeCheckbox} name="main_symptoms" value="symptom3" /> Symptom3 <br/>
-                    // <input type="checkbox" onChange={this._handleChangeCheckbox} name="main_symptoms" value="symptom4" /> Symptom4 <br/>
-                    // <input type="checkbox" onChange={this._handleChangeCheckbox} name="main_symptoms" value="symptom5" /> Symptom5 <br/>
-                    // <input type="checkbox" onChange={this._handleChangeCheckbox} name="main_symptoms" value="symptom6" /> Symptom6 <br/><br/>

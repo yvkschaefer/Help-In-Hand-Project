@@ -54,7 +54,7 @@ var Homepage = React.createClass({
                 
                 <section> 
                     <h2> Fill out the form! </h2>
-                    <a href='/forms'> Fill out the form! </a>               
+                    <a href='/forms'> Fill out the form! </a>
                 </section>
                 
                 
