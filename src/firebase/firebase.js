@@ -13,8 +13,11 @@ try {
     console.log(e);
 }
 
+
 module.exports = {
     firebase: firebase,
     firebaseRef: firebase.database().ref(),
-    facebookProvider: new firebase.auth.FacebookAuthProvider()
+    facebookProvider: new firebase.auth.FacebookAuthProvider(),
+    twitterProvider: new firebase.auth.TwitterAuthProvider(),
+    googleProvider: new firebase.auth.GoogleAuthProvider()
 };

@@ -1,6 +1,9 @@
+/* global localStorage */
+
 var React = require('react');
 var ReactDOM = require('react-dom');
 var ReactRouter = require('react-router');
+var browserHistory = require("react-router").browserHistory;
 
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
@@ -10,18 +13,34 @@ var $ = require('jquery');
 // require the firebase.js file in order to use firebase, firebaseRef, and facebookProvider
 var fr = require('../firebase/firebase.js');
 
+
 var App = require('./components/App');
 var Homepage = require('./components/Homepage');
 var Forms = require('./components/Forms');
 
 // When the user clicks the hyperlink to complete the form, it will check if the user is logged in.
 // If the user is not logged in, redirect to homepage. If logged in, redirect to the link to complete the form
-function checkLogin(nextState, replace, next) {
-    if (!fr.firebase.auth().currentUser) {
-        replace('/')
+
+
+
+fr.firebase.auth().onAuthStateChanged(function(user){
+    if (user) {
+        localStorage.setItem('user', user.uid);
+        console.log("User " + user.uid + " is logged in");
     } else {
-        next();
+        localStorage.removeItem('user');
+        browserHistory.push('/');
+        console.log("User is logged out");
     }
+});
+
+
+function checkLogin(nextState, replace, next) {
+    if(!localStorage.getItem('user')) {
+        alert('You must be logged in!');
+        replace('/');
+    }
+    next();
 }
 
 var routes = (
