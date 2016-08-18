@@ -98,6 +98,7 @@ var Homepage = React.createClass({
 
 });
 
+// Surrounding Homepage with Router - wrap up Homepage into a higher-order component 
 var HomepageWithRouter = withRouter(Homepage);
 
 module.exports = HomepageWithRouter;
