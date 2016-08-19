@@ -4,13 +4,11 @@ var Link = require('react-router').Link;
 var withRouter = require('react-router').withRouter;
 var fr = require('../../firebase/firebase.js');
 
+// console.log(localStorage)
 
 var Homepage = React.createClass({
     getInitialState: function() {
-        return {
-            loggedIn: false,
-            hello: 'hello'
-        }
+        return {}
     },
     // handles login for all facebook, twitter, and google account
     _handleLogin: function(e) {
@@ -57,12 +55,19 @@ var Homepage = React.createClass({
             that.props.router.push('/');
         })
     },
-    render: function() {
+    componentDidMount: function() {
+        
+        var user = localStorage.getItem('user');
+        this.setState({
+           loggedIn: user ? true : false
+        })
        
+    },
+    render: function() {
+        
         var showLoginButton;
         var showLogoutButton;
         
-        console.log("STATE", this.state);
         if (!this.state.loggedIn) {
             showLoginButton = (
                 <div>
@@ -86,7 +91,6 @@ var Homepage = React.createClass({
                 {showLoginButton}
                 {showLogoutButton}
 
-                
                 <section> 
                     <h2> Fill out the form! </h2>
                     <a href='/forms'> Fill out the form! </a>
