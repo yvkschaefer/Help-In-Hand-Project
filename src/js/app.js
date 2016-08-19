@@ -18,6 +18,8 @@ var App = require('./components/App');
 var Homepage = require('./components/Homepage');
 var Forms = require('./components/Forms');
 var MakeCounselorsProfile = require('./components/MakeCounselorsProfile');
+var RetrieveInfoFromDatabase = require('./components/RetrieveInfoFromDatabase');
+
 // When the user clicks the hyperlink to complete the form, it will check if the user is logged in.
 // If the user is not logged in, redirect to homepage. If logged in, redirect to the link to complete the form
 
@@ -49,6 +51,7 @@ var routes = (
             <IndexRoute component={Homepage} />
             <Route path="forms" component={Forms} onEnter={checkLogin} />
             <Route path="makeCounselorsProfile" component={MakeCounselorsProfile}/>
+            <Route path="retrieveInfoFromDatabase" component={RetrieveInfoFromDatabase}/>
         </Route>
     </Router>
 );

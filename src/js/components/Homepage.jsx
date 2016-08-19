@@ -30,13 +30,13 @@ var Homepage = React.createClass({
         
         fr.firebase.auth().signInWithPopup(whichProvider).then(function(result) {
             
-            var authData = result.user;
-            // console.log(authData);
-            // this stores name and provider into Firebase database
-            fr.firebaseRef.child("users").child(authData.uid).set({
-                provider: authData.providerData[0].providerId,
-                name: authData.displayName
-            });
+            // var authData = result.user;
+            // // console.log(authData);
+            // // this stores name and provider into Firebase database
+            // fr.firebaseRef.child("users").child(authData.uid).set({
+            //     provider: authData.providerData[0].providerId,
+            //     name: authData.displayName
+            // });
             
             alert("You have successfully logged in!")
 

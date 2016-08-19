@@ -73,6 +73,8 @@ var counselors = {
     }
 }
 
+//var id = fr.firebase.
+
 var MakeCounselorsProfile = React.createClass({
     _handleSubmit: function(e) {
         e.preventDefault();
