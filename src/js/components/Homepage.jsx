@@ -57,6 +57,7 @@ var Homepage = React.createClass({
     },
     componentDidMount: function() {
         
+        // check if there is a local user, i.e. someone is logged in. Store that user and assign true to loggedIn state if logged in, false otherwise
         var user = localStorage.getItem('user');
         this.setState({
            loggedIn: user ? true : false
@@ -93,7 +94,7 @@ var Homepage = React.createClass({
 
                 <section> 
                     <h2> Fill out the form! </h2>
-                    <a href='/forms'> Fill out the form! </a>
+                    <Link to="/forms"> Fill out the form! </Link>
                 </section>
                 
             

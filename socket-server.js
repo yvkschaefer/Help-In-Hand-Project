@@ -1,18 +1,10 @@
-// npm run dev
-// node server.js
-
-// https://final-project-decode-takanarisasaki.c9users.io/
-// https://console.firebase.google.com/project/decodemtl-final-project/database/data
-
-// We are using firebase rather than mySQL to store and retrieve information
-// Firebase can take care of user authentication, which is much simpler to use!
-
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-app.use('/files', express.static(__dirname + '/public'));
+
+
 
 var triage = [];
 var triageCounselors = [];
@@ -97,6 +89,20 @@ function triageNext() {
 }
 
 
+app.use(express.static('public'));
+
+app.get('/', function(req, res) {
+  res.sendfile('index.html');
+});
+
+app.get('/triageCounselor', function(req, res) {
+  res.sendfile('triageCounselor.html');
+});
+
+app.get('/counselor', function(req, res) {
+  res.sendfile('counselor.html');
+});
+
 io.on('connection', function(socket) {
   socket.on('triage patient', function() {
     socket.isPatient = true;
@@ -116,6 +122,11 @@ io.on('connection', function(socket) {
     socket.isCounselor = true;
     triageCounselors.push(socket);
     triageNext();
+  });
+  
+  socket.on('patient', function(){
+    socket.isPatient = true;
+    patientNext();
   });
 
   socket.on('stream id', function(data) {
@@ -184,9 +195,8 @@ io.on('connection', function(socket) {
   });
 });
 
-  app.get('/*', function(req, res) {
-    res.sendFile(__dirname + '/public/index.html');
-});
+
+
 
 http.listen(process.env.PORT, function() {
   console.log('listening on', process.env.PORT);
