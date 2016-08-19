@@ -6,13 +6,16 @@ var fr = require('../../firebase/firebase.js');
 
 
 var Homepage = React.createClass({
-    setInitialState: function() {
-        return {};
+    getInitialState: function() {
+        return {
+            loggedIn: false,
+            hello: 'hello'
+        }
     },
     // handles login for all facebook, twitter, and google account
     _handleLogin: function(e) {
         e.preventDefault();
-        
+        var that = this;
         // We access the value of the button and store it in whatButtonClicked. 
         // Then we use that value to decide which provider to be used
         var whatButtonClicked = e.target.value;
@@ -29,14 +32,10 @@ var Homepage = React.createClass({
         }
         
         fr.firebase.auth().signInWithPopup(whichProvider).then(function(result) {
-            
-            // var authData = result.user;
-            // // console.log(authData);
-            // // this stores name and provider into Firebase database
-            // fr.firebaseRef.child("users").child(authData.uid).set({
-            //     provider: authData.providerData[0].providerId,
-            //     name: authData.displayName
-            // });
+
+            that.setState({
+                loggedIn: true
+            });
             
             alert("You have successfully logged in!")
 
@@ -48,30 +47,44 @@ var Homepage = React.createClass({
         var that = this;
         e.preventDefault();
         fr.firebase.auth().signOut().then(function() {
+            
+            that.setState({
+                loggedIn: false
+            });
+            
             alert("You have successfully signed out!")
             // When signed out, the user is redirected to the homepage
             that.props.router.push('/');
         })
     },
-    // this function fetches data from Firebase database
-    _getUsers: function() {
-        fr.firebaseRef.child('users').on("value", function(snapshot) {
-            console.log(snapshot.val());
-            }, function (errorObject) {
-            console.log("The read failed: " + errorObject.code);
-        });
-    },
     render: function() {
+       
+        var showLoginButton;
+        var showLogoutButton;
+        
+        console.log("STATE", this.state);
+        if (!this.state.loggedIn) {
+            showLoginButton = (
+                <div>
+                    <button onClick={this._handleLogin} value="facebookButtonClicked"> Login with Facebook! </button>
+                    <button onClick={this._handleLogin} value="twitterButtonClicked"> Login with Twitter! </button> 
+                    <button onClick={this._handleLogin} value="googleAccountButtonClicked"> Login with your Google Account! </button>
+                </div>
+            );
+        }
+        else {
+            showLogoutButton = (
+                <div>
+                    <button onClick={this._handleLogout}> Logout! </button> <br/><br/>
+                </div>
+            );
+        }   
+        
         return (
             <div className="homepage">
                 
-                <button onClick={this._handleLogin} value="facebookButtonClicked"> Login with Facebook! </button>
-                <button onClick={this._handleLogin} value="twitterButtonClicked"> Login with Twitter! </button> 
-                <button onClick={this._handleLogin} value="googleAccountButtonClicked"> Login with your Google Account! </button>
-                
-                <button onClick={this._handleLogout}> Logout! </button> <br/><br/>
-                
-                <button onClick={this._getUsers}> Get user </button>
+                {showLoginButton}
+                {showLogoutButton}
 
                 
                 <section> 
