@@ -21,8 +21,6 @@ var Triage = React.createClass({
                 audio: false
             }, function(stream) {
 
-
-
                 var peer = new SimplePeer({
                     initiator: false,
                     trickle: false,
