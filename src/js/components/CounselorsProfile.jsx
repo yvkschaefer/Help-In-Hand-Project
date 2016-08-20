@@ -65,45 +65,47 @@ var fr = require('../../firebase/firebase.js');
 // }];
 
 var CounselorsProfile = React.createClass({
-	getInitialState: function() {
-		return {}
-	},
-	_fetchData: function() {
-		console.log("COMES IN HERE");
+	componentWillMount: function() {
+		// console.log("COMES IN HERE FIRST");
 		var that = this;
 		
 		fr.firebase.database().ref('counselors/').on('value', function(snapshot) {
-			console.log("HEYHEY",snapshot.val());
+			//console.log("HEYHEY",snapshot.val());
+			// console.log("COMES IN HERE THIRD BECAUSE OF CALLBACK; render happens before setState beneath");
 			that.setState({
 				listOfCounselors: snapshot.val()
 			})
 		});
 	},
-	componentWillMount: function() {
-		this._fetchData();
-	},
 	render: function() {
+		// console.log("COMES IN HERE SECOND");
+		var showAllCounselors;
+		// console.log(this.state);
+		if (this.state) {
+			showAllCounselors =
+				<div>
+					<div className="counselorsHeaderText"> <h1>Our Counselors</h1> </div>
+	
+					<div className="counselorsProfilePage">
+						{this.state.listOfCounselors.map(function(counselor){
+							return (
+								<div className="counselorsInformation">
+									<img src={counselor.Photo} className="counselorsProfilePicture" />
+									<div className="counselorsTextInformation">
+										<div className="counselorsName"><p>{counselor.Name}</p></div>
+										<div className="patientComments"><p>{counselor['Patient Comments']}</p></div>
+										<div className="counselorsCredentials"><p>{counselor.Credentials}</p></div>
+									</div>
+							</div>);
+						})}
+					</div>
+				</div>
+		}
 		
-		console.log("LIST OF COUNSELORS", this.state.listOfCounselors)
 		
 		return (
 			<div>
-				<div className="counselorsHeaderText"> <h1>Our Counselors</h1> </div>
-
-				<div className="counselorsProfilePage">
-					{this.state.listOfCounselors.map(function(counselor){
-						return (
-							<div className="counselorsInformation" key={counselor.key}>
-								<img src={counselor.photo} className="counselorsProfilePicture" />
-								<div className="counselorsTextInformation">
-									<div className="counselorsName"><p>{counselor.name}</p></div>
-									<div className="patientComments"><p>{counselor.patientComments}</p></div>
-									<div className="counselorsCredentials"><p>{counselor.credentials}</p></div>
-								</div>
-						</div>);
-					})}
-				</div>
-
+				{showAllCounselors}
 			</div>
 		);
 	}
