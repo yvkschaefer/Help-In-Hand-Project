@@ -76,16 +76,22 @@ var Counselor = React.createClass({
         });
     },
     _stopCall: function(){
-        //GOALS. (problem area for Kara to work on)
-        console.log('hey you clicked the stop call button, sup');
-        console.log('do I has a socket, this.socket is: ', this.socket);
+        console.log('what info do I have in this socket of stop call button', this.refs.endCall);
+        this.socket.emit('counselor conversation over');
+    },
+    _endCallUi: function(){
+        return (
+            <div>
+                <button ref="endCall" onClick={this._stopCall}>STOP CALL</button>
+            </div>
+        );
     },
     _connected: function() {
         return (
             <div>
-                <p>You are talking to a patient in triage</p>
+                <p>You are talking to a patient</p>
                 <video ref="videoPlayer"/>
-                <button onClick={this._stopCall}>STOP CALL</button>
+                {this._endCallUi()}
             </div>
         );
     },

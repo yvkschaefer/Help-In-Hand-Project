@@ -39,7 +39,7 @@ var TriageCounselor = React.createClass({
 
                 peer.on('signal', function(data) {
                     console.log('received signal');
-                    console.log('hi I am a peer ', peer);
+                    console.log('hi I am a peer and I just heard a signal ', peer);
                     socket.emit('stream id', data);
                 });
 
@@ -117,13 +117,12 @@ var TriageCounselor = React.createClass({
         console.log('logout button was clicked');
         this.socket.isFree = false;
 
-        console.log('is the socket free ', this.socket.isFree);
-        console.log('is there a peer ', this.peer);
+        console.log('logout button clicked. is the socket free ', this.socket.isFree);
+        console.log('logout button clicked. is there a peer ', this.peer);
         // this.socket.removeListener('connect peer', onConnectPeer);
         // this.socket.removeListener('stop call', onStopCall);
         // this.socket.connected = false;
-        console.log('this.socket is ', this.socket);
-        console.log('what');
+        console.log('logout button clicked. this.socket is ', this.socket);
         // var tracks = stream.getTracks();
         // tracks.forEach(function(track) {
         //     track.stop();

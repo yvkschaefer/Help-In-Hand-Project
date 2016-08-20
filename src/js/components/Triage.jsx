@@ -5,7 +5,9 @@ var SimplePeer = require('simple-peer');
 
 var Triage = React.createClass({
     getInitialState: function() {
-        return {connected: false};
+        return {
+            connected: false
+        };
     },
     componentDidMount: function() {
         var socket = io();
@@ -20,8 +22,6 @@ var Triage = React.createClass({
                 video: true,
                 audio: false
             }, function(stream) {
-
-
 
                 var peer = new SimplePeer({
                     initiator: false,
@@ -66,6 +66,20 @@ var Triage = React.createClass({
                     socket.removeListener('queued', onQueued);
                 }
                 socket.on('queued', onQueued);
+
+                function onStopped() {
+                    that.setState({
+                        connected: false
+                    });
+                    peer.destroy();
+                    var tracks = stream.getTracks();
+                    tracks.forEach(function(track) {
+                        track.stop();
+                    });
+                    socket.removeListener('connect peer', onConnectPeer);
+                    socket.removeListener('call stopped', onStopped);
+                }
+                socket.on('call stopped', onStopped);
 
             }, function(err) {
                 console.error(err);
