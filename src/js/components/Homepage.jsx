@@ -92,7 +92,10 @@ var Homepage = React.createClass({
                 
                 {showLoginButton}
                 {showLogoutButton}
-
+                
+                <section>
+                    <Link to='/triage'> Chat with a counselor </Link>
+                </section>    
                 <section> 
                     <h2> Fill out the form! </h2>
                     <Link to="/forms"> Fill out the form! </Link>
