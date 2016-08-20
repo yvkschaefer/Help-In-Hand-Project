@@ -9,6 +9,8 @@ var Checkbox = ReactCheckboxGroup.Checkbox;
 var withRouter = require('react-router').withRouter;
 var fr = require('../../firebase/firebase.js');
 
+var bootstrap = require('bootstrap');
+
 // a variable illnesses that contain all illnesses, as well as all symptoms of each illness
 var illnesses = {
     Depression: {
@@ -120,14 +122,19 @@ var Forms = React.createClass({
         };
     },
     // takes care of all user inputs that are text, such as name, nationality, etc. only setState when clicked on submit.
-    _handleText: function(e) {
+    _submitForm: function(e) {
         e.preventDefault();
 
         var userFormInfo = {
             dateOfBirth: this.refs.userInputBirthDate.value,
             nationality: this.refs.userInputNationality.value,
-            career: this.refs.userInputCareer.value,
-            userInputDescriptionInOwnWords: this.refs.userInputDescriptionInOwnWords.value
+            occupation: this.refs.userInputCareer.value,
+            userInputDescriptionInOwnWords: this.refs.userInputDescriptionInOwnWords.value,
+            gender: this.state.gender,
+            sexualOrientation: this.state.sexual_orientation,
+            income: this.state.income,
+            selectedSymptoms: this.state.selectedSymptoms
+            
         };
 
         var currentUser = fr.firebase.auth().currentUser;
@@ -135,13 +142,15 @@ var Forms = React.createClass({
         var userEmail = fr.firebase.auth().currentUser.email;
         //console.log("currentUser", currentUser);
         //console.log("currentUser UID", uniqueUserId);
-
+        
+        console.log("COMES IN HERE", userFormInfo)
+        
         fr.firebase.database().ref('users/' + uniqueUserId).set({
             'Date of Birth': userFormInfo.dateOfBirth,
             Gender: userFormInfo.gender,
-            'Sexual Orientation': userFormInfo.sexual_orientation,
+            'Sexual Orientation': userFormInfo.sexualOrientation,
             Nationality: userFormInfo.nationality,
-            Career: userFormInfo.career,
+            Occupation: userFormInfo.occupation,
             Income: userFormInfo.income,
             'Illnesses & Symptoms': userFormInfo.selectedSymptoms,
             'Description in your own words': userFormInfo.userInputDescriptionInOwnWords
@@ -213,7 +222,7 @@ var Forms = React.createClass({
                 <CheckboxGroup value={that.state.selectedSymptoms[illness.id]} onChange={that._handleSymptoms(illness.id)} key={illness.id}>
                 {
                     illness.symptoms.map(function(symptom) {
-                        return <div key={symptom}><label><Checkbox value={symptom}/> {symptom}</label></div>;
+                        return <div className="checkbox" key={symptom}><label><Checkbox value={symptom}/> {symptom}</label></div>;
                     })
                 }
                 </CheckboxGroup>
@@ -223,56 +232,104 @@ var Forms = React.createClass({
         return (
             <div className="questionnaire_forms">
             
+                <h3 className="formHeader"> Complete this form </h3>
+                
                 <form onSubmit={this._handleText}>
-                
-                    <h3> Complete this form (All * must be filled)</h3>
-                
-                    *Date of Birth: <input type="text" ref="userInputBirthDate" /> dd/mm/yyyy <br/><br/>
                     
-                    *Gender: <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="gender" value="male" /> Male
-                    <input type="radio" onChange={this._handleChangeRadio} name="gender" value="female" /> Female <br/><br/>
+                    <div className="form-group">
+                        <label> <h4 className="formCategory"> Date of Birth: </h4> </label>
+                        <input type="date"  ref="userInputBirthDate" className="form-control" />
+                    </div> 
+                    
+                    
+                    <div className="form-group">
+                        <label> <h4 className="formCategory"> Gender: </h4> </label>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="gender" value="male" /> Male </label>
+                        </div>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="gender" value="female" /> Female </label>
+                        </div>
+                    </div>
+                    
+                    <div className="form-group">
+                        <label> <h4 className="formCategory"> Nationality: </h4> </label>
+                        <input type="text" ref="userInputNationality" className="form-control"/>
+                    </div>
+                    
+                    <div className="form-group">
+                        <label> <h4 className="formCategory"> Occupation: </h4> </label>
+                        <input type="text" ref="userInputCareer" className="form-control" /> 
+                    </div>
 
-                    *Nationality: <br/>
-                    <input type="text" ref="userInputNationality" />  <br/><br/>
-                    
-                    *Career: <br/>
-                    <input type="text" ref="userInputCareer" />  <br/><br/>
-                    
-                    Sexual orientation: <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="heterosexual" /> Heterosexual <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="gay" /> Gay <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="lesbian" /> Lesbian <br/> 
-                    <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="bisexual" /> Bisexual <br/> 
-                    <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="transgender" /> Transgender <br/> 
-                    <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="other" /> Other <br/><br/> 
-                    
-                    Income: <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="income" value="0-20,000" /> $0-$20,000 <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="income" value="20,000-40,000" /> $20,000-$40,000 <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="income" value="40,000-60,000" /> $40,000-$60,000 <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="income" value="60,000-80,000" /> $60,000-$80,000 <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="income" value="80,000-100,000" /> $80,000-$100,000 <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="income" value="100,000+" /> $100,000+ <br/><br/>
-                    
-                    Major Illness: (Select all that apply) <br/>
-                    <CheckboxGroup value={this.state.selectedIllnesses} onChange={this._handleIllness} name="major_illnesses">
-                        {
-                            Object.keys(illnesses).map(function(illness) {
-                                return <div key={illness}><label><Checkbox value={illnesses[illness]}/> {illness}</label></div>;
-                            })
-                        }
-                    </CheckboxGroup>
-                    
-                    <br/>
-                    Main Symptoms: (Select all that apply) <br/><br/>
-                    {symptoms}
-                    
-                    <br/><br/>
-                    Description in your own words: <br/>
-                    <input className="descrip_own_words" type="text" ref="userInputDescriptionInOwnWords" />  <br/><br/>
+                    <div className="form-group">
+                        <label> <h4 className="formCategory"> Sexual orientation: </h4> </label>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="heterosexual" /> Heterosexual </label> 
+                        </div>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="gay" /> Gay </label> 
+                        </div>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="lesbian" /> Lesbian </label> 
+                        </div>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="bisexual" /> Bisexual </label> 
+                        </div>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="transgender" /> Transgender </label> 
+                        </div>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="other" /> Other </label>                        
+                        </div>
+                    </div>
 
-                    <button className="submit_form"> Submit! </button>
+                    <div className="form-group">
+                        <label> <h4 className="formCategory"> Income: </h4> </label>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="income" value="0-20,000" /> $0-$20,000 </label>
+                        </div>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="income" value="20,000-40,000" /> $20,000-$40,000 </label>
+                        </div>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="income" value="40,000-60,000" /> $40,000-$60,000 </label>
+                        </div>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="income" value="60,000-80,000" /> $60,000-$80,000 </label>
+                        </div>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="income" value="80,000-100,000" /> $80,000-$100,000 </label>
+                        </div>
+                        <div className="radio">
+                            <label> <input type="radio" onChange={this._handleChangeRadio} name="income" value="100,000+" /> $100,000+ </label>
+                        </div>
+                    </div>
+                    
+                    <div className="form-group">
+                        <label> <h4 className="formCategory"> Major Illnesses: (Select all that apply) </h4> </label>
+                        <CheckboxGroup value={this.state.selectedIllnesses} onChange={this._handleIllness} name="major_illnesses">
+                            {
+                                Object.keys(illnesses).map(function(illness) {
+                                    return <div className="checkbox" key={illness}><label><Checkbox value={illnesses[illness]}/> {illness}</label></div>;
+                                })
+                            }
+                        </CheckboxGroup>
+                    </div>
+                    
+                    <div className="form-group">
+                        <label> <h4 className="formCategory"> Symptoms: (Select all that apply) </h4> </label>
+                        {symptoms}
+                    </div>
+
+                    
+                    <div className="form-group">
+                          <label> <h4 className="formCategory"> Describe your concerns in your own words: </h4> </label>
+                          <textarea className="form-control" ref="userInputDescriptionInOwnWords" rows="5" id="comment"></textarea>
+                    </div>
+                    
+                    
+                    <button onClick={this._submitForm}> Submit </button>
                 </form>
                 
             </div>

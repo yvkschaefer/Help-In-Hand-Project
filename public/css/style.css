@@ -1,6 +1,7 @@
 .main-app {
     background-color: #e6fffa;
     border: 2px black solid;
+    font-family: Lato;
 }
 
 .homepage {
@@ -9,4 +10,27 @@
 
 .descrip_own_words {
     width: 600px;
+}
+
+.questionnaire_forms {
+    padding: 1em 4em 1em 4em;
+    background: url('./form-page-background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.formHeader {
+    margin-bottom: 1em;
+}
+
+.formHeader:after {
+    content:' ';
+    display:block;
+    border:1px solid black;
+}
+
+.formCategory {
+    font-weight: bold;
 }
