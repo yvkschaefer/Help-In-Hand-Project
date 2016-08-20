@@ -34,7 +34,7 @@ function getFirstFreeCounselor() {
 
 function patientNext() {
 
-  
+
   var counselor = getFirstFreeCounselor();
   if (counselor) {
     var patient = getHighestPriorityPatient();
@@ -68,7 +68,7 @@ function getFirstTriagePatient() {
 }
 
 function triageNext() {
-  
+
   var triageCounselor = getFirstFreeTriageCounselor();
   if (triageCounselor) {
     var triagePatient = getFirstTriagePatient();
@@ -103,14 +103,14 @@ io.on('connection', function(socket) {
     triage.push(socket);
     triageNext();
   });
-
+  
   socket.on('counselor', function() {
     socket.isFree = true;
     socket.isCounselor = true;
     counselors.push(socket);
     patientNext();
   });
-  
+
   socket.on('triage counselor', function() {
     socket.isFree = true;
     socket.isCounselor = true;
@@ -127,7 +127,6 @@ io.on('connection', function(socket) {
   socket.on('queue', function(counselorsEvaluation) {
     console.log('queue was heard');
     var patientSocket = connections[socket.id];
-
     if (patientSocket) {
       socket.isFree = true;
       console.log('is the counselors socket really free ', socket.isFree);
@@ -144,7 +143,7 @@ io.on('connection', function(socket) {
           return 0;
         }
       });
-      
+
       socket.emit('stop call');
       patientSocket.emit('queued');
 
@@ -161,7 +160,7 @@ io.on('connection', function(socket) {
 
   });
 
-  socket.on('triage counselor free', function(){
+  socket.on('triage counselor free', function() {
     console.log('I heard that the triage counselor is free again');
     triageNext();
   });
@@ -184,8 +183,8 @@ io.on('connection', function(socket) {
   });
 });
 
-  app.get('/*', function(req, res) {
-    res.sendFile(__dirname + '/public/index.html');
+app.get('/*', function(req, res) {
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 http.listen(process.env.PORT, function() {

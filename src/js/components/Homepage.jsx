@@ -4,7 +4,7 @@ var Link = require('react-router').Link;
 var withRouter = require('react-router').withRouter;
 var fr = require('../../firebase/firebase.js');
 
-// console.log(localStorage)
+//console.log("local storage:", localStorage.getItem('user'))
 
 var Homepage = React.createClass({
     getInitialState: function() {
@@ -59,9 +59,10 @@ var Homepage = React.createClass({
         
         // check if there is a local user, i.e. someone is logged in. Store that user and assign true to loggedIn state if logged in, false otherwise
         var user = localStorage.getItem('user');
+        console.log(user);
         this.setState({
            loggedIn: user ? true : false
-        })
+        });
        
     },
     render: function() {
