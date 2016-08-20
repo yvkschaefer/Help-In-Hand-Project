@@ -72,7 +72,7 @@ function triageNext() {
   var triageCounselor = getFirstFreeTriageCounselor();
   if (triageCounselor) {
     var triagePatient = getFirstTriagePatient();
-    // console.log('triage before connection ', triage);
+
     if (triagePatient) {
 
       triagePatient.emit('start stream');
@@ -188,6 +188,12 @@ io.on('connection', function(socket) {
     }
 
     triageNext();
+  });
+  
+  socket.on('triageCounselor logged out', function(){
+    socket.isFree = false;
+    console.log('server heard triageCounselor logged out');
+    socket.emit('logged out');
   });
 });
 
