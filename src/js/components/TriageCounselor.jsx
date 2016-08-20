@@ -127,6 +127,9 @@ var TriageCounselor = React.createClass({
         console.log('logout button was clicked');
         // this.socket.isFree = false;
         this.socket.emit('triageCounselor logged out');
+        this.setState({
+            logoutButtonClicked: true
+        });
     },
     render: function() {
         return (
