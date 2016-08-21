@@ -32,7 +32,7 @@ var TriageCounselor = React.createClass({
                     stream: stream,
                     config: {
                         iceServers: [{
-                            url: 'stun:stun.l.google.com:19302'
+                            url: 'stun:stun3.l.google.com:19302'
                         }]
                     }
                 });
@@ -74,16 +74,16 @@ var TriageCounselor = React.createClass({
                     video.play();
 
                 });
-                
-                socket.on('logged out', function(){
+
+                socket.on('logged out', function() {
                     socket.removeListener('connect peer', onConnectPeer);
                     peer.destroy();
                     var tracks = stream.getTracks();
-                    tracks.forEach(function(track){
-                       track.stop(); 
+                    tracks.forEach(function(track) {
+                        track.stop();
                     });
                 });
-                
+
             }, function(err) {
                 console.error(err);
             });
@@ -106,12 +106,22 @@ var TriageCounselor = React.createClass({
             </div>
         );
     },
+    _stopCall: function(){
+        this.socket.emit('triage counselor ended conversation');
+    },
+    _endCallUi: function() {
+        return (
+            <div>
+                <button ref='endCall' onClick={this._stopCall}>stop call</button>
+            </div>
+        );
+    },
     _connected: function() {
         return (
             <div>
                 <p>You are talking to a patient in triage</p>
                 <video ref="videoPlayer"/>
-                {this._priorityUi()}
+                {this._priorityUi()}{this._endCallUi()}
             </div>
         );
     },

@@ -3,6 +3,7 @@
 var React = require('react');
 var SimplePeer = require('simple-peer');
 var StopCall = require('./StopCall');
+var GotHungUpOn = require('./GotHungUpOn');
 
 var Triage = React.createClass({
     getInitialState: function() {
@@ -30,7 +31,7 @@ var Triage = React.createClass({
                     stream: stream,
                     config: {
                         iceServers: [{
-                            url: 'stun:stun.l.google.com:19302'
+                            url: 'stun:stun3.l.google.com:19302'
                         }]
                     }
                 });
@@ -82,7 +83,22 @@ var Triage = React.createClass({
                     socket.removeListener('call stopped', onStopped);
                 }
                 socket.on('call stopped', onStopped);
-
+                
+                function gotHungUpOn(){
+                    console.log('triage heard they were hung up on');
+                    that.setState({
+                        hungUpOn: true
+                    });
+                    peer.destroy();
+                    var tracks = stream.getTracks();
+                    tracks.forEach(function(track){
+                        track.stop();
+                    });
+                    socket.removeListener('connect peer', onConnectPeer);
+                    socket.removeListener('call stopped', onStopped);
+                }
+                socket.on('got hung up on', gotHungUpOn);
+                
             }, function(err) {
                 console.error(err);
             });
@@ -116,12 +132,15 @@ var Triage = React.createClass({
             <div>
                 {
                     this.state.stopCall ?
-                    <StopCall/> 
-                    :
-                    this.state.queued ?
-                        'You are in a queue to talk to a counselor. Please wait :)'
+                        <StopCall/> 
                         :
-                        'You are in a queue for triage'
+                        this.state.queued ?
+                            'You are in a queue to talk to a counselor. Please wait :)'
+                            :
+                            this.state.hungUpOn ?
+                                <GotHungUpOn/>
+                                :
+                                'You are in a queue for triage'
                 }
             </div>
         );
@@ -138,5 +157,3 @@ var Triage = React.createClass({
 });
 
 module.exports = Triage;
-
-// this.state.stopCall ? <StopCall/> : 

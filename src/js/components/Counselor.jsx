@@ -30,7 +30,7 @@ var Counselor = React.createClass({
                     stream: stream,
                     config: {
                         iceServers: [{
-                            url: 'stun:stun.l.google.com:19302'
+                            url: 'stun:stun3.l.google.com:19302'
                         }]
                     }
                 });
@@ -76,7 +76,6 @@ var Counselor = React.createClass({
         });
     },
     _stopCall: function(){
-        console.log('what info do I have in this socket of stop call button', this.refs.endCall);
         this.socket.emit('counselor conversation over');
     },
     _endCallUi: function(){
