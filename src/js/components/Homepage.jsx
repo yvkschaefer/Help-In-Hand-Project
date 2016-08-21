@@ -69,13 +69,32 @@ var Homepage = React.createClass({
         
         var showLoginButton;
         var showLogoutButton;
+
         
         if (!this.state.loggedIn) {
             showLoginButton = (
                 <div>
-                    <button onClick={this._handleLogin} value="facebookButtonClicked"> Login with Facebook! </button>
-                    <button onClick={this._handleLogin} value="twitterButtonClicked"> Login with Twitter! </button> 
-                    <button onClick={this._handleLogin} value="googleAccountButtonClicked"> Login with your Google Account! </button>
+                    <div className="login">
+                        <div className="container">
+                            <a>
+                                <ul>
+                                    <li>
+                                        <p>Login:</p>
+                                    </li>
+                                    <li>
+                                       <input type="image" src="http://www.firstbaptistashland.com/wp-content/uploads/2015/09/facebook-logo-png-transparent-background.png" onClick={this._handleLogin} value="facebookButtonClicked"  className="facebookImage" />
+
+                                    </li>
+                                    <li>
+                                       <input type="image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRX3AKo2r3hd5qH-rqmpzzN8PChRhK-MAWDcbWdzW89PV0TXHeP" onClick={this._handleLogin} value="twitterButtonClicked"  className="twitterImage" />
+                                    </li>
+                                    <li>
+                                        <input type="image" src="https://i.kinja-img.com/gawker-media/image/upload/s--pEKSmwzm--/c_scale,fl_progressive,q_80,w_800/1414228815325188681.jpg" onClick={this._handleLogin} value="googleAccountButtonClicked" className="googleImage" />
+                                    </li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             );
         }
@@ -88,32 +107,26 @@ var Homepage = React.createClass({
         }   
         
         return (
-            <div className="homepage">
-                
+            <div className="nav">
                 {showLoginButton}
                 {showLogoutButton}
-                
-                <section>
-                    <Link to='/triage'> Chat with a counselor </Link>
-                </section>    
+                    
+                        
                 <section> 
                     <h2> Fill out the form! </h2>
                     <Link to="/forms"> Fill out the form! </Link>
                 </section>
-                
-            
+                    
+                    
                 <section>
                     <h2> About us </h2>
                     <p> We are a team of volunteer who's gonna help you! </p>
-                </section>                
-
+                </section>
                 
                 <section>
                     <h2> Services </h2>
                     <p> We provide bunch of services </p>
                 </section>
-                
-                
             </div>
         );
     }

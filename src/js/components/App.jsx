@@ -5,11 +5,11 @@ var Link = require('react-router').Link;
 var App = React.createClass({
     render: function() {
         return (
-            <div className="main-app">
-                <header className="main-header">
-                    <h1><Link to="/"> NAVIGATION STUFFS? LOGO?</Link></h1>
+            <div className="mainPage">
+                <header className="mainHeader">
+                    <h1><Link to="/">Help In Hand</Link></h1>
                 </header>
-                <main className="main-content">
+                <main className="mainContent">
                     {this.props.children}
                 </main>
             </div>

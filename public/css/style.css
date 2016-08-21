@@ -34,3 +34,185 @@
 .formCategory {
     font-weight: bold;
 }
+
+.mainPage {
+    background-color: rgba(78, 78, 90, 0.7);
+}
+
+.mainHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Lato;
+    font-size: 11px;
+    font-weight: bold;
+    color: red;
+    padding: 14px 10px;
+    text-transform: uppercase;
+    background-color: rgba(78, 78, 90, 0.7) ;
+}
+
+.mainContent {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(78, 78, 90, 0.7) ;
+
+}
+
+
+.mainPageLinkButtons {
+    display: flex;
+    margin-left: -10px;
+  	margin-top: -10px;
+    flex-wrap: wrap;
+    background-color: rgba(78, 78, 90, 0.7) ;
+}
+
+.googleButton {
+    height: 50px;
+    width: 100px;
+    padding: -20px;
+    background-color: rgba(78, 78, 90, 0.7) ;
+}
+
+.mainPageButtons {
+	flex: 1 0 200px;
+    display:flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 10px;
+	margin-left: 30px;
+	margin-top: 10px;
+    color: white;
+    font-size: 30px;
+    background-color: rgba(78, 78, 90, 0.7) ;
+}
+
+#contact {
+  margin-left: 20px;
+}
+.login {
+    background-color: rgba(78, 78, 90, 0.7);
+}
+
+.footer {
+  background-color: rgba(78, 78, 90, 0.7); 
+}
+
+.facebookImage {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-left: 3px;
+    height: 50px;
+    width: 50px;
+}
+
+.twitterImage {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-right: 3px;
+    margin-left: 3px;
+    height: 50px;
+    width: 50px;
+}
+
+.googleImage {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-left: 3px;
+    height: 50px;
+    width: 50px;
+}
+
+.nav {
+    background-image:url('data:image/jpeg;base64,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');
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav li {
+    display: inline;
+    float: left;
+}
+
+.descrip_own_words {
+    width: 600px;
+}
+
+.questionnaire_forms {
+    padding: 1em 4em 1em 4em;
+    background: url('http://www.tubadzin.pl/sites/default/files/en-gb_PS-Palacio-beige.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.formHeader {
+    margin-bottom: 1em;
+}
+.formHeader:after {
+    content:' ';
+    display:block;
+    border:1px solid black;
+}
+.formCategory {
+    font-weight: bold;
+}
+
+.counselorsProfilePage {
+  background: url('http://img.wallpaperfolder.com/f/79130BE5BD00/aring-pound-129-ccedil-ordm-cedil.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2em;
+}
+
+.counselorsHeaderText {
+  border-top: 5px solid black;
+  font-size: 3.5em;
+  font-weight: 100;
+}
+
+.counselorsInformation {
+  display: flex;
+  margin-top: 15px;
+  border-top: 5px solid black;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.counselorsProfilePicture {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  margin: 10px;
+  border-radius: 60%;
+}
+
+.counselorsTextInformation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.counselorsName {
+  font-weight: bold;
+  margin-top: -45px;
+  height: 150px;
+  font-size: 3em;
+}
+
+.patientComments {
+  font-size: 1.4em;
+}
+
+.counselorsCredentials {
+  font-size: 1.1em;
+}
+
+.counselorsStatus {
+  justify-content: flex-end;
+}
