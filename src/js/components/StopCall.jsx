@@ -6,6 +6,7 @@ var StopCall = React.createClass({
         return(
             <div>
                 <p>You stopped the call</p>
+                <p>HELLO HELLO</p>
                 <Link to='/'>homepage</Link>
             </div>
         );
