@@ -79,7 +79,7 @@ var Homepage = React.createClass({
                             <a>
                                 <ul>
                                     <li>
-                                        <p className="login">Login:</p>
+                                        <p className="loginText">Login:</p>
                                     </li>
                                     <li>
                                        <input type="image" src="http://www.firstbaptistashland.com/wp-content/uploads/2015/09/facebook-logo-png-transparent-background.png" onClick={this._handleLogin} value="facebookButtonClicked"  className="facebookImage" />
@@ -127,27 +127,28 @@ var Homepage = React.createClass({
         }   
         
         return (
-            <div className="nav">
-                {showLoginButton}
-                {showLogoutButton}
-                 <div className="container">
-                    <ul>
-                        <section>
-                            <h1>We're here to help.</h1>
-                            <p>Login to begin the process of getting the help you need.</p>
-                        </section>
+            <div>
+                <div className="nav">
+                    {showLoginButton}
+                    {showLogoutButton}
+                     <div className="container">
+                            <section>
+                                <h1>We're here to help.</h1>
+                                <p>Login to begin the process of getting the help you need.</p>
+                            </section>
+                    </div>
+                </div>
+                
+                <div>
+                    <section>
+                        <h2> About us </h2>
+                        <p> We are a team of volunteer who's gonna help you! </p>
+                    </section>
                             
-                            
-                        <section>
-                            <h2> About us </h2>
-                            <p> We are a team of volunteer who's gonna help you! </p>
-                        </section>
-                        
-                        <section>
-                            <h2> Services </h2>
-                            <p> We provide bunch of services </p>
-                        </section>
-                    </ul>
+                    <section>
+                        <h2> Services </h2>
+                        <p> We provide bunch of services </p>
+                    </section>
                 </div>
             </div>
         );
