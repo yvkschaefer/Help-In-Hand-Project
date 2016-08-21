@@ -178,13 +178,11 @@ io.on('connection', function(socket) {
 
     socket.emit('stop call');
     patientSocket.emit('got hung up on');
-
     connections[socket.id] = null;
     connections[patientSocket.id] = null;
 
     triageNext();
   });
-
   socket.on('patient ended conversation', function() {
     console.log('server heard that the patient stopped call');
     var counselorSocket = connections[socket.id];
