@@ -76,7 +76,6 @@ var Counselor = React.createClass({
         });
     },
     _stopCall: function(){
-        console.log('what info do I have in this socket of stop call button', this.refs.endCall);
         this.socket.emit('counselor conversation over');
     },
     _endCallUi: function(){

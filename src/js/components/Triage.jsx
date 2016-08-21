@@ -3,6 +3,7 @@
 var React = require('react');
 var SimplePeer = require('simple-peer');
 var StopCall = require('./StopCall');
+var GotHungUpOn = require('./GotHungUpOn');
 
 var Triage = React.createClass({
     getInitialState: function() {
@@ -138,5 +139,3 @@ var Triage = React.createClass({
 });
 
 module.exports = Triage;
-
-// this.state.stopCall ? <StopCall/> : 

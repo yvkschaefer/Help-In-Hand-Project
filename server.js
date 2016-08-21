@@ -102,7 +102,7 @@ io.on('connection', function(socket) {
     triage.push(socket);
     triageNext();
   });
-  
+
   socket.on('counselor', function() {
     socket.isFree = true;
     socket.isCounselor = true;
@@ -142,13 +142,13 @@ io.on('connection', function(socket) {
           return 0;
         }
       });
-      
+
       socket.emit('stop call');
       patientSocket.emit('queued');
-      
+
       connections[socket.id] = null;
       connections[patientSocket.id] = null;
-      
+
       triageNext();
       patientNext();
     }
@@ -158,31 +158,44 @@ io.on('connection', function(socket) {
 
   });
 
-  socket.on('counselor conversation over', function(){
+  socket.on('counselor conversation over', function() {
     console.log('the server heard counselor conversation over');
     var patientSocket = connections[socket.id];
     socket.isFree = true;
-    
+
     socket.emit('stop call');
     patientSocket.emit('call stopped');
-    
+
     connections[socket.id] = null;
     connections[patientSocket.id] = null;
-    
+
     patientNext();
   });
-  
-  socket.on('patient ended conversation', function(){
+
+  socket.on('triage counselor ended conversation', function() {
+    var patientSocket = connections[socket.id];
+    socket.isFree = true;
+
+    socket.emit('stop call');
+    patientSocket.emit('call stopped');
+
+    connections[socket.id] = null;
+    connections[patientSocket.id] = null;
+
+    triageNext();
+  });
+
+  socket.on('patient ended conversation', function() {
     console.log('server heard that the patient stopped call');
     var counselorSocket = connections[socket.id];
     counselorSocket.isFree = true;
-    
+
     socket.emit('call stopped');
     counselorSocket.emit('stop call');
-    
+
     connections[socket.id] = null;
     connections[counselorSocket.id] = null;
-    
+
     triageNext();
     patientNext();
   });
@@ -203,8 +216,8 @@ io.on('connection', function(socket) {
 
     triageNext();
   });
-  
-  socket.on('triageCounselor logged out', function(){
+
+  socket.on('triageCounselor logged out', function() {
     socket.isFree = false;
     console.log('server heard triageCounselor logged out');
     socket.emit('logged out');
