@@ -1,52 +1,28 @@
-.descrip_own_words {
-    width: 600px;
-}
-
-.mainPage {
-    /*background-color: rgba(78, 78, 90, 0.7);*/
-}
-
-.mainHeader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Lato;
-    font-size: 11px;
-    font-weight: bold;
-    color: red;
-    padding: 14px 10px;
-    text-transform: uppercase;
-    background-color: rgba(78, 78, 90, 0.7) ;
-}
-
+/*--------------------------------------------------------*/
+/*HOMEPAGE*/
 .mainContent {
     position: relative;
     overflow: hidden;
-    background-color: rgba(78, 78, 90, 0.7) ;
-
+    background-color: white;
 }
 
+.moreInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.aboutUs {
+    
+}
+
+.services {
+
+}
 
 .mainPageLinkButtons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     background-color: rgba(78, 78, 90, 0.7);
-    font-size: 20px;
-}
-
-.googleButton {
-    border: 2px solid black;
-    border-radius: 10px;
-    height: 50px;
-    width: 100px;
-    background-color: rgba(78, 78, 90, 0.7) ;
-}
-
-.contactUs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .mainPageButtons {
@@ -54,14 +30,11 @@
     display:flex;
     justify-content: center;
     box-sizing: border-box;
-    padding: 10px;
-	margin-left: 30px;
-	margin-top: 10px;
-    font-size: 30px;
-}
-
-#contact {
-  margin-left: 20px;
+    padding: .5em;
+	margin-left: 1em;
+	margin-top: 1em;
+    color: white;
+    font-size: 2em;
 }
 
 .footer {
@@ -71,35 +44,32 @@
 .facebookImage {
     border: 2px solid black;
     border-radius: 10px;
-    margin-right: 5px;
-    margin-left: 3px;
-    height: 50px;
-    width: 50px;
+    margin-right: 0.25em;
+    margin-left: 0.5em;
+    height: 2.4em;
+    width: 2.4em;
 }
 
 .twitterImage {
     border: 2px solid black;
     border-radius: 10px;
-    margin-right: 3px;
-    margin-left: 3px;
-    height: 50px;
-    width: 50px;
+    margin-right: 0.25em;
+    margin-left: 0.25em;
+    height: 2.4em;
+    width: 2.4em;
 }
 
 .googleImage {
     border: 2px solid black;
     border-radius: 10px;
-    margin-left: 3px;
-    height: 50px;
-    width: 50px;
+    margin-left: 0.25em;
+    height: 2.4em;
+    width: 2.4em;
 }
 
 .login {
     background-color: rgba(78, 78, 90, 0.7);
-}
-
-.loginText {
-    font-size: 4em;
+    font-size: 1.5em;
 }
 
 .logout {
@@ -115,7 +85,7 @@
 
 .nav {
     background-image: url('./homepageBackground.jpg');
-    height: 500px;
+    height: 50em;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -126,19 +96,45 @@
 }
 
 .nav h1 {
-    font-size: 48px;
+    font-size: 5em;
     font-family: 'Bitter', sans-serif;
     font-weight: bold;
 }
 
 .nav p {
-    font-size: 20px;
+    font-size: 2.3em;
     font-family: 'Bitter', sans-serif;
 }
 
-.descrip_own_words {
-    width: 600px;
+
+
+
+/*--------------------------------------------------------*/
+/*FORM PAGE*/
+
+.questionnaire_forms {
+    padding: 1em 4em 1em 4em;
+    background: url('./form-page-background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
+
+.formHeader {
+    margin-bottom: 1em;
+}
+
+.formHeader:after {
+    content:' ';
+    display:block;
+    border:1px solid black;
+}
+
+.formCategory {
+    font-weight: bold;
+}
+
 
 .questionnaire_forms {
     padding: 1em 4em 1em 4em;
@@ -160,31 +156,40 @@
     font-weight: bold;
 }
 
+
+
+/*--------------------------------------------------------*/
+/*COUNSELORS PROFILE PAGE*/
+
+
 .counselorsProfilePage {
+  background: url('./counselor-profile-background.jpg') no-repeat center center fixed;
+  background-size: cover;
   font-family: 'Lato', sans-serif;
   font-size: 1.2em;
+  padding: 0em 1em 1em 1em;
 }
 
 .counselorsHeaderText {
-  border-top: 5px solid black;
-  font-size: 3.5em;
-  font-weight: 100;
+  font-size: 3em;
+  text-align: center;
+  /*font-weight: 100;*/
 }
 
 .counselorsInformation {
   display: flex;
-  margin-top: 15px;
-  border-top: 5px solid black;
+  /*margin-top: 15px;*/
+  border-top: 2px solid black;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .counselorsProfilePicture {
-  width: 300px;
-  height: 300px;
+  width: 10em;
+  height: 10em;
   display: flex;
-  margin: 10px;
+  margin: 1.2em;
   border-radius: 60%;
 }
 
@@ -197,13 +202,13 @@
 
 .counselorsName {
   font-weight: bold;
-  margin-top: -45px;
-  height: 150px;
-  font-size: 3em;
+  /*margin-top: -45px;*/
+  /*height: 150px;*/
+  font-size: 2.2em;
 }
 
 .patientComments {
-  font-size: 1.4em;
+  font-size: 1.1em;
 }
 
 .counselorsCredentials {

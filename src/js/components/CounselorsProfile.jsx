@@ -93,7 +93,7 @@ var CounselorsProfile = React.createClass({
 									<img src={counselor.Photo} className="counselorsProfilePicture" />
 									<div className="counselorsTextInformation">
 										<div className="counselorsName"><p>{counselor.Name}</p></div>
-										<div className="patientComments"><p>{counselor['Patient Comments']}</p></div>
+										<div className="patientComments"><p>"{counselor['Patient Comments']}"</p></div>
 										<div className="counselorsCredentials"><p>{counselor.Credentials}</p></div>
 									</div>
 							</div>);
@@ -101,7 +101,6 @@ var CounselorsProfile = React.createClass({
 					</div>
 				</div>
 		}
-		
 		
 		return (
 			<div>

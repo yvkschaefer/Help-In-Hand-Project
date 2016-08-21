@@ -76,7 +76,6 @@ var Homepage = React.createClass({
                 <div>
                     <div className="login">
                         <div className="container">
-                            <a>
                                 <ul>
                                     <li>
                                         <p className="loginText">Login:</p>
@@ -92,7 +91,25 @@ var Homepage = React.createClass({
                                         <input type="image" src="https://i.kinja-img.com/gawker-media/image/upload/s--pEKSmwzm--/c_scale,fl_progressive,q_80,w_800/1414228815325188681.jpg" onClick={this._handleLogin} value="googleAccountButtonClicked" className="googleImage" />
                                     </li>
                                 </ul>
-                            </a>
+                        </div>
+                    </div>
+                    <div className="nav">
+                        {showLoginButton}
+                        {showLogoutButton}
+                         <div className="container">
+                            <section>
+                                <h1>We're here to help.</h1>
+                                <p>Login to begin the process of getting the help you need.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <br />
+                    <div className="moreInfo">
+                        <div className="aboutUs">
+                            <Link to="/counselorsprofile"><h2>About us</h2></Link>
+                        </div>
+                        <div className="services">
+                            <h2> Services </h2>
                         </div>
                     </div>
                 </div>
@@ -111,14 +128,6 @@ var Homepage = React.createClass({
                                     <h2> Fill out the form! </h2>
                                     <Link to="/forms"> Fill out the form! </Link>
                                 </section>
-                                <section>
-                                    <h2> About us </h2>
-                                    <p> We are a team of volunteer who's gonna help you! </p>
-                                </section>
-                                <section>
-                                    <h2> Services </h2>
-                                    <p> We provide bunch of services </p>
-                                </section>
                             </ul>
                         </div>
                     </div>
@@ -131,26 +140,18 @@ var Homepage = React.createClass({
                 <div className="nav">
                     {showLoginButton}
                     {showLogoutButton}
-                     <div className="container">
-                            <section>
-                                <h1>We're here to help.</h1>
-                                <p>Login to begin the process of getting the help you need.</p>
-                            </section>
+                </div>
+                <br />
+                <div className="moreInfo">
+                    <div className="aboutUs">
+                        <Link to="/counselorsprofile"><h2>About us</h2></Link>
+                    </div>
+                    <div className="services">
+                        <h2> Services </h2>
                     </div>
                 </div>
-                
-                <div>
-                    <section>
-                        <h2> About us </h2>
-                        <p> We are a team of volunteer who's gonna help you! </p>
-                    </section>
-                            
-                    <section>
-                        <h2> Services </h2>
-                        <p> We provide bunch of services </p>
-                    </section>
-                </div>
             </div>
+            
         );
     }
 
