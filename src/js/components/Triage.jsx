@@ -140,7 +140,18 @@ var Triage = React.createClass({
                             this.state.hungUpOn ?
                                 <GotHungUpOn/>
                                 :
-                                'You are in a queue for triage'
+                                <div className="triageWaiting">
+                                    <div className='triageWaitingText'>
+                                        <img src="http://cdn.pcwallart.com/images/plain-blue-background-wallpaper-3.jpg"/>
+                                        <p>You are in a queue for triage</p>
+                                        <p>
+                                            Thanks for your patience
+                                            <span className="dots"> 
+                                                ...
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
                 }
             </div>
         );
