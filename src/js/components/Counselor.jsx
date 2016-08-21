@@ -82,7 +82,7 @@ var Counselor = React.createClass({
     _endCallUi: function(){
         return (
             <div>
-                <button ref="endCall" onClick={this._stopCall}>STOP CALL</button>
+                <button ref="endCall" onClick={this._stopCall}>stop call</button>
             </div>
         );
     },
