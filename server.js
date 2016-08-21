@@ -177,7 +177,7 @@ io.on('connection', function(socket) {
     socket.isFree = true;
 
     socket.emit('stop call');
-    patientSocket.emit('call stopped');
+    patientSocket.emit('got hung up on');
 
     connections[socket.id] = null;
     connections[patientSocket.id] = null;
