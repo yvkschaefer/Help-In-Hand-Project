@@ -96,7 +96,6 @@ function triageNext() {
   }
 }
 
-
 io.on('connection', function(socket) {
   socket.on('triage patient', function() {
     socket.isPatient = true;
@@ -170,6 +169,21 @@ io.on('connection', function(socket) {
     connections[socket.id] = null;
     connections[patientSocket.id] = null;
     
+    patientNext();
+  });
+  
+  socket.on('patient ended conversation', function(){
+    console.log('server heard that the patient stopped call');
+    var counselorSocket = connections[socket.id];
+    counselorSocket.isFree = true;
+    
+    socket.emit('call stopped');
+    counselorSocket.emit('stop call');
+    
+    connections[socket.id] = null;
+    connections[counselorSocket.id] = null;
+    
+    triageNext();
     patientNext();
   });
 
