@@ -77,14 +77,14 @@ var Homepage = React.createClass({
             showLoginButton = (
                 <div>
                     <div className="homepageTopBar">
-                        <p id="appName">Help In Hand</p>
+                        <p id="appName"> Help In Hand </p>
                         <div className="login">  
                             <div className="loginText">
-                                <p>Login:</p>
+                                <p> Login: </p>
                             </div>
                             <div className="loginIcons">
                                 <input type="image" src="http://www.firstbaptistashland.com/wp-content/uploads/2015/09/facebook-logo-png-transparent-background.png" onClick={this._handleLogin} value="facebookButtonClicked"  className="facebookImage" />
-                                <input type="image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRX3AKo2r3hd5qH-rqmpzzN8PChRhK-MAWDcbWdzW89PV0TXHeP" onClick={this._handleLogin} value="twitterButtonClicked"  className="twitterImage" />
+                                <input type="image" src="http://panosnetwork.org/images/twt.png" onClick={this._handleLogin} value="twitterButtonClicked"  className="twitterImage" />
                                 <input type="image" src="https://i.kinja-img.com/gawker-media/image/upload/s--pEKSmwzm--/c_scale,fl_progressive,q_80,w_800/1414228815325188681.jpg" onClick={this._handleLogin} value="googleAccountButtonClicked" className="googleImage" />
                             </div>
                         </div>            
@@ -92,10 +92,10 @@ var Homepage = React.createClass({
                     <div className="mainBodyDiv">
                         {showLoginButton}
                         {showLogoutButton}
-                                    
-                        <h1>We're here to help.</h1>
-                        <p>Login to begin the process of getting the help you need.</p>
-                        <Link to="/counselorsProfile"> See Counselors' Profile! </Link>
+                        <div className="messageNotLoggedIn">
+                            <h1 className="homepageMessage1"> We're here to help! </h1>
+                            <p className="homepageMessage2"> Login to begin the process of getting the help you need. </p>
+                        </div>
                     </div>
                     <br />
                 </div>
@@ -106,12 +106,15 @@ var Homepage = React.createClass({
                 <div>
                     <div className="homepageTopBar">
                             <p id="appName">Help In Hand</p>
-                            <input type="button" className="logoutButton" onClick={this._handleLogout} value="Logout" />
+                            <div className="logoutButtonHomepage"> <input type="button" className="logoutButton" onClick={this._handleLogout} value="Logout" /> </div>
                     </div>
                     <div className="mainBodyDiv">
-                        <h2> Fill out the form! </h2>
-                        <Link to="/forms"> Fill out the form! </Link>
-                        <h2>Speak with one of our <Link to='/triage'>counselors</Link></h2>
+                        <div className="choicesText">
+                            <Link to="/forms"><h2>Intake Questionnaire</h2></Link>
+                            <p>Please answer this brief questionnaire <br/> so that our volunteers may better help you.</p>
+                            <h2><Link to='/triage'>Counselors</Link></h2>
+                            <p>Click here if you are in crisis and <br /> need immediate assistance</p>
+                        </div>
                     </div>
                 </div>
             );
