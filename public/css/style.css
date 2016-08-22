@@ -12,6 +12,7 @@
 
 /*--------------------------------------------------------*/
 
+
 /*HOMEPAGE NAVIGATION BAR*/
 
 .homepageTopBar {
@@ -31,8 +32,8 @@
 }
 
 
-
 /*--------------------------------------------------------*/
+
 
 /*HOMEPAGE LOGIN FUNCTIONS*/
 
@@ -70,6 +71,8 @@
     width: 2.4em;
     /*border: 1px solid #66ffff;*/
 }
+
+
 /* Changed the twitter image to make it fit a little better with the header (Dylan )*/
 
 .googleImage {
@@ -82,6 +85,7 @@
 
 
 /*--------------------------------------------------------*/
+
 
 /*LOGOUT BUTTON*/
 
@@ -101,8 +105,8 @@
 
 /*--------------------------------------------------------*/
 
-/*HOMEPAGE INTRODUCTION*/
 
+/*HOMEPAGE INTRODUCTION*/
 
 .homepageIntroduction {
     display: flex;
@@ -144,7 +148,9 @@ a:hover {
     font-family: 'Bitter', sans-serif;
 }
 
+
 /*.messageNotLoggedIn {*/
+
 
 /*}*/
 
@@ -157,10 +163,11 @@ a:hover {
     color: black;
     padding: 0.5em 0em 0em 0.5em;
     display: flex;
-    
 }
 
+
 /*--------------------------------------------------------*/
+
 
 /*BODY OF HOMEPAGE: About us, Services, Instructions*/
 
@@ -211,7 +218,8 @@ a:hover {
     padding: 1em 3em;
 }
 
-.ourCounselor1, .ourCounselor2 {
+.ourCounselor1,
+.ourCounselor2 {
     padding: 1.5em 4em;
 }
 
@@ -229,6 +237,7 @@ a:hover {
 .counselorDescriptionOnHomepage {
     font-size: 1.2em;
 }
+
 
 /*--------------------------------------------------------*/
 
@@ -257,7 +266,6 @@ a:hover {
     width: 100%;
     vertical-align: middle;
 }
-
 
 
 /*--------------------------------------------------------*/
@@ -370,7 +378,6 @@ a:hover {
     flex-wrap: wrap;
     align-items: center;
     border-bottom: 2px solid black;
-
 }
 
 .counselorsProfilePicture {
@@ -440,9 +447,6 @@ a:hover {
 }
 
 
-
-
-
 /*--------------------------------------------------------*/
 
 
@@ -482,11 +486,12 @@ a:hover {
     height: 90vh;
 }
 
-.triageTalkingText {
+.triageTalkingText,
+.triageCounselorTalking {
     font-family: 'Lato', sans-serif;
     font-size: 2em;
     color: #0D0D25;
-    padding: 8vh 0 0 1vh;
+    padding: 4vh 0 0 1vh;
 }
 
 .stopCallButton {
@@ -521,10 +526,31 @@ a:hover {
     text-decoration: none;
 }
 
-.tCounselorLogoutButton {
-    border-radius: 10%;
-    padding: 0 0.2em 0 0.2em;
+.tCounselorButtonsContainer {
+    display: flex;
 }
+
+.priorityTextInput {
+    height: 1em;
+    width: 7em;
+    padding: 0 1.3em 0 0;
+}
+
+/*.priorityButton {*/
+/*    border-radius: 20%;*/
+/*    height: 1em;*/
+/*}*/
+
+/*.tCounselorStopCallButton {*/
+/*    border-radius: 20%;*/
+/*    height: 1em;*/
+/*    margin: 0 0 0 1em;*/
+/*}*/
+
+/*.tCounselorLogoutButton {*/
+/*    border-radius: 10%;*/
+/*    padding: 0 0.2em 0 0.2em;*/
+/*}*/
 
 .loggedOutPage {
     background: url('./triageBackground.jpg') no-repeat center center fixed;
