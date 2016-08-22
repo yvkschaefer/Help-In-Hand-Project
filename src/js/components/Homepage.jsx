@@ -110,10 +110,12 @@ var Homepage = React.createClass({
                     </div>
                     <div className="mainBodyDiv">
                         <div className="choicesText">
-                            <Link to="/forms"><h2>Intake Questionnaire</h2></Link>
-                            <p>Please answer this brief questionnaire <br/> so that our volunteers may better help you.</p>
-                            <h2><Link to='/triage'>Counselors</Link></h2>
-                            <p>Click here if you are in crisis and <br /> need immediate assistance</p>
+                            <div className='homepageBodyLinks'>
+                                <Link to="/forms"><h2>Intake Questionnaire</h2></Link>
+                                <p>Please answer this brief questionnaire <br/> so that our volunteers may better help you.</p>
+                                <h2><Link to='/counselorsprofile'>Counselors</Link></h2>
+                                <p>Click <Link to='/triage'>here</Link> if you are in crisis and <br /> need immediate assistance</p>
+                            </div>
                         </div>
                     </div>
                 </div>
