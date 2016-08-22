@@ -101,8 +101,8 @@ var TriageCounselor = React.createClass({
     _priorityUi: function() {
         return (
             <div>
-                <input type="text" ref="priorityInput"/>
-                <button onClick={this._handleAssign}>assign</button>
+                <input type="text" className='priorityTextInput' ref="priorityInput"/>
+                <button className='priorityButton' onClick={this._handleAssign}><h4>assign priority</h4></button>
             </div>
         );
     },
@@ -112,7 +112,7 @@ var TriageCounselor = React.createClass({
     _endCallUi: function() {
         return (
             <div>
-                <button ref='endCall' onClick={this._stopCall}>stop call</button>
+                <button className='tCounselorStopCallButton' ref='endCall' onClick={this._stopCall}><h4>stop call</h4></button>
             </div>
         );
     },
@@ -121,7 +121,9 @@ var TriageCounselor = React.createClass({
             <div className='triageCounselorTalking'>
                 <p>You are talking to a patient in triage</p>
                 <video ref="videoPlayer"/>
-                {this._priorityUi()}{this._endCallUi()}
+                <div className='tCounselorButtonsContainer'>
+                    {this._priorityUi()}{this._endCallUi()}
+                </div>
             </div>
         );
     },

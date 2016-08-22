@@ -7,7 +7,7 @@
 // Firebase can take care of user authentication, which is much simpler to use!
 
 var express = require('express');
-var app = express()
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
