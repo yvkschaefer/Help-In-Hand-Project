@@ -1,6 +1,5 @@
 // npm run dev
 // node server.js
-
 // https://final-project-decode-takanarisasaki.c9users.io/
 // https://console.firebase.google.com/project/decodemtl-final-project/database/data
 
@@ -13,7 +12,6 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 app.use('/files', express.static(__dirname + '/public'));
-
 var triage = [];
 var triageCounselors = [];
 var patients = [];

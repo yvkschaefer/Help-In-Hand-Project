@@ -102,7 +102,7 @@ var TriageCounselor = React.createClass({
         return (
             <div>
                 <input type="text" ref="priorityInput"/>
-                <button onClick={this._handleAssign}>ASSIGN</button>
+                <button onClick={this._handleAssign}>assign</button>
             </div>
         );
     },
@@ -118,7 +118,7 @@ var TriageCounselor = React.createClass({
     },
     _connected: function() {
         return (
-            <div>
+            <div className='triageCounselorTalking'>
                 <p>You are talking to a patient in triage</p>
                 <video ref="videoPlayer"/>
                 {this._priorityUi()}{this._endCallUi()}
@@ -127,9 +127,9 @@ var TriageCounselor = React.createClass({
     },
     _disconnected: function() {
         return (
-            <div>
+            <div className='tCounselorWaiting'>
                 <p>There are no patients in the queue. Time to browse Reddit!</p>
-                <button onClick={this._logout}>logout</button>
+                <button className='tCounselorLogoutButton' onClick={this._logout}>logout</button>
             </div>
         );
     },

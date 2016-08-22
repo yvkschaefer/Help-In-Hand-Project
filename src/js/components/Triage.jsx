@@ -83,22 +83,22 @@ var Triage = React.createClass({
                     socket.removeListener('call stopped', onStopped);
                 }
                 socket.on('call stopped', onStopped);
-                
-                function gotHungUpOn(){
+
+                function gotHungUpOn() {
                     console.log('triage heard they were hung up on');
                     that.setState({
                         hungUpOn: true
                     });
                     peer.destroy();
                     var tracks = stream.getTracks();
-                    tracks.forEach(function(track){
+                    tracks.forEach(function(track) {
                         track.stop();
                     });
                     socket.removeListener('connect peer', onConnectPeer);
                     socket.removeListener('call stopped', onStopped);
                 }
                 socket.on('got hung up on', gotHungUpOn);
-                
+
             }, function(err) {
                 console.error(err);
             });
@@ -114,16 +114,18 @@ var Triage = React.createClass({
     _endCallUi: function() {
         return (
             <div>
-                <button ref='endCall' onClick={this._stopCall}>stop call</button>
+                <button className='stopCallButton' ref='endCall' onClick={this._stopCall}>stop call</button>
             </div>
         );
     },
     _connected: function() {
         return (
-            <div>
-                <p>You are now talking to someone</p>
-                <video ref="videoPlayer"/>
-                {this._endCallUi()}
+            <div className="triageTalking">
+                <div className="triageTalkingText">
+                    <p>You are now talking to someone</p>
+                    <video ref="videoPlayer"/>
+                    {this._endCallUi()}
+                </div>
             </div>
         );
     },
@@ -135,14 +137,18 @@ var Triage = React.createClass({
                         <StopCall/> 
                         :
                         this.state.queued ?
-                            'You are in a queue to talk to a counselor. Please wait :)'
+                            <div className="triage">
+                                <div className="triageText">
+                                    <p>You are in a queue to talk to a counselor.</p>
+                                    <p>Please wait :) </p>
+                                </div>
+                            </div>
                             :
                             this.state.hungUpOn ?
                                 <GotHungUpOn/>
                                 :
-                                <div className="triageWaiting">
-                                    <div className='triageWaitingText'>
-                                        <img src="http://cdn.pcwallart.com/images/plain-blue-background-wallpaper-3.jpg"/>
+                                <div className="triage">
+                                    <div className='triageText'>
                                         <p>You are in a queue for triage</p>
                                         <p>
                                             Thanks for your patience
