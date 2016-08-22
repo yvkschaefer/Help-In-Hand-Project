@@ -4,6 +4,11 @@ var React = require('react');
 var SimplePeer = require('simple-peer');
 var StopCall = require('./StopCall');
 var GotHungUpOn = require('./GotHungUpOn');
+var fr = require('../../firebase/firebase.js');
+
+/*global localStorage*/
+
+var userId = localStorage.getItem('user');
 
 var Triage = React.createClass({
     getInitialState: function() {
@@ -12,9 +17,10 @@ var Triage = React.createClass({
         };
     },
     componentDidMount: function() {
+        console.log('does I get userId ', userId);
         var socket = this.socket = io();
         var that = this;
-        socket.emit('triage patient');
+        socket.emit('triage patient', {userId: userId});
         socket.on('start stream', function() {
             that.setState({
                 connected: true

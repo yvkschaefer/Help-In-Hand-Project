@@ -35,7 +35,7 @@ fr.firebase.auth().onAuthStateChanged(function(user){
         console.log("User " + user.uid + " is logged in");
     } else {
         localStorage.removeItem('user');
-        browserHistory.push('/');
+        // browserHistory.push('/');
         console.log("User is logged out");
     }
 });

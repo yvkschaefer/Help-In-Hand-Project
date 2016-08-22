@@ -116,6 +116,10 @@ var TriageCounselor = React.createClass({
             </div>
         );
     },
+    _triageFirebaseId: function(){
+        this.socket.patientFirebaseId;
+        console.log('looking for the patient firebase id inside of tCouns ', this.socket.patientFirebaseId);
+    },
     _connected: function() {
         return (
             <div className='triageCounselorTalking'>
@@ -123,6 +127,9 @@ var TriageCounselor = React.createClass({
                 <video ref="videoPlayer"/>
                 <div className='tCounselorButtonsContainer'>
                     {this._priorityUi()}{this._endCallUi()}
+                </div>
+                <div>
+                    counselor has the patient's firebase Id: {this._triageFirebaseId()}
                 </div>
             </div>
         );

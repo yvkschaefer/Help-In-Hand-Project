@@ -81,7 +81,9 @@ function triageNext() {
       connections[triagePatient.id] = triageCounselor;
       //inside connections object, it is being assigned a key which is triagePatient.id, 
       //and the value is triageCounselor
-
+      
+      triageCounselor.patientFirebaseId = triagePatient.userId;
+      console.log('looking for the patients firebase ', triageCounselor.patientFirebaseId);
       connections[triageCounselor.id] = triagePatient;
       console.log('connected: triage counselor with patient');
     }
@@ -95,7 +97,8 @@ function triageNext() {
 }
 
 io.on('connection', function(socket) {
-  socket.on('triage patient', function() {
+  socket.on('triage patient', function(firebaseUserId) {
+    socket.userId = firebaseUserId;
     socket.isPatient = true;
     triage.push(socket);
     triageNext();
@@ -162,7 +165,7 @@ io.on('connection', function(socket) {
     socket.isFree = true;
 
     socket.emit('stop call');
-    patientSocket.emit('call stopped');
+    patientSocket.emit('got hung up on');
 
     connections[socket.id] = null;
     connections[patientSocket.id] = null;

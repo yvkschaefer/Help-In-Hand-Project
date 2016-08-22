@@ -12,7 +12,6 @@
 
 /*--------------------------------------------------------*/
 
-
 /*HOMEPAGE NAVIGATION BAR*/
 
 .homepageTopBar {
@@ -32,15 +31,15 @@
 }
 
 
-/*--------------------------------------------------------*/
 
+/*--------------------------------------------------------*/
 
 /*HOMEPAGE LOGIN FUNCTIONS*/
 
 .login {
     display: flex;
     flex-wrap: wrap;
-    margin-right: 1em;
+    margin-right: 0.4em;
 }
 
 .loginText {
@@ -69,10 +68,9 @@
     margin: 0em 0.3em;
     height: 2.4em;
     width: 2.4em;
+    padding: 0.3em;
     /*border: 1px solid #66ffff;*/
 }
-
-
 /* Changed the twitter image to make it fit a little better with the header (Dylan )*/
 
 .googleImage {
@@ -85,7 +83,6 @@
 
 
 /*--------------------------------------------------------*/
-
 
 /*LOGOUT BUTTON*/
 
@@ -105,8 +102,8 @@
 
 /*--------------------------------------------------------*/
 
-
 /*HOMEPAGE INTRODUCTION*/
+
 
 .homepageIntroduction {
     display: flex;
@@ -114,43 +111,37 @@
     justify-content: center;
 }
 
+/*.mainBodyDiv {*/
+/*    background: url('./homepageBackground.jpg');*/
+/*    opacity: 0.65;*/
+/*    height: 100vh; */
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    margin-bottom: -3em;*/
+/*}*/
+
 .mainBodyDiv {
-    background: url('./homepageBackground.jpg');
-    opacity: 0.65;
-    height: 40.7em;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: -3em;
+  background: url('./homepageBackground.jpg') no-repeat center center fixed;
+  min-height: 89.6vh;
+  /*opacity: 0.65;*/
+
 }
 
-.mainBodyDiv:hover {
-    opacity: 1;
-}
+/*.mainBodyDiv:hover {*/
+/*    opacity: 1;*/
+/*}*/
 
 a:hover {
     text-decoration: none;
     color: red;
 }
 
-.nav h1 {
-    font-size: 5em;
-    font-family: 'Bitter', sans-serif;
-    font-weight: bold;
-}
-
-.nav p {
-    font-size: 2.3em;
-    font-family: 'Bitter', sans-serif;
-}
-
 .choicesText {
-    font-size: 0.7em;
+    font-size: 0.6em;
     font-family: 'Bitter', sans-serif;
 }
-
 
 /*.messageNotLoggedIn {*/
-
 
 /*}*/
 
@@ -163,11 +154,14 @@ a:hover {
     color: black;
     padding: 0.5em 0em 0em 0.5em;
     display: flex;
+    
 }
 
+.homepageBodyLinks {
+    margin-left: 2em;
+}
 
 /*--------------------------------------------------------*/
-
 
 /*BODY OF HOMEPAGE: About us, Services, Instructions*/
 
@@ -218,8 +212,7 @@ a:hover {
     padding: 1em 3em;
 }
 
-.ourCounselor1,
-.ourCounselor2 {
+.ourCounselor1, .ourCounselor2 {
     padding: 1.5em 4em;
 }
 
@@ -238,7 +231,6 @@ a:hover {
     font-size: 1.2em;
 }
 
-
 /*--------------------------------------------------------*/
 
 
@@ -246,7 +238,8 @@ a:hover {
 
 .footer {
     background-color: black;
-    padding: 1em 0em 1em 7.5em;
+    /*padding: 1em 0em 1em 7.5em;*/
+    padding: 1em 1em 0.3em 1em;
     font-weight: bold;
 }
 
@@ -262,9 +255,12 @@ a:hover {
     font-size: 2em;
 }
 
-.footerTable {
-    width: 100%;
-    vertical-align: middle;
+.mainPageLinkButtons {
+    display: flex;
+}
+
+.linksToOtherPages .homepageFooterLinksOne .homepageFooterLinksTwo {
+    padding: 0em 2em;
 }
 
 
@@ -378,6 +374,7 @@ a:hover {
     flex-wrap: wrap;
     align-items: center;
     border-bottom: 2px solid black;
+
 }
 
 .counselorsProfilePicture {
@@ -447,6 +444,9 @@ a:hover {
 }
 
 
+
+
+
 /*--------------------------------------------------------*/
 
 
@@ -486,12 +486,11 @@ a:hover {
     height: 90vh;
 }
 
-.triageTalkingText,
-.triageCounselorTalking {
+.triageTalkingText {
     font-family: 'Lato', sans-serif;
     font-size: 2em;
     color: #0D0D25;
-    padding: 4vh 0 0 1vh;
+    padding: 8vh 0 0 1vh;
 }
 
 .stopCallButton {
@@ -526,31 +525,10 @@ a:hover {
     text-decoration: none;
 }
 
-.tCounselorButtonsContainer {
-    display: flex;
+.tCounselorLogoutButton {
+    border-radius: 10%;
+    padding: 0 0.2em 0 0.2em;
 }
-
-.priorityTextInput {
-    height: 1em;
-    width: 7em;
-    padding: 0 1.3em 0 0;
-}
-
-/*.priorityButton {*/
-/*    border-radius: 20%;*/
-/*    height: 1em;*/
-/*}*/
-
-/*.tCounselorStopCallButton {*/
-/*    border-radius: 20%;*/
-/*    height: 1em;*/
-/*    margin: 0 0 0 1em;*/
-/*}*/
-
-/*.tCounselorLogoutButton {*/
-/*    border-radius: 10%;*/
-/*    padding: 0 0.2em 0 0.2em;*/
-/*}*/
 
 .loggedOutPage {
     background: url('./triageBackground.jpg') no-repeat center center fixed;

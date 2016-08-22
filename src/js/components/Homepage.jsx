@@ -83,9 +83,9 @@ var Homepage = React.createClass({
                                 <p> Login: </p>
                             </div>
                             <div className="loginIcons">
-                                <input type="image" src="http://www.firstbaptistashland.com/wp-content/uploads/2015/09/facebook-logo-png-transparent-background.png" onClick={this._handleLogin} value="facebookButtonClicked"  className="facebookImage" />
-                                <input type="image" src="http://panosnetwork.org/images/twt.png" onClick={this._handleLogin} value="twitterButtonClicked"  className="twitterImage" />
-                                <input type="image" src="https://i.kinja-img.com/gawker-media/image/upload/s--pEKSmwzm--/c_scale,fl_progressive,q_80,w_800/1414228815325188681.jpg" onClick={this._handleLogin} value="googleAccountButtonClicked" className="googleImage" />
+                                <input type="image" src="files/images/facebook_logo.jpg" onClick={this._handleLogin} value="facebookButtonClicked"  className="facebookImage" />
+                                <input type="image" src="files/images/twitter_logo.png" onClick={this._handleLogin} value="twitterButtonClicked"  className="twitterImage" />
+                                <input type="image" src="files/images/google_logo.png" onClick={this._handleLogin} value="googleAccountButtonClicked" className="googleImage" />
                             </div>
                         </div>            
                     </div>
@@ -124,7 +124,7 @@ var Homepage = React.createClass({
 
         return (
             <div>
-                <div className="nav">
+                <div>
                     {showLoginButton}
                     {showLogoutButton}
                 </div>
@@ -155,12 +155,12 @@ var Homepage = React.createClass({
                         <Link to="/counselorsprofile"><h1> Our Counselors </h1> </Link>
                         <div className='counselorsBox'>
                             <div className="ourCounselor1">
-                                <img src="http://www.onsemiro.org/html/pages/eteacher/10.png" className="counselorsProfilePictureHomepage"/>
+                                <img src="files/images/counselor1" className="counselorsProfilePictureHomepage"/>
                                 <p className="counselorNameOnHomepage"> Dylan Pelletier </p>
                                 <p className="counselorDescriptionOnHomepage"> "Talking to Dylan helped save my marriage. He really helped us get over a rough patch." </p>
                             </div>
                             <div className="ourCounselor2">
-                                <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/10470238_1006373092723375_6470945268279924007_n.jpg?oh=cf8a7293c908f81d6b3b1da149155aad&oe=5816FF65" className="counselorsProfilePictureHomepage"/>
+                                <img src="files/images/counselor2" className="counselorsProfilePictureHomepage"/>
                                 <p className="counselorNameOnHomepage"> Christine Lee </p>
                                 <p className="counselorDescriptionOnHomepage"> "Christine's calm, easy-going approach really helped me to let out some things I'd been keeping bottled up for years. Thanks!" </p>
                             </div>
