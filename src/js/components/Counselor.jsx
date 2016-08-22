@@ -87,7 +87,7 @@ var Counselor = React.createClass({
     },
     _connected: function() {
         return (
-            <div>
+            <div className='counselorTalking'>
                 <p>You are talking to a patient</p>
                 <video ref="videoPlayer"/>
                 {this._endCallUi()}
@@ -96,7 +96,7 @@ var Counselor = React.createClass({
     },
     _disconnected: function() {
         return (
-            <div>
+            <div className='counselorWaiting'>
                 There are no patients in the queue. Time to browse Reddit!
             </div>
         );

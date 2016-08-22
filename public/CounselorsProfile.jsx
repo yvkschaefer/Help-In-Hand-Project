@@ -74,7 +74,7 @@ var CounselorsProfile = React.createClass({
 			// console.log("COMES IN HERE THIRD BECAUSE OF CALLBACK; render happens before setState beneath");
 			that.setState({
 				listOfCounselors: snapshot.val()
-			})
+			});
 		});
 	},
 	render: function() {
@@ -84,10 +84,6 @@ var CounselorsProfile = React.createClass({
 		if (this.state) {
 			showAllCounselors =
 				<div>
-					<div className="homepageTopBar">
-                        <p id="appName">Help In Hand</p>
-                    </div>
-                    
 					<div className="counselorsHeaderText"> <h1>Our Counselors</h1> </div>
 	
 					<div className="counselorsProfilePage">
@@ -97,7 +93,7 @@ var CounselorsProfile = React.createClass({
 									<img src={counselor.Photo} className="counselorsProfilePicture" />
 									<div className="counselorsTextInformation">
 										<div className="counselorsName"><p>{counselor.Name}</p></div>
-										<div className="patientComments"><p>{counselor['Patient Comments']}</p></div>
+										<div className="patientComments"><p>"{counselor['Patient Comments']}"</p></div>
 										<div className="counselorsCredentials"><p>{counselor.Credentials}</p></div>
 									</div>
 							</div>);
@@ -105,7 +101,6 @@ var CounselorsProfile = React.createClass({
 					</div>
 				</div>
 		}
-		
 		
 		return (
 			<div>

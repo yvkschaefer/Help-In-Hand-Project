@@ -4,9 +4,8 @@ var Link = require('react-router').Link;
 var StopCall = React.createClass({
     render: function(){
         return(
-            <div>
+            <div className='youStoppedCall'>
                 <p>You stopped the call</p>
-                <p>HELLO HELLO</p>
                 <Link to='/'>homepage</Link>
             </div>
         );

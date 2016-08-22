@@ -1,110 +1,78 @@
-.descrip_own_words {
-    width: 600px;
+/*--------------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.mainPage {
-    /*background-color: rgba(78, 78, 90, 0.7);*/
-}
 
-.mainHeader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Lato;
-    font-size: 11px;
-    font-weight: bold;
-    color: red;
-    padding: 14px 10px;
-    text-transform: uppercase;
-    background-color: rgba(78, 78, 90, 0.7) ;
-}
+/*HOMEPAGE*/
 
 .mainContent {
     position: relative;
     overflow: hidden;
-    background-color: rgba(78, 78, 90, 0.7) ;
-
+    background-color: white;
 }
 
 
-.mainPageLinkButtons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: rgba(78, 78, 90, 0.7);
-    font-size: 20px;
-}
+/*--------------------------------------------------------*/
 
-.googleButton {
-    border: 2px solid black;
-    border-radius: 10px;
-    height: 50px;
-    width: 100px;
-    background-color: rgba(78, 78, 90, 0.7) ;
-}
 
-.contactUs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.mainPageButtons {
-	flex: 1 0 200px;
-    display:flex;
-    justify-content: center;
-    box-sizing: border-box;
-    padding: 10px;
-	margin-left: 30px;
-	margin-top: 10px;
-    font-size: 30px;
-}
-
-#contact {
-  margin-left: 20px;
-}
-
-.footer {
-  background-color: rgba(78, 78, 90, 0.7); 
-}
+/**/
 
 .facebookImage {
     border: 2px solid black;
-    border-radius: 10px;
-    margin-right: 5px;
-    margin-left: 3px;
-    height: 50px;
-    width: 50px;
+    border-radius: 20%;
+    margin: 0.25em 0.25em 0.25em 0.25em;
+    height: 2.4em;
+    width: 2.4em;
 }
 
 .twitterImage {
     border: 2px solid black;
-    border-radius: 10px;
-    margin-right: 3px;
-    margin-left: 3px;
-    height: 50px;
-    width: 50px;
+    border-radius: 20%;
+    margin: 0.25em 0.25em 0.25em 0.25em;
+    height: 2.4em;
+    width: 2.4em;
 }
 
 .googleImage {
     border: 2px solid black;
-    border-radius: 10px;
-    margin-left: 3px;
-    height: 50px;
-    width: 50px;
+    border-radius: 20%;
+    margin: 0.25em 0.25em 0.25em 0.25em;
+    height: 2.4em;
+    width: 2.4em;
+}
+
+.homepageTopBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(78, 78, 90, 0.7);
+    font-size: 1.5em;
+    margin-bottom: -1em;
+}
+
+#appName {
+    color: white;
 }
 
 .login {
-    background-color: rgba(78, 78, 90, 0.7);
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 1em;
 }
 
 .loginText {
-    font-size: 4em;
+    align-items: center;
 }
 
-.logout {
-    background-color: rgba(78, 78, 90, 0.7);
-    font-size: 1.5em;
+.loginIcons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 1em;
 }
 
 .homepageIntroduction {
@@ -113,31 +81,176 @@
     justify-content: center;
 }
 
-.nav {
-    background-image: url('./homepageBackground.jpg');
-    height: 500px;
+.mainBodyDiv {
+    background: url('./homepageBackground.jpg');
+    opacity: 0.65;
+    height: 38.4em;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: -3em;
 }
 
-.nav li {
-    display: inline;
-    float: left;
+.mainBodyDiv:hover {
+    opacity: 1;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
 }
 
 .nav h1 {
-    font-size: 48px;
+    font-size: 5em;
     font-family: 'Bitter', sans-serif;
     font-weight: bold;
 }
 
 .nav p {
-    font-size: 20px;
+    font-size: 2.3em;
     font-family: 'Bitter', sans-serif;
 }
 
-.descrip_own_words {
-    width: 600px;
+
+/*--------------------------------------------------------*/
+
+
+/*BODY OF HOMEPAGE: About us, Services, Instructions*/
+
+.moreInfo {
+    text-align: center;
+    padding: 4em 6em;
+}
+
+.aboutUs,
+.services,
+.instructions {
+    padding: 3.5em 0em;
+}
+
+.textInHomepage {
+    font-size: 2em;
+    color: #666666;
+}
+
+.lineSeparator {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 8px auto;
+    height: 0;
+    width: 50%;
+    max-height: 0;
+    font-size: 1px;
+    line-height: 0;
+    clear: both;
+    border: none;
+    border-top: 1px solid #aaaaaa;
+    border-bottom: 1px solid #ffffff;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+/*BODY OF HOMEPAGE: Our Counselors*/
+
+.ourConselorsHomepage {
+    padding: 3.5em 0em;
+    border: 2px black solid;
+}
+
+
+.counselorsBox {
+    display: flex;
+    
+}
+
+.counselorsProfilePictureHomepage {
+    height: 13em;
+    width: 13em;
+    border-radius: 60%;
+}
+
+.counselorNameOnHomepage {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.counselorDescriptionOnHomepage {
+    font-size: 1.2em;
+}
+
+
+/*--------------------------------------------------------*/
+
+/*FOOTER OF ALL PAGE*/
+
+.footer {
+    background-color: black;
+    padding: 1em 0em 1em 7.5em;
+    font-weight: bold;
+}
+
+.mainPageButtons {
+    flex: 1 0 200px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: .5em;
+    margin-left: 1em;
+    margin-top: 1em;
+    color: white;
+    font-size: 2em;
+}
+
+.footerTable {
+    width: 100%;
+    vertical-align: middle;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+/*LOGOUT PAGE*/
+
+.logoutButton {
+    margin: 0.4em 0 0 0.4em;
+    border-radius: 20%;
+    height: 2.4em;
+    width: 4em;
+    border: 0.1em solid black;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+/*FORM PAGE*/
+
+.questionnaire_forms {
+    padding: 1em 4em 1em 4em;
+    background: url('./form-page-background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.formHeader {
+    margin-bottom: 1em;
+}
+
+.formHeader:after {
+    content: ' ';
+    display: block;
+    border: 1px solid black;
+}
+
+.formCategory {
+    font-weight: bold;
 }
 
 .questionnaire_forms {
@@ -148,68 +261,186 @@
     -o-background-size: cover;
     background-size: cover;
 }
+
 .formHeader {
     margin-bottom: 1em;
+    padding: 1em;
+    text-align: center;
 }
+
 .formHeader:after {
-    content:' ';
-    display:block;
-    border:1px solid black;
+    content: ' ';
+    display: block;
+    border: 1px solid black;
+    margin-top: 0.3em;
 }
+
 .formCategory {
     font-weight: bold;
 }
 
+
+/*--------------------------------------------------------*/
+
+
+/*COUNSELORS PROFILE PAGE*/
+
 .counselorsProfilePage {
-  font-family: 'Lato', sans-serif;
-  font-size: 1.2em;
+    background: url('./counselor-profile-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    padding: 0em 1em 1em 1em;
 }
 
 .counselorsHeaderText {
-  border-top: 5px solid black;
-  font-size: 3.5em;
-  font-weight: 100;
+    font-size: 3em;
+    text-align: center;
+    /*background-color: black;*/
+    /*font-weight: 100;*/
 }
 
 .counselorsInformation {
-  display: flex;
-  margin-top: 15px;
-  border-top: 5px solid black;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
+    display: flex;
+    /*margin-top: 15px;*/
+    border-top: 2px solid black;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .counselorsProfilePicture {
-  width: 300px;
-  height: 300px;
-  display: flex;
-  margin: 10px;
-  border-radius: 60%;
+    width: 10em;
+    height: 10em;
+    display: flex;
+    margin: 1.2em;
+    border-radius: 60%;
 }
 
 .counselorsTextInformation {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
 }
 
 .counselorsName {
-  font-weight: bold;
-  margin-top: -45px;
-  height: 150px;
-  font-size: 3em;
+    font-weight: bold;
+    /*margin-top: -45px;*/
+    /*height: 150px;*/
+    font-size: 2.2em;
 }
 
 .patientComments {
-  font-size: 1.4em;
+    font-size: 1.1em;
 }
 
 .counselorsCredentials {
-  font-size: 1.1em;
+    font-size: 1.1em;
 }
 
 .counselorsStatus {
-  justify-content: flex-end;
+    justify-content: flex-end;
 }
+
+
+/*--------------------------------------------------------*/
+
+
+/*TRIAGE PAGE*/
+
+.triage {
+    background: url('./triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+    opacity: 0.8;
+}
+
+.triageText {
+    padding: 25vh 0 0 2vh;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: #0D0D25;
+}
+
+.triageWaiting img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.dots {
+    margin: 0 0 0 0.08em;
+}
+
+.triageTalking,
+.triageCounselorTalking,
+.counselorTalking {
+    background: url('./triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+}
+
+.triageTalkingText {
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: #0D0D25;
+    padding: 8vh 0 0 1vh;
+}
+
+.stopCallButton {
+    margin: 0 0 1vh 0;
+    border-radius: 20%;
+    padding: 0 0.2em 0 0.2em;
+    font-family: 'Lato', sans-serif;
+}
+
+.youStoppedCall,
+.tCounselorWaiting {
+    background: url('./triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+    opacity: 0.8;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+/*TRIAGE COUNSELOR PAGE*/
+
+.tCounselorWaiting,
+.counselorWaiting {
+    padding: 25vh 0 0 2vh;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: #0D0D25;
+    text-decoration: none;
+}
+
+.tCounselorLogoutButton {
+    border-radius: 10%;
+    padding: 0 0.2em 0 0.2em;
+}
+
+.loggedOutPage {
+    background: url('./triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+    opacity: 0.8;
+    padding: 25vh 0 0 2vh;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: #234C75;
+    text-decoration: none;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+/*VIDEO COUNSELOR PAGE*/
