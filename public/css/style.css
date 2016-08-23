@@ -13,6 +13,7 @@
 
 /*--------------------------------------------------------*/
 
+
 /*HOMEPAGE NAVIGATION BAR*/
 
 .homepageTopBar {
@@ -32,8 +33,8 @@
 }
 
 
-
 /*--------------------------------------------------------*/
+
 
 /*HOMEPAGE LOGIN FUNCTIONS*/
 
@@ -78,6 +79,7 @@
 
 /*--------------------------------------------------------*/
 
+
 /*LOGOUT BUTTON*/
 
 .logoutButton {
@@ -96,14 +98,14 @@
 
 /*--------------------------------------------------------*/
 
+
 /*HOMEPAGE INTRODUCTION*/
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
+.carousel-inner> .item> img,
+.carousel-inner> .item> a> img {
     width: 70%;
     margin: auto;
 }
-
 
 .homepageIntroduction {
     display: flex;
@@ -118,7 +120,6 @@
 .mainBodyDiv h2 {
     font-size: 3em;
 }
-
 
 a:hover {
     text-decoration: none;
@@ -139,14 +140,15 @@ a:hover {
     color: black;
     padding: 0.5em 0em 0em 0.5em;
     display: flex;
-
 }
 
 .homepageBodyLinks {
     margin-left: 2em;
 }
 
+
 /*--------------------------------------------------------*/
+
 
 /*BODY OF HOMEPAGE: About us, Services, Instructions*/
 
@@ -176,7 +178,10 @@ a:hover {
     border-bottom: 1px solid #ffffff;
 }
 
-#aboutUs, #services, #ourCounselors, #instructions {
+#aboutUs,
+#services,
+#ourCounselors,
+#instructions {
     padding: 3.5em 0em;
 }
 
@@ -197,7 +202,8 @@ a:hover {
     padding: 3.5em 0em 3em 0em;
 }
 
-.ourCounselor1, .ourCounselor2 {
+.ourCounselor1,
+.ourCounselor2 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -224,13 +230,14 @@ a:hover {
     font-size: 1.2em;
 }
 
+
 /*--------------------------------------------------------*/
+
 
 /*FOOTER OF ALL PAGE*/
 
 .footer {
     background-color: black;
-
     padding: 1em 0em 1em 7.5em;
     padding: 1em 1em 0.3em 1em;
     font-weight: bold;
@@ -269,6 +276,7 @@ a:hover {
 .contactUs {
     font-size: 1.5em;
 }
+
 
 /*--------------------------------------------------------*/
 
@@ -371,7 +379,6 @@ a:hover {
     flex-wrap: wrap;
     align-items: center;
     border-bottom: 2px solid black;
-
 }
 
 .counselorsProfilePicture {
@@ -441,9 +448,6 @@ a:hover {
 }
 
 
-
-
-
 /*--------------------------------------------------------*/
 
 
@@ -478,18 +482,17 @@ a:hover {
 .triageTalkingBackground,
 .triageCounselorTalking,
 .counselorTalking {
-    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background: url('../images/video-background-white.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 90vh;
 }
 
-
 .triageTalking {
     font-family: 'Lato', sans-serif;
     font-size: 2em;
-    color: rgba(13, 13, 37, 0.9), black;
+    color: rgba(28, 28, 22, 0.49);
     margin: 0 0 0 2vw;
-    padding: 3vh 0 0 0;
+    padding: 2vh 0 0 0;
 }
 
 .video {
@@ -503,7 +506,7 @@ a:hover {
     padding: 0 0.2em 0 0.2em;
     font-family: 'Lato', sans-serif;
     font-size: 1.5em;
-    
+    background: white;
 }
 
 .patientHungUpOn {
@@ -515,7 +518,7 @@ a:hover {
     text-decoration: none;
     font-size: 5vh;
     padding: 14vh 0 0 2vw;
-    color: rgba(13, 13, 37, 0.9), black;   
+    color: rgba(13, 13, 37, 0.9), black;
 }
 
 .youStoppedCall {
@@ -545,10 +548,48 @@ a:hover {
 
 /*TRIAGE COUNSELOR PAGE*/
 
-.tCounselorConnectedMainContents, .counselorConnectedMainContents {
+.tCounselorMainContents,
+.counselorConnectedMainContents,
+.tCounselorButtonsContainer {
     display: flex;
 }
 
+.tCounselorTopText {
+    color: rgba(28, 28, 22, 0.45);
+}
+
+.tCounselorAllContents {
+    padding: 2vh 0 0 0;
+    margin: 0 0 0 2vw;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+}
+
+.priorityTextInput {
+    border-radius: 3%;
+    border: solid black 0.03em;
+}
+
+.priorityButton {
+    border: none;
+    border-radius: 8%;
+    background: white;
+    padding: 0 0.2em 0 0.2em;
+    margin: 0 0.2em 1em 0.2em;
+}
+
+.tCounselorStopCallButton {
+    border: none;
+    border-radius: 8%;
+    background: white;
+    padding: 0 0.2em 0 0.2em;
+    margin: 0 0 0 0.2em;
+}
+
+.patientIntakeForm {
+    margin: 0 0 0 4vw;
+    font-size: 0.4em;
+}
 
 .tCounselorWaiting,
 .counselorWaiting {
@@ -562,6 +603,7 @@ a:hover {
 .tCounselorLogoutButton {
     border-radius: 10%;
     padding: 0 0.2em 0 0.2em;
+    border: none;
 }
 
 .loggedOutPage {
@@ -582,18 +624,13 @@ a:hover {
 
 /*VIDEO COUNSELOR PAGE*/
 
-
-
-
-
-
 body {
     position: relative
 }
 
 
-
 /*--------------------------------------------------------*/
+
 
 /*CONTACT US PAGE*/
 
@@ -623,7 +660,7 @@ body {
 }
 
 .homepageButtonLinkOnContactUs {
-        padding-right: 1em;
+    padding-right: 1em;
 }
 
 .contactUsFormInput {

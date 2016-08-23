@@ -11,7 +11,7 @@ var TriageCounselor = React.createClass({
     getInitialState: function() {
         return {};
     },
-    
+
     componentDidMount: function() {
         var socket = this.socket = io();
         var that = this;
@@ -91,7 +91,7 @@ var TriageCounselor = React.createClass({
 
 
     },
-    
+
     _handleAssign: function() {
         var priority = this.refs.priorityInput.value;
 
@@ -99,7 +99,7 @@ var TriageCounselor = React.createClass({
             priority: priority
         });
     },
-    
+
     _priorityUi: function() {
         return (
             <div>
@@ -108,11 +108,11 @@ var TriageCounselor = React.createClass({
             </div>
         );
     },
-    
+
     _stopCall: function() {
         this.socket.emit('triage counselor ended conversation');
     },
-    
+
     _endCallUi: function() {
         return (
             <div>
@@ -120,7 +120,7 @@ var TriageCounselor = React.createClass({
             </div>
         );
     },
-    
+
     _connected: function() {
         var userInfo = this.state.data;
         var userInfoToShow;
@@ -139,14 +139,17 @@ var TriageCounselor = React.createClass({
                                 Object.keys(illnessAndSymptoms).map(function(illnessKey) {
                                 return (
                                     <li key={illnessKey}>
-                                        ***{illnessKey}:***
+                                        {illnessKey}:
                                         <ul>
                                         {
                                             illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
                                                 return (
-                                                    <li key={eachSymptom}>
-                                                        {eachSymptom}
-                                                    </li>
+                                                    <div key={eachSymptom}>
+                                                        <p>Symptoms:</p>
+                                                        <li key={eachSymptom}>
+                                                            {eachSymptom}
+                                                        </li>
+                                                    </div>
                                                 );
                                             })
                                         }
@@ -158,7 +161,7 @@ var TriageCounselor = React.createClass({
                             </ul>
                         </div>
                     );
-                    
+
                     return illnessToShow;
                 }
                 else {
@@ -173,22 +176,30 @@ var TriageCounselor = React.createClass({
         }
         return (
             <div className='triageCounselorTalking'>
-                <p>You are talking to a patient in triage</p>
-                <div className='tCounselorConnectedMainContents'>
-                    <div>
-                        <video className='video' ref="videoPlayer"/>
-                        {this._priorityUi()}
-                        {this._endCallUi()}
-                    </div>
-                    <div>
-                        Patient Intake Form:
-                        {userInfoToShow}
+                <div className='tCounselorAllContents'>
+                    <p className='tCounselorTopText'>You are talking to a patient in triage</p>
+                    <div className='tCounselorMainContents'>
+                        <div>
+                            <video className='video' ref="videoPlayer"/>
+                            <div className='tCounselorButtonsContainer'>
+                                <div>
+                                    {this._priorityUi()}
+                                </div>
+                                <div>
+                                    {this._endCallUi()}
+                                </div>
+                            </div>
+                        </div>
+                        <div className='patientIntakeForm'>
+                            Patient Intake Form:
+                            {userInfoToShow}
+                        </div>
                     </div>
                 </div>
             </div>
         );
     },
-    
+
     _disconnected: function() {
         return (
             <div className='tCounselorWaiting'>
@@ -197,7 +208,7 @@ var TriageCounselor = React.createClass({
             </div>
         );
     },
-    
+
     _logout: function() {
         console.log('logout button was clicked');
         this.socket.emit('triageCounselor logged out');
@@ -205,7 +216,7 @@ var TriageCounselor = React.createClass({
             logoutButtonClicked: true
         });
     },
-    
+
     render: function() {
         return (
             <div>
@@ -213,7 +224,7 @@ var TriageCounselor = React.createClass({
             </div>
         );
     }
-    
+
 });
 
 module.exports = TriageCounselor;
