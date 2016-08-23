@@ -475,7 +475,7 @@ a:hover {
     margin: 0 0 0 0.08em;
 }
 
-.triageTalking,
+.triageTalkingBackground,
 .triageCounselorTalking,
 .counselorTalking {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
@@ -483,21 +483,40 @@ a:hover {
     height: 90vh;
 }
 
-.triageTalkingText {
+
+.triageTalking {
     font-family: 'Lato', sans-serif;
     font-size: 2em;
-    color: #0D0D25;
-    padding: 8vh 0 0 1vh;
+    color: rgba(13, 13, 37, 0.9), black;
+    margin: 0 0 0 2vw;
+    padding: 3vh 0 0 0;
+}
+
+.videoTriage {
+    border-radius: 1%;
 }
 
 .stopCallButton {
-    margin: 0 0 1vh 0;
-    border-radius: 20%;
+    margin: 0 0 1vh 2vw;
+    border-radius: 8%;
+    border: none;
     padding: 0 0.2em 0 0.2em;
     font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    
 }
 
-.youStoppedCall,
+.youStoppedCall {
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+    opacity: 0.8;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    font-size: 6vh;
+    padding: 8vh 0 0 2vw;
+}
+
 .tCounselorWaiting {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -561,9 +580,9 @@ body {
 
 
 
-  /*--------------------------------------------------------*/
+/*--------------------------------------------------------*/
 
-   /*CONTACT US PAGE*/
+/*CONTACT US PAGE*/
 
 .contactUsMainPage {
     background: url('../images/contactUsBackground.jpg') no-repeat center center fixed;

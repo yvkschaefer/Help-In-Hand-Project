@@ -147,12 +147,17 @@ var Triage = React.createClass({
     
     _connected: function() {
         return (
-            <div className="triageTalking">
-                <div className="triageTalkingText">
-                    <p>You are now talking to someone</p>
-                    <video ref="videoPlayer"/>
-                    {this._endCallUi()}
+            <div className="triageTalkingBackground">
+                <div className="triageTalking">
+                {
+                    this.state.queued ?
+                        <p>you are now connected with a counselor</p>
+                        :
+                        <p>you are now connected with a triage counselor</p>
+                }
+                    <video className='videoTriage' ref="videoPlayer"/>
                 </div>
+                    {this._endCallUi()}
             </div>
         );
     },
