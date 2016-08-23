@@ -17,7 +17,7 @@ var App = React.createClass({
                         <div className="mainPageLinkButtons">
                             
                             <div className="googleSearch">
-                                <form method="get" action="http://www.google.com/search">
+                                <form method="get" action="https://www.google.com/search">
                                     <div>
                                         <div> <input type="text" name="q" size="25" /> </div>
                                         <div> <input type="submit" value="Google Search" /> </div>

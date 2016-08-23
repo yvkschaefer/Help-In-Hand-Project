@@ -131,26 +131,39 @@ var TriageCounselor = React.createClass({
                 if (Object.prototype.toString.call(userInfo[infoKey]) === '[object Object]') {
                     var illnessAndSymptoms = userInfo['Illnesses & Symptoms'];
 
-                    var illnessToShow = Object.keys(illnessAndSymptoms).map(function(illnessKey) {
-                        return (
-                            <div> ***{illnessKey}:*** {illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
-                            return (
-                                <div>
-                                    <ul>
-                                        <li>
-                                            {eachSymptom}
-                                        </li>
-                                    </ul>
-                                </div>
-                            );
-                        })} </div>
-                        );
-                    });
+                    var illnessToShow = (
+                        <div key={infoKey}>
+                            <p>Illnesses:</p>
+                            <ul>
+                            {
+                                Object.keys(illnessAndSymptoms).map(function(illnessKey) {
+                                return (
+                                    <li key={illnessKey}>
+                                        ***{illnessKey}:***
+                                        <ul>
+                                        {
+                                            illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
+                                                return (
+                                                    <li key={eachSymptom}>
+                                                        {eachSymptom}
+                                                    </li>
+                                                );
+                                            })
+                                        }
+                                        </ul>
+                                    </li>
+                                )
+                            })
+                            }
+                            </ul>
+                        </div>
+                    );
+                    
                     return illnessToShow;
                 }
                 else {
                     return (
-                        <div> {infoKey}: {userInfo[infoKey]} </div>
+                        <div key={infoKey}> {infoKey}: {userInfo[infoKey]} </div>
                     );
                 }
             });

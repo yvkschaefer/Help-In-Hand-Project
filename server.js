@@ -5,9 +5,7 @@
 
 /*
 
-IN CASE YOU FORGET THE PASSWORD TO DO A GIT PUSH ETC: 
-  username: tkd-project
-  password: tkd-project1
+https://kara-new-branch-yvkschaefer.c9users.io/
 
 */
 
