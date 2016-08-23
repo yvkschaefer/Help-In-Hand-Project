@@ -48,7 +48,7 @@ function patientNext() {
     // console.log('triage before connection ', triage);
     if (patient) {
       patient.emit('start stream');
-      counselor.emit('start stream');
+      counselor.emit('start stream', patient.formInfo);
 
       counselor.isFree = false;
 

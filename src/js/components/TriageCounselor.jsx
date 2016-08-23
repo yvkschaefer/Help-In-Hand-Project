@@ -134,7 +134,13 @@ var TriageCounselor = React.createClass({
                         return (
                             <div> ***{illnessKey}:*** {illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
                             return (
-                                <div> <ul> <li> {eachSymptom} </li></ul> </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            {eachSymptom}
+                                        </li>
+                                    </ul>
+                                </div>
                             );
                         })} </div>
                         );
@@ -192,5 +198,3 @@ var TriageCounselor = React.createClass({
 });
 
 module.exports = TriageCounselor;
-
-//  {userInfoToShow}

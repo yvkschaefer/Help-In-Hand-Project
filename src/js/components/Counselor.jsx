@@ -13,9 +13,10 @@ var Counselor = React.createClass({
 
         socket.emit('counselor');
 
-        socket.on('start stream', function() {
+        socket.on('start stream', function(data) {
 
             that.setState({
+                data: data,
                 connected: true
             });
             navigator.webkitGetUserMedia({
@@ -75,10 +76,10 @@ var Counselor = React.createClass({
             });
         });
     },
-    _stopCall: function(){
+    _stopCall: function() {
         this.socket.emit('counselor conversation over');
     },
-    _endCallUi: function(){
+    _endCallUi: function() {
         return (
             <div>
                 <button ref="endCall" onClick={this._stopCall}>stop call</button>
@@ -86,11 +87,58 @@ var Counselor = React.createClass({
         );
     },
     _connected: function() {
+        var userInfo = this.state.data;
+        console.log('USER INFO', userInfo);
+        var userInfoToShow;
+
+        if (userInfo) {
+            userInfoToShow = Object.keys(userInfo).map(function(infoKey) {
+
+                if (Object.prototype.toString.call(userInfo[infoKey]) === '[object Object]') {
+                    var illnessAndSymptoms = userInfo['Illnesses & Symptoms'];
+                    console.log('illnessAndSymptoms', illnessAndSymptoms);
+                    
+                    var illnessToShow = Object.keys(illnessAndSymptoms).map(function(illnessKey) {
+                        return (
+                            <div> ***{illnessKey}:*** {illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
+                                return (
+                                    <div>
+                                        <ul> 
+                                            <li>
+                                                {eachSymptom}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    );
+                                })} 
+                            </div>
+                        );
+                    });
+                    return illnessToShow;
+                }
+                else {
+                    return (
+                        <div>
+                            {infoKey}: {userInfo[infoKey]}
+                        </div>
+                    );
+                }
+            });
+        }
+        else {
+            userInfoToShow = <div>
+                                this patient did not fill out a form
+                            </div>;
+        }
         return (
             <div className='counselorTalking'>
                 <p>You are talking to a patient</p>
                 <video ref="videoPlayer"/>
                 {this._endCallUi()}
+                <div>
+                    Patient Intake Form:
+                    {userInfoToShow}
+                </div>
             </div>
         );
     },
