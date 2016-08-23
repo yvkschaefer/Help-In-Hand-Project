@@ -1,6 +1,3 @@
-// npm run dev
-// node server.js
-// https://final-project-decode-takanarisasaki.c9users.io/
 // https://console.firebase.google.com/project/decodemtl-final-project/database/data
 
 // We are using firebase rather than mySQL to store and retrieve information
