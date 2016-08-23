@@ -1,601 +1,250 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Bitter', sans-serif;
-}
-
-.mainContent {
-    position: relative;
-    overflow: hidden;
-    background-color: white;
-}
-
-
-/*--------------------------------------------------------*/
-
-/*HOMEPAGE NAVIGATION BAR*/
-
-.homepageTopBar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    font-size: 1.5em;
-    margin-bottom: -1em;
-}
-
-#appName {
-    color: white;
-    font-size: 1.5em;
-    padding: 0.3em 0.1em 0em 0.5em;
-}
-
-
-
-
-/*--------------------------------------------------------*/
-
-/*HOMEPAGE LOGIN FUNCTIONS*/
-
-.login {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: 0.4em;
-}
-
-.loginButtons {
-    display: flex;
-    /*align-content: flex-end;*/
-    border: 1px white solid;
-    justify-content: flex-end;
-    padding-top: 0.5em;
-}
-
-.facebookImage {
-    border: 2px solid black;
-    border-radius: 20%;
-    margin: 0em 0.3em;
-    height: 2.4em;
-    width: 2.4em;
-}
-
-.twitterImage {
-    border-radius: 20%;
-    margin: 0em 0.3em;
-    height: 2.4em;
-    width: 2.4em;
-    padding: 0.3em;
-}
-
-.googleImage {
-    border: 2px solid black;
-    border-radius: 20%;
-    margin: 0em 0.3em;
-    height: 2.4em;
-    width: 2.4em;
-}
-
-
-/*--------------------------------------------------------*/
-
-/*LOGOUT BUTTON*/
-
-.logoutButton {
-    border-radius: 15%;
-    height: 2.2em;
-    width: 3.5em;
-    font-family: 'Lato', sans-serif;
-    background-color: white;
-    color: black;
-}
-
-.logoutButtonHomepage {
-    padding-right: 1em;
-}
-
-
-/*--------------------------------------------------------*/
-
-/*HOMEPAGE INTRODUCTION*/
-
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    width: 70%;
-    margin: auto;
-}
-
-
-.homepageIntroduction {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.item {
-    height: 75.5vh;
-}
-
-.mainBodyDiv h2 {
-    font-size: 3em;
-}
-
-
-a:hover {
-    text-decoration: none;
-    color: red;
-}
-
-.choicesText {
-    font-size: 0.6em;
-    font-family: 'Bitter', sans-serif;
-}
-
-.homepageMessage1 {
-    padding: 0.5em 0em 0em 0.5em;
-    color: black;
-}
-
-.homepageMessage2 {
-    color: black;
-    padding: 0.5em 0em 0em 0.5em;
-    display: flex;
-
-}
-
-.homepageBodyLinks {
-    margin-left: 2em;
-}
-
-/*--------------------------------------------------------*/
-
-/*BODY OF HOMEPAGE: About us, Services, Instructions*/
-
-.moreInfo {
-    text-align: center;
-    padding: 4em 6em;
-}
-
-.textInHomepage {
-    font-size: 1.2em;
-    color: #666666;
-}
-
-.lineSeparator {
-    display: block;
-    position: relative;
-    padding: 0;
-    margin: 8px auto;
-    height: 0;
-    width: 50%;
-    max-height: 0;
-    font-size: 1px;
-    line-height: 0;
-    clear: both;
-    border: none;
-    border-top: 1px solid #aaaaaa;
-    border-bottom: 1px solid #ffffff;
-}
-
-#aboutUs, #services, #ourCounselors, #instructions {
-    padding: 3.5em 0em;
-}
-
-
-/*--------------------------------------------------------*/
-
-
-/*BODY OF HOMEPAGE: Our Counselors*/
-
-.ourCounselorsHomepage {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-bottom: 3.5em;
-}
-
-.ourCounselorsHomepageHeaderText {
-    padding: 3.5em 0em 3em 0em;
-}
-
-.ourCounselor1, .ourCounselor2 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    width: 47%;
-    padding: 0% 1%;
-}
-
-.counselorsProfilePictureHomepage {
-    height: 13em;
-    width: 13em;
-    border-radius: 60%;
-}
-
-.counselorNameOnHomepage {
-    font-weight: bold;
-    font-size: 2em;
-}
-
-.counselorDescriptionOnHomepage {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 1.2em;
-}
-
-/*--------------------------------------------------------*/
-
-/*FOOTER OF ALL PAGE*/
-
-.footer {
-    background-color: black;
-
-    padding: 1em 0em 1em 7.5em;
-    padding: 1em 1em 0.3em 1em;
-    font-weight: bold;
-}
-
-.mainPageButtons {
-    flex: 1 0 200px;
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-    padding: .5em;
-    margin-left: 1em;
-    margin-top: 1em;
-    color: white;
-    font-size: 2em;
-}
-
-.mainPageLinkButtons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.googleSearch {
-    padding-left: 3em;
-}
-
-.linksToOtherPages {
-    padding: 0em 12em;
-}
-
-.homepageFooterContact {
-    padding-right: 3em;
-}
-
-.contactUs {
-    font-size: 1.5em;
-}
-
-/*--------------------------------------------------------*/
-
-
-/*FORM PAGE*/
-
-.questionnaire_forms {
-    padding: 1em 4em 1em 4em;
-    background: url('../images/form-page-background.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.formHeader {
-    margin-bottom: 1em;
-}
-
-.formHeader:after {
-    content: ' ';
-    display: block;
-    border: 1px solid black;
-}
-
-.formCategory {
-    font-weight: bold;
-}
-
-.formHeader {
-    margin-bottom: 1em;
-    padding: 1em;
-    text-align: center;
-}
-
-.formHeader:after {
-    content: ' ';
-    display: block;
-    border: 1px solid black;
-    margin-top: 0.3em;
-}
-
-.formCategory {
-    font-weight: bold;
-}
-
-.formsTopBar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    font-size: 1.5em;
-}
-
-.homepageButtonOnForms {
-    border-radius: 15%;
-    height: 2.2em;
-    width: 5em;
-    font-family: 'Lato', sans-serif;
-    background-color: white;
-    color: black;
-}
-
-.homepageButtonOnForms:hover {
-    text-decoration: none;
-    color: black;
-}
-
-.homepageButtonLinkOnForms {
-    padding-right: 1em;
-}
-
-
-/*--------------------------------------------------------*/
-
-
-/*COUNSELORS PROFILE PAGE*/
-.counselorsBackground {
-    background-color: rgba(78, 78, 90, 0.7);
-}
-
-.counselorsProfilePage {
-    background: url('../images/counselor-profile-background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.2em;
-    padding: 0em 1em 1em 1em;
-}
-
-.counselorsHeaderText {
-    font-size: 3em;
-    text-align: center;
-}
-
-.counselorsInformation {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    border-bottom: 2px solid black;
-
-}
-
-.counselorsProfilePicture {
-    width: 10em;
-    height: 10em;
-    display: flex;
-    margin: 1.2em;
-    border-radius: 60%;
-}
-
-.counselorsTextInformation {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: flex-start;
-}
-
-.counselorsName {
-    font-weight: bold;
-    /*margin-top: -45px;*/
-    /*height: 150px;*/
-    font-size: 2.2em;
-}
-
-.patientComments {
-    font-size: 1.1em;
-}
-
-.counselorsCredentials {
-    font-size: 1.1em;
-}
-
-.counselorsStatus {
-    justify-content: flex-end;
-}
-
-.counselorsTopBar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    font-size: 1.5em;
-}
-
-.counselorsHeaderText {
-    color: white;
-    font-family: 'Bitter', sans-serif;
-}
-
-.homepageButtonOnCounselorsProfile {
-    border-radius: 15%;
-    height: 2.2em;
-    width: 5em;
-    font-family: 'Lato', sans-serif;
-    background-color: white;
-    color: black;
-}
-
-.homepageButtonOnCounselorsProfile:hover {
-    text-decoration: none;
-    color: black;
-}
-
-.homepageButtonLinkOnCounselorsProfile {
-    padding-right: 1em;
-}
-
-
-/*--------------------------------------------------------*/
-
-
-/*TRIAGE PAGE*/
-
-.triage {
-    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 90vh;
-    opacity: 0.8;
-}
-
-.triageText {
-    padding: 25vh 0 0 2vh;
-    font-family: 'Lato', sans-serif;
-    font-size: 2em;
-    color: #0D0D25;
-}
-
-.triageWaiting img {
-    position: absolute;
-    left: 0;
-    top: 0;
+/*!
+ * Start Bootstrap - Stylish Portfolio (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+/* Global Styles */
+
+html,
+body {
     width: 100%;
-    opacity: 0.8;
+    height: 100%;
 }
-
-.dots {
-    margin: 0 0 0 0.08em;
-}
-
-.triageTalking,
-.triageCounselorTalking,
-.counselorTalking {
-    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 90vh;
-}
-
-.triageTalkingText {
-    font-family: 'Lato', sans-serif;
-    font-size: 2em;
-    color: #0D0D25;
-    padding: 8vh 0 0 1vh;
-}
-
-.stopCallButton {
-    margin: 0 0 1vh 0;
-    border-radius: 20%;
-    padding: 0 0.2em 0 0.2em;
-    font-family: 'Lato', sans-serif;
-}
-
-.youStoppedCall,
-.tCounselorWaiting {
-    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 90vh;
-    opacity: 0.8;
-    font-family: 'Lato', sans-serif;
-    text-decoration: none;
-}
-
-
-/*--------------------------------------------------------*/
-
-
-/*TRIAGE COUNSELOR PAGE*/
-
-.tCounselorConnectedMainContents, .counselorConnectedMainContents {
-    display: flex;
-}
-
-
-.tCounselorWaiting,
-.counselorWaiting {
-    padding: 25vh 0 0 2vh;
-    font-family: 'Lato', sans-serif;
-    font-size: 2em;
-    color: #0D0D25;
-    text-decoration: none;
-}
-
-.tCounselorLogoutButton {
-    border-radius: 10%;
-    padding: 0 0.2em 0 0.2em;
-}
-
-.loggedOutPage {
-    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 90vh;
-    opacity: 0.8;
-    padding: 25vh 0 0 2vh;
-    font-family: 'Lato', sans-serif;
-    font-size: 2em;
-    color: #234C75;
-    text-decoration: none;
-}
-
-
-/*--------------------------------------------------------*/
-
-
-/*VIDEO COUNSELOR PAGE*/
-
-
-
-
-
 
 body {
-    position: relative
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
 
+.text-vertical-center h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+}
 
-  /*--------------------------------------------------------*/
+/* Custom Button Styles */
 
-   /*CONTACT US PAGE*/
+.btn-dark {
+    border-radius: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+}
 
-.contactUsMainPage {
-    background: url('../images/contactUsBackground.jpg') no-repeat center center fixed;
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active {
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.btn-light {
+    border-radius: 0;
+    color: #333;
+    background-color: rgb(255,255,255);
+}
+
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
+    color: #333;
+    background-color: rgba(255,255,255,0.8);
+}
+
+/* Custom Horizontal Rule */
+
+hr.small {
+    max-width: 100px;
+}
+
+/* Side Menu */
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    transform: translateX(250px);
+    overflow-y: auto;
+    background: #222;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 55px;
+    font-size: 18px;
+    line-height: 55px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+#menu-toggle {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+#sidebar-wrapper.active {
+    right: 250px;
+    width: 250px;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+.toggle {
+    margin: 5px 5px 0 0;
+}
+
+/* Header */
+
+.header {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../img/bg.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
     background-size: cover;
-    height: 100em;
-    opacity: 0.7;
+    -o-background-size: cover;
 }
 
-.contactUsTopBar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    font-size: 1.5em;
+/* About */
+
+.about {
+    padding: 50px 0;
 }
 
-.homepageButtonOnContactUs {
-    border-radius: 15%;
-    height: 2.2em;
-    width: 5em;
-    font-family: 'Lato' sans-serif;
-    background-color: white;
-    color: black;
+/* Services */
+
+.services {
+    padding: 50px 0;
 }
 
-.homepageButtonLinkOnContactUs {
-        padding-right: 1em;
+.service-item {
+    margin-bottom: 30px;
 }
 
-.contactUsFormInput {
-    font-size: 3em;
-    font-family: 'Bitter', sans-serif;
+/* Callout */
+
+.callout {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: url(../img/callout.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
-.contactUsText {
-    font-weight: bold;
-    color: green;
+/* Portfolio */
+
+.portfolio {
+    padding: 50px 0;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.img-portfolio {
+    margin: 0 auto;
+}
+
+.img-portfolio:hover {
+    opacity: 0.8;
+}
+
+/* Call to Action */
+
+.call-to-action {
+    padding: 50px 0;
+}
+
+.call-to-action .btn {
+    margin: 10px;
+}
+
+/* Map */
+
+.map {
+    height: 500px;
+}
+
+@media(max-width:768px) {
+    .map {
+        height: 75%;
+    }
+}
+
+.map iframe {
+    pointer-events: none;
+}
+
+/* Footer */
+
+footer {
+    padding: 100px 0;
+}
+
+#to-top {
+  display: none;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
 }

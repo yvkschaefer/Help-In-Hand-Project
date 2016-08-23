@@ -1,25 +1,29 @@
 var React = require('react');
 var Link = require('react-router').Link;
+var browserHistory = require('react-router').browserHistory;
 var withRouter = require('react-router').withRouter;
 var fr = require('../../firebase/firebase.js');
+var $ = require('jquery');
 
 var ContactUs = React.createClass({
-	getInitialState: function () {
-		return {
-			username: "",
-			emailAddress: "",
-			title: "",
-			message: ""
-		};	
-	},
-	
 	submitEmailInfo: function () {
-		this.setState({
-			username: this.refs.contactUsUsername.value,
+		$.post('/contactUs', {
+			username: this.refs.contactUsUsernameEntry.value,
 			emailAddress: this.refs.contactUsEmailEntry.value,
 			title: this.refs.contactUsUserTitleEntry.value,
 			message: this.refs.contactUsMessageEntry.value
-		});
+		})
+		.then(
+			function(response){
+				console.log(response);
+				if (response.ok){
+					browserHistory.push('/');
+				}
+				else {
+					alert('there was an error');
+				}
+			}
+		);
 	},
     render: function() {
         return (
