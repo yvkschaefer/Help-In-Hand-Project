@@ -248,7 +248,7 @@ var Forms = React.createClass({
             
             <div className="questionnaire_forms">
             
-                <h3 className="formHeader"> Complete this form </h3>
+                <h3 className="formHeader"> Please complete this form </h3>
                 
                 <form onSubmit={this._handleText}>
                     
@@ -279,7 +279,7 @@ var Forms = React.createClass({
                     </div>
 
                     <div className="form-group">
-                        <label> <h4 className="formCategory"> Sexual orientation: </h4> </label>
+                        <label> <h4 className="formCategory"> Sexual Orientation: </h4> </label>
                         <div className="radio">
                             <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="heterosexual" /> Heterosexual </label> 
                         </div>
