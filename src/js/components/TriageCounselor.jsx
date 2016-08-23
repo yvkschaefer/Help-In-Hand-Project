@@ -152,7 +152,7 @@ var TriageCounselor = React.createClass({
                                         }
                                         </ul>
                                     </li>
-                                )
+                                );
                             })
                             }
                             </ul>
