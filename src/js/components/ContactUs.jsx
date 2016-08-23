@@ -3,7 +3,10 @@ var Link = require('react-router').Link;
 var withRouter = require('react-router').withRouter;
 var fr = require('../../firebase/firebase.js');
 
-var ContactUs = React.createClass({ 
+var ContactUs = React.createClass({
+	submitEmailInfo: function () {
+		username: this.props.refs.contactUsUsername.value
+	},
     render: function() {
         return (
             <div>
