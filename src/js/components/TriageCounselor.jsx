@@ -1,19 +1,18 @@
-/* global io*/
-/* global navigator*/
 var React = require('react');
 var SimplePeer = require('simple-peer');
 
 var LogoutPage = require('./LogoutPage');
 
+/* global io*/
+/* global navigator*/
 /*global localStorage*/
-var userId = localStorage.getItem('user');
 
 var TriageCounselor = React.createClass({
     getInitialState: function() {
         return {};
     },
+    
     componentDidMount: function() {
-        console.log('TRIAGE COUNSELOR user id ', userId);
         var socket = this.socket = io();
         var that = this;
 
@@ -21,7 +20,6 @@ var TriageCounselor = React.createClass({
 
         socket.on('start stream', function(data) {
 
-            // console.log('is this the triage form');
             that.setState({
                 data: data,
                 connected: true
@@ -71,7 +69,6 @@ var TriageCounselor = React.createClass({
 
                 peer.on('stream', function(stream) {
                     console.log('peer data');
-                    console.log('connected, looking for triage form ', socket);
                     var video = that.refs.videoPlayer;
 
                     video.src = window.URL.createObjectURL(stream);
@@ -94,6 +91,7 @@ var TriageCounselor = React.createClass({
 
 
     },
+    
     _handleAssign: function() {
         var priority = this.refs.priorityInput.value;
 
@@ -101,6 +99,7 @@ var TriageCounselor = React.createClass({
             priority: priority
         });
     },
+    
     _priorityUi: function() {
         return (
             <div>
@@ -109,9 +108,11 @@ var TriageCounselor = React.createClass({
             </div>
         );
     },
+    
     _stopCall: function() {
         this.socket.emit('triage counselor ended conversation');
     },
+    
     _endCallUi: function() {
         return (
             <div>
@@ -119,6 +120,7 @@ var TriageCounselor = React.createClass({
             </div>
         );
     },
+    
     _connected: function() {
         var userInfo = this.state.data;
         var userInfoToShow;
@@ -128,7 +130,6 @@ var TriageCounselor = React.createClass({
 
                 if (Object.prototype.toString.call(userInfo[infoKey]) === '[object Object]') {
                     var illnessAndSymptoms = userInfo['Illnesses & Symptoms'];
-                    console.log('illnessAndSymptoms', illnessAndSymptoms);
 
                     var illnessToShow = Object.keys(illnessAndSymptoms).map(function(illnessKey) {
                         return (
@@ -159,19 +160,22 @@ var TriageCounselor = React.createClass({
         }
         return (
             <div className='triageCounselorTalking'>
-                    <p>You are talking to a patient in triage</p>
-                    <video ref="videoPlayer"/>
-                    <div className='tCounselorButtonsContainer'>
-                        {this._priorityUi()}{this._endCallUi()}
+                <p>You are talking to a patient in triage</p>
+                <div className='tCounselorConnectedMainContents'>
+                    <div>
+                        <video ref="videoPlayer"/>
+                        {this._priorityUi()}
+                        {this._endCallUi()}
                     </div>
                     <div>
                         Patient Intake Form:
                         {userInfoToShow}
-                        
                     </div>
                 </div>
+            </div>
         );
     },
+    
     _disconnected: function() {
         return (
             <div className='tCounselorWaiting'>
@@ -180,14 +184,15 @@ var TriageCounselor = React.createClass({
             </div>
         );
     },
+    
     _logout: function() {
         console.log('logout button was clicked');
-        // this.socket.isFree = false;
         this.socket.emit('triageCounselor logged out');
         this.setState({
             logoutButtonClicked: true
         });
     },
+    
     render: function() {
         return (
             <div>
@@ -195,6 +200,7 @@ var TriageCounselor = React.createClass({
             </div>
         );
     }
+    
 });
 
 module.exports = TriageCounselor;

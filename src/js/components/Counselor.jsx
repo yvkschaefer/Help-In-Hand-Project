@@ -1,12 +1,14 @@
-/* global io*/
-/* global navigator*/
 var React = require('react');
 var SimplePeer = require('simple-peer');
+
+/* global io*/
+/* global navigator*/
 
 var Counselor = React.createClass({
     getInitialState: function() {
         return {};
     },
+
     componentDidMount: function() {
         var socket = this.socket = io();
         var that = this;
@@ -76,9 +78,11 @@ var Counselor = React.createClass({
             });
         });
     },
+    
     _stopCall: function() {
         this.socket.emit('counselor conversation over');
     },
+    
     _endCallUi: function() {
         return (
             <div>
@@ -86,6 +90,7 @@ var Counselor = React.createClass({
             </div>
         );
     },
+    
     _connected: function() {
         var userInfo = this.state.data;
         console.log('USER INFO', userInfo);
@@ -133,15 +138,20 @@ var Counselor = React.createClass({
         return (
             <div className='counselorTalking'>
                 <p>You are talking to a patient</p>
-                <video ref="videoPlayer"/>
-                {this._endCallUi()}
-                <div>
-                    Patient Intake Form:
-                    {userInfoToShow}
+                <div className='counselorConnectedMainContents'>
+                    <div>
+                        <video ref="videoPlayer"/>
+                        {this._endCallUi()}
+                    </div>
+                    <div>
+                        Patient Intake Form:
+                        {userInfoToShow}
+                    </div>
                 </div>
             </div>
         );
     },
+    
     _disconnected: function() {
         return (
             <div className='counselorWaiting'>
@@ -149,6 +159,7 @@ var Counselor = React.createClass({
             </div>
         );
     },
+    
     render: function() {
         return (
             <div>
@@ -156,6 +167,7 @@ var Counselor = React.createClass({
             </div>
         );
     }
+    
 });
 
 module.exports = Counselor;

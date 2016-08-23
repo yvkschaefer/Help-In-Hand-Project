@@ -494,7 +494,7 @@ COUNSELORS PROFILE PAGE
 
 
 
---------------------------------------------------------
+/*--------------------------------------------------------*/
 
 
 TRIAGE PAGE
@@ -558,10 +558,15 @@ TRIAGE PAGE
 }
 
 
---------------------------------------------------------
+/*--------------------------------------------------------*/
 
 
 TRIAGE COUNSELOR PAGE
+
+.tCounselorConnectedMainContents, .counselorConnectedMainContents {
+    display: flex;
+}
+
 
 .tCounselorWaiting,
 .counselorWaiting {

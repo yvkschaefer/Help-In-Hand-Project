@@ -1,11 +1,13 @@
-/* global io*/
-/* global navigator*/
 var React = require('react');
 var SimplePeer = require('simple-peer');
-var StopCall = require('./StopCall');
-var GotHungUpOn = require('./GotHungUpOn');
 var fr = require('../../firebase/firebase.js');
 
+var StopCall = require('./StopCall');
+var GotHungUpOn = require('./GotHungUpOn');
+
+
+/* global io*/
+/* global navigator*/
 /*global localStorage*/
 
 var Triage = React.createClass({
@@ -14,6 +16,7 @@ var Triage = React.createClass({
             connected: false,
         };
     },
+    
     componentDidMount: function() {
         var socket = this.socket = io();
         var that = this;
@@ -126,23 +129,14 @@ var Triage = React.createClass({
 
 
     },
-    // _handleUserSearch: function() {
-    //     var that = this;
-        
-    //     fr.firebase.database().ref('users/' + userId).on('value', function(snapshot) {
-    //         console.log(snapshot.val());
-    //         that.setState({
-    //             userInfo: snapshot.val()
-    //         })
-    //     });
-        
-    // },
+
     _stopCall: function() {
         this.socket.emit('patient ended conversation');
         this.setState({
             stopCall: true
         });
     },
+    
     _endCallUi: function() {
         return (
             <div>
@@ -150,6 +144,7 @@ var Triage = React.createClass({
             </div>
         );
     },
+    
     _connected: function() {
         return (
             <div className="triageTalking">
@@ -161,6 +156,7 @@ var Triage = React.createClass({
             </div>
         );
     },
+    
     _disconnected: function() {
         return (
             <div>
@@ -194,6 +190,7 @@ var Triage = React.createClass({
             </div>
         );
     },
+    
     render: function() {
         return (
             <div>
@@ -203,6 +200,7 @@ var Triage = React.createClass({
             </div>
         );
     }
+    
 });
 
 module.exports = Triage;
