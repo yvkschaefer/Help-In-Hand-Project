@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Bitter', sans-serif;
 }
 
 .mainContent {
@@ -11,7 +12,6 @@
 
 
 /*--------------------------------------------------------*/
-
 
 /*HOMEPAGE NAVIGATION BAR*/
 
@@ -32,29 +32,38 @@
 }
 
 
-/*--------------------------------------------------------*/
 
+/*--------------------------------------------------------*/
 
 /*HOMEPAGE LOGIN FUNCTIONS*/
 
 .login {
     display: flex;
     flex-wrap: wrap;
-    margin-right: 1em;
+    margin-right: 0.4em;
 }
 
-.loginText {
-    align-items: center;
-    font-size: 0.7em;
-    color: white;
-    padding: 0.4em 0.9em 0em 0em;
+.loginButtons {
+    
 }
 
-.loginIcons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
+/*.loginText {*/
+/*    align-items: center;*/
+/*    font-size: 1.4em;*/
+/*    color: black;*/
+/*    padding: 0.3em;*/
+/*}*/
+
+/*.loginButtonHomepage {*/
+/*    background-color: black;*/
+/*    color: white;*/
+/*    padding: 0.9em 1.3em;*/
+/*    align-content: flex-end;*/
+/*}*/
+
+/*.loginButtonHomepage:hover {*/
+/*    background-color: #4ddbff;*/
+/*}*/
 
 .facebookImage {
     border: 2px solid black;
@@ -69,11 +78,9 @@
     margin: 0em 0.3em;
     height: 2.4em;
     width: 2.4em;
+    padding: 0.3em;
     /*border: 1px solid #66ffff;*/
 }
-
-
-/* Changed the twitter image to make it fit a little better with the header (Dylan )*/
 
 .googleImage {
     border: 2px solid black;
@@ -85,7 +92,6 @@
 
 
 /*--------------------------------------------------------*/
-
 
 /*LOGOUT BUTTON*/
 
@@ -105,8 +111,8 @@
 
 /*--------------------------------------------------------*/
 
-
 /*HOMEPAGE INTRODUCTION*/
+
 
 .homepageIntroduction {
     display: flex;
@@ -114,43 +120,60 @@
     justify-content: center;
 }
 
+/*.mainBodyDiv {*/
+/*    background: url('./homepageBackground.jpg');*/
+/*    opacity: 0.65;*/
+/*    height: 100vh; */
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    margin-bottom: -3em;*/
+/*}*/
+
 .mainBodyDiv {
-    background: url('./homepageBackground.jpg');
+    background: url('../images/homepageBackground.jpg') no-repeat center center fixed;
+    background: cover;
+    position: relative;
     opacity: 0.65;
-    height: 40.7em;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: -3em;
+    height: 22em;
+    box-sizing: border-box; 
+    font-size: 2em;
 }
 
-.mainBodyDiv:hover {
-    opacity: 1;
+.mainBodyDiv h2 {
+    font-size: 3em;
 }
+
+/*html { */
+/*  background: url(images/bg.jpg) no-repeat center center fixed; */
+/*  -webkit-background-size: cover;*/
+/*  -moz-background-size: cover;*/
+/*  -o-background-size: cover;*/
+/*  background-size: cover;*/
+/*}*/
+
+/*.mainBodyDiv {*/
+/*    padding: 1em 4em 1em 4em;*/
+/*    background: url('../images/homepageBackground.jpg') no-repeat center center fixed;*/
+/*    -webkit-background-size: cover;*/
+/*    -moz-background-size: cover;*/
+/*    -o-background-size: cover;*/
+/*    background-size: cover;*/
+/*}*/
+/*.mainBodyDiv:hover {*/
+/*    opacity: 1;*/
+/*}*/
 
 a:hover {
     text-decoration: none;
     color: red;
 }
 
-.nav h1 {
-    font-size: 5em;
-    font-family: 'Bitter', sans-serif;
-    font-weight: bold;
-}
-
-.nav p {
-    font-size: 2.3em;
-    font-family: 'Bitter', sans-serif;
-}
-
 .choicesText {
-    font-size: 0.7em;
+    font-size: 0.6em;
     font-family: 'Bitter', sans-serif;
 }
-
 
 /*.messageNotLoggedIn {*/
-
 
 /*}*/
 
@@ -163,11 +186,14 @@ a:hover {
     color: black;
     padding: 0.5em 0em 0em 0.5em;
     display: flex;
+    
 }
 
+.homepageBodyLinks {
+    margin-left: 2em;
+}
 
 /*--------------------------------------------------------*/
-
 
 /*BODY OF HOMEPAGE: About us, Services, Instructions*/
 
@@ -179,11 +205,11 @@ a:hover {
 .aboutUs,
 .services,
 .instructions {
-    padding: 3.5em 0em;
+    /*padding: 3.5em 0em;*/
 }
 
 .textInHomepage {
-    font-size: 2em;
+    font-size: 1.2em;
     color: #666666;
 }
 
@@ -209,18 +235,25 @@ a:hover {
 
 /*BODY OF HOMEPAGE: Our Counselors*/
 
-.ourConselorsHomepage {
-    padding: 3.5em 0em;
-}
-
-.counselorsBox {
+.ourCounselorsHomepage {
     display: flex;
-    padding: 1em 3em;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 3.5em;
 }
 
-.ourCounselor1,
-.ourCounselor2 {
-    padding: 1.5em 4em;
+.ourCounselorsHomepageHeaderText {
+    padding: 3.5em 0em 3em 0em;
+}
+
+.ourCounselor1, .ourCounselor2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 47%;
+    padding: 0% 1%;
+    /*border: black 2px solid;*/
 }
 
 .counselorsProfilePictureHomepage {
@@ -235,9 +268,10 @@ a:hover {
 }
 
 .counselorDescriptionOnHomepage {
+    display: flex;
+    flex-wrap: wrap;
     font-size: 1.2em;
 }
-
 
 /*--------------------------------------------------------*/
 
@@ -246,7 +280,9 @@ a:hover {
 
 .footer {
     background-color: black;
-    padding: 1em 0em 1em 7.5em;
+
+    /*padding: 1em 0em 1em 7.5em;*/
+    padding: 1em 1em 0.3em 1em;
     font-weight: bold;
 }
 
@@ -262,11 +298,27 @@ a:hover {
     font-size: 2em;
 }
 
-.footerTable {
-    width: 100%;
-    vertical-align: middle;
+.mainPageLinkButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+.googleSearch {
+    padding-left: 3em;
+}
+
+.linksToOtherPages {
+    /*padding: 0em 12em;*/
+}
+
+.homepageFooterContact {
+    padding-right: 3em;
+}
+
+.contactUs {
+    font-size: 1.5em;
+}
 
 /*--------------------------------------------------------*/
 
@@ -275,7 +327,7 @@ a:hover {
 
 .questionnaire_forms {
     padding: 1em 4em 1em 4em;
-    background: url('./form-page-background.jpg') no-repeat center center fixed;
+    background: url('../images/form-page-background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -294,15 +346,6 @@ a:hover {
 
 .formCategory {
     font-weight: bold;
-}
-
-.questionnaire_forms {
-    padding: 1em 4em 1em 4em;
-    background: url('http://www.tubadzin.pl/sites/default/files/en-gb_PS-Palacio-beige.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 
 .formHeader {
@@ -360,7 +403,7 @@ a:hover {
 }
 
 .counselorsProfilePage {
-    background: url('./counselor-profile-background.jpg') no-repeat center center fixed;
+    background: url('../images/counselor-profile-background.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Lato', sans-serif;
     font-size: 1.2em;
@@ -378,6 +421,7 @@ a:hover {
     flex-wrap: wrap;
     align-items: center;
     border-bottom: 2px solid black;
+
 }
 
 .counselorsProfilePicture {
@@ -447,13 +491,16 @@ a:hover {
 }
 
 
+
+
+
 /*--------------------------------------------------------*/
 
 
 /*TRIAGE PAGE*/
 
 .triage {
-    background: url('./triageBackground.jpg') no-repeat center center fixed;
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 90vh;
     opacity: 0.8;
@@ -481,17 +528,16 @@ a:hover {
 .triageTalking,
 .triageCounselorTalking,
 .counselorTalking {
-    background: url('./triageBackground.jpg') no-repeat center center fixed;
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 90vh;
 }
 
-.triageTalkingText,
-.triageCounselorTalking {
+.triageTalkingText {
     font-family: 'Lato', sans-serif;
     font-size: 2em;
     color: #0D0D25;
-    padding: 4vh 0 0 1vh;
+    padding: 8vh 0 0 1vh;
 }
 
 .stopCallButton {
@@ -503,7 +549,7 @@ a:hover {
 
 .youStoppedCall,
 .tCounselorWaiting {
-    background: url('./triageBackground.jpg') no-repeat center center fixed;
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 90vh;
     opacity: 0.8;
@@ -526,34 +572,13 @@ a:hover {
     text-decoration: none;
 }
 
-.tCounselorButtonsContainer {
-    display: flex;
+.tCounselorLogoutButton {
+    border-radius: 10%;
+    padding: 0 0.2em 0 0.2em;
 }
-
-.priorityTextInput {
-    height: 1em;
-    width: 7em;
-    padding: 0 1.3em 0 0;
-}
-
-/*.priorityButton {*/
-/*    border-radius: 20%;*/
-/*    height: 1em;*/
-/*}*/
-
-/*.tCounselorStopCallButton {*/
-/*    border-radius: 20%;*/
-/*    height: 1em;*/
-/*    margin: 0 0 0 1em;*/
-/*}*/
-
-/*.tCounselorLogoutButton {*/
-/*    border-radius: 10%;*/
-/*    padding: 0 0.2em 0 0.2em;*/
-/*}*/
 
 .loggedOutPage {
-    background: url('./triageBackground.jpg') no-repeat center center fixed;
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 90vh;
     opacity: 0.8;
@@ -569,3 +594,52 @@ a:hover {
 
 
 /*VIDEO COUNSELOR PAGE*/
+
+
+
+
+
+
+body {
+    position: relative
+}
+
+
+
+#aboutUs {padding-top:4em;color: black; border: 2px black solid;}
+#services {padding-top:4em;color: black; }
+#ourCounselors {padding-top:4em;color: black; }
+#instructions {padding-top:4em;color: black; }
+  
+  
+  /*--------------------------------------------------------*/
+  
+  /* CONTACT US PAGE */
+  
+.contactUsMainPage {
+    background: url('../images/contactUsBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+  
+.contactUsTopBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    font-size: 1.5em;
+}
+
+.homepageButtonOnContactUs {
+    border-radius: 15%;
+    height: 2.2em;
+    width: 5em;
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    color: black;
+}
+
+.homepageButtonLinkOnContactUs {
+        padding-right: 1em;
+}
+      

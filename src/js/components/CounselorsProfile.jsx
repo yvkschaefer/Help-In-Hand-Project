@@ -65,7 +65,7 @@ var fr = require('../../firebase/firebase.js');
 // }];
 
 var CounselorsProfile = React.createClass({
-	
+
 	componentWillMount: function() {
 		// console.log("COMES IN HERE FIRST");
 		var that = this;

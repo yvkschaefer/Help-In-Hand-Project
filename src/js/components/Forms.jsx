@@ -226,13 +226,13 @@ var Forms = React.createClass({
                     })
                 }
                 </CheckboxGroup>
-            )
+            );
         });
 
         return (
             
         <div>
-			<div className="nav">
+			<div>
 				<div className="formsTopBar">
 	                <p id="appName"> Help In Hand </p>
 	                <div>  
