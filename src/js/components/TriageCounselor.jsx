@@ -121,35 +121,38 @@ var TriageCounselor = React.createClass({
     },
     _connected: function() {
         var userInfo = this.state.data;
+        var userInfoToShow;
 
-        var userInfoToShow =  Object.keys(userInfo).map(function(infoKey) {
-           
-            if (Object.prototype.toString.call(userInfo[infoKey]) === '[object Object]') {
-                var illnessAndSymptoms = userInfo['Illnesses & Symptoms'];
-                console.log('illnessAndSymptoms', illnessAndSymptoms);
-                
-                var illnessToShow = Object.keys(illnessAndSymptoms).map(function(illnessKey) {
-                    return (
-                        <div> ***{illnessKey}:*** {illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
+        if (userInfo) {
+            userInfoToShow = Object.keys(userInfo).map(function(infoKey) {
+
+                if (Object.prototype.toString.call(userInfo[infoKey]) === '[object Object]') {
+                    var illnessAndSymptoms = userInfo['Illnesses & Symptoms'];
+                    console.log('illnessAndSymptoms', illnessAndSymptoms);
+
+                    var illnessToShow = Object.keys(illnessAndSymptoms).map(function(illnessKey) {
+                        return (
+                            <div> ***{illnessKey}:*** {illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
                             return (
                                 <div> <ul> <li> {eachSymptom} </li></ul> </div>
                             );
                         })} </div>
+                        );
+                    });
+                    return illnessToShow;
+                }
+                else {
+                    return (
+                        <div> {infoKey}: {userInfo[infoKey]} </div>
                     );
-                });
-                return illnessToShow;
-            }
-           
-            else {
-                return (
-                    <div> {infoKey}: {userInfo[infoKey]} </div>
-                );
-            }
-        });
-        
-        
-            return (
-                <div className='triageCounselorTalking'>
+                }
+            });
+        }
+        else {
+            userInfoToShow = <div>this patient did not fill out a form</div>;
+        }
+        return (
+            <div className='triageCounselorTalking'>
                     <p>You are talking to a patient in triage</p>
                     <video ref="videoPlayer"/>
                     <div className='tCounselorButtonsContainer'>
@@ -161,7 +164,7 @@ var TriageCounselor = React.createClass({
                         
                     </div>
                 </div>
-            );
+        );
     },
     _disconnected: function() {
         return (
