@@ -123,19 +123,7 @@ var Homepage = React.createClass({
                 
                 
                 
-                <div className="mainBodyDiv">
-                    <div className="choicesText">
-                        <div className='homepageBodyLinks'>
-                            <h2><Link to="/forms">Intake Questionnaire</Link></h2>
-                            <p>Please answer this brief questionnaire <br/> so that our volunteers may better help you.</p>
-                            <h2><Link to='/counselorsprofile'>Counselors</Link></h2>
-                            <p>Click <Link to='/triage'>here</Link> if you are in crisis and <br /> need immediate assistance</p>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <div className="container">
+                <div className="homepageImages">
                     <br/>
                     <div id="myCarousel" className="carousel slide" data-ride="carousel">
                         <ol className="carousel-indicators">
@@ -147,19 +135,19 @@ var Homepage = React.createClass({
                 
                         <div className="carousel-inner" role="listbox">
                             <div className="item active">
-                                <img src="https://pbs.twimg.com/profile_images/562466745340817408/_nIu8KHX.jpeg" alt="Chania" width="460" height="345"/>
+                                <img src="https://pbs.twimg.com/profile_images/562466745340817408/_nIu8KHX.jpeg" alt="Chania"/>
                             </div>
                 
                             <div className="item">
-                                <img src="http://s3.amazonaws.com/assets.prod.vetstreet.com/2a/cd/ee484be546418f40cc3cbc194b52/kitten-in-arms-thinkstockphotos-106397271-335lc070915jpg.jpg" alt="Chania" width="460" height="345"/>
+                                <img src="http://s3.amazonaws.com/assets.prod.vetstreet.com/2a/cd/ee484be546418f40cc3cbc194b52/kitten-in-arms-thinkstockphotos-106397271-335lc070915jpg.jpg" alt="Chania"/>
                             </div>
                     
                             <div className="item">
-                                <img src="http://ajaxnorthpethospital.ca/clients/17476/images/kit.jpg" alt="Flower" width="460" height="345"/>
+                                <img src="http://ajaxnorthpethospital.ca/clients/17476/images/kit.jpg" alt="Flower"/>
                             </div>
                         
                             <div className="item">
-                                <img src="http://upshout.net/wp-content/uploads/2015/06/dwarf-kitten-01.jpg" alt="Flower" width="460" height="345"/>
+                                <img src="http://upshout.net/wp-content/uploads/2015/06/dwarf-kitten-01.jpg" alt="Flower"/>
                             </div>
                         </div>
                 
@@ -177,7 +165,16 @@ var Homepage = React.createClass({
                 
                 
                 
-                
+                <div className="mainBodyDiv">
+                    <div className="choicesText">
+                        <div className='homepageBodyLinks'>
+                            <h2><Link to="/forms">Intake Questionnaire</Link></h2>
+                            <p>Please answer this brief questionnaire <br/> so that our volunteers may better help you.</p>
+                            <h2><Link to='/counselorsprofile'>Counselors</Link></h2>
+                            <p>Click <Link to='/triage'>here</Link> if you are in crisis and <br /> need immediate assistance</p>
+                        </div>
+                    </div>
+                </div>                
                 
                 
                 
