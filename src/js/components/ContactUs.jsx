@@ -4,8 +4,22 @@ var withRouter = require('react-router').withRouter;
 var fr = require('../../firebase/firebase.js');
 
 var ContactUs = React.createClass({
+	getInitialState: function () {
+		return {
+			username: "",
+			emailAddress: "",
+			title: "",
+			message: ""
+		};	
+	},
+	
 	submitEmailInfo: function () {
-		username: this.props.refs.contactUsUsername.value
+		this.setState({
+			username: this.refs.contactUsUsername.value,
+			emailAddress: this.refs.contactUsEmailEntry.value,
+			title: this.refs.contactUsUserTitleEntry.value,
+			message: this.refs.contactUsMessageEntry.value
+		});
 	},
     render: function() {
         return (

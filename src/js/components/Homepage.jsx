@@ -135,19 +135,19 @@ var Homepage = React.createClass({
                 
                         <div className="carousel-inner" role="listbox">
                             <div className="item active">
-                                <img src="https://pbs.twimg.com/profile_images/562466745340817408/_nIu8KHX.jpeg" alt="Chania"/>
+                                <img src="https://www.amoils.com/health-blog/wp-content/uploads/2010/03/blog-image-teeth-whitening-dollar-paid.jpg" alt="Chania"/>
                             </div>
                 
                             <div className="item">
-                                <img src="http://s3.amazonaws.com/assets.prod.vetstreet.com/2a/cd/ee484be546418f40cc3cbc194b52/kitten-in-arms-thinkstockphotos-106397271-335lc070915jpg.jpg" alt="Chania"/>
+                                <img src="http://cache3.asset-cache.net/gc/565888169-black-businessman-smiling-in-office-gettyimages.jpg?v=1&c=IWSAsset&k=2&d=NbqvbmyjbXuNKjCvNVvGgtC7ZrteWgcGCZlgN7x50HA%3D" alt="Chania"/>
                             </div>
                     
                             <div className="item">
-                                <img src="http://ajaxnorthpethospital.ca/clients/17476/images/kit.jpg" alt="Flower"/>
+                                <img src="http://www.gambiadiocese.org/wp-content/uploads/2014/12/asian-student-smiling.jpg" alt="Flower"/>
                             </div>
                         
                             <div className="item">
-                                <img src="http://upshout.net/wp-content/uploads/2015/06/dwarf-kitten-01.jpg" alt="Flower"/>
+                                <img src="http://youqueen.com/wp-content/uploads/2015/03/blonde-girl-smiling.jpg" alt="Flower"/>
                             </div>
                         </div>
                 
