@@ -109,14 +109,17 @@ var Counselor = React.createClass({
                                 Object.keys(illnessAndSymptoms).map(function(illnessKey) {
                                 return (
                                     <li key={illnessKey}>
-                                        ***{illnessKey}:***
+                                        {illnessKey}:
                                         <ul>
                                         {
                                             illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
                                                 return (
-                                                    <li key={eachSymptom}>
-                                                        {eachSymptom}
-                                                    </li>
+                                                    <div key={eachSymptom}>
+                                                        <p>Symptoms:</p>
+                                                        <li key={eachSymptom}>
+                                                            {eachSymptom}
+                                                        </li>
+                                                    </div>
                                                 );
                                             })
                                         }
@@ -152,7 +155,7 @@ var Counselor = React.createClass({
                         <video className='video' ref="videoPlayer"/>
                         {this._endCallUi()}
                     </div>
-                    <div>
+                    <div className='patientIntakeForm'>
                         Patient Intake Form:
                         {userInfoToShow}
                     </div>

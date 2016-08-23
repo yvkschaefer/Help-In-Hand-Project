@@ -480,8 +480,7 @@ a:hover {
 }
 
 .triageTalkingBackground,
-.triageCounselorTalking,
-.counselorTalking {
+.triageCounselorTalking {
     background: url('../images/video-background-white.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 90vh;
@@ -624,8 +623,10 @@ a:hover {
 
 /*VIDEO COUNSELOR PAGE*/
 
-body {
-    position: relative
+.counselorTalking {
+    background: url('../images/video-background-white.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
 }
 
 
