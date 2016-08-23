@@ -5,19 +5,25 @@ var SimplePeer = require('simple-peer');
 
 var LogoutPage = require('./LogoutPage');
 
+/*global localStorage*/
+var userId = localStorage.getItem('user');
+
 var TriageCounselor = React.createClass({
     getInitialState: function() {
         return {};
     },
     componentDidMount: function() {
+        console.log('TRIAGE COUNSELOR user id ', userId);
         var socket = this.socket = io();
         var that = this;
 
         socket.emit('triage counselor');
 
-        socket.on('start stream', function() {
+        socket.on('start stream', function(data) {
 
+            // console.log('is this the triage form');
             that.setState({
+                data: data,
                 connected: true
             });
             navigator.webkitGetUserMedia({
@@ -39,7 +45,6 @@ var TriageCounselor = React.createClass({
 
                 peer.on('signal', function(data) {
                     console.log('received signal');
-                    console.log('hi I am a peer and I just heard a signal ', peer);
                     socket.emit('stream id', data);
                 });
 
@@ -53,7 +58,6 @@ var TriageCounselor = React.createClass({
                     socket.removeListener('connect peer', onConnectPeer);
                     socket.removeListener('stop call', onStopCall);
                     peer.destroy();
-                    console.log('peer after peer.destroy() ', peer);
                     var tracks = stream.getTracks();
                     tracks.forEach(function(track) {
                         track.stop();
@@ -67,7 +71,7 @@ var TriageCounselor = React.createClass({
 
                 peer.on('stream', function(stream) {
                     console.log('peer data');
-
+                    console.log('connected, looking for triage form ', socket);
                     var video = that.refs.videoPlayer;
 
                     video.src = window.URL.createObjectURL(stream);
@@ -83,7 +87,6 @@ var TriageCounselor = React.createClass({
                         track.stop();
                     });
                 });
-
             }, function(err) {
                 console.error(err);
             });
@@ -106,7 +109,7 @@ var TriageCounselor = React.createClass({
             </div>
         );
     },
-    _stopCall: function(){
+    _stopCall: function() {
         this.socket.emit('triage counselor ended conversation');
     },
     _endCallUi: function() {
@@ -116,11 +119,32 @@ var TriageCounselor = React.createClass({
             </div>
         );
     },
-    _triageFirebaseId: function(){
-        this.socket.patientFirebaseId;
-        console.log('looking for the patient firebase id inside of tCouns ', this.socket.patientFirebaseId);
-    },
     _connected: function() {
+        // var that = this;
+        var userInfo = this.state.data;
+
+        var userInfoToShow = Object.keys(this.state.userInfo).map(function(infoKey) {
+
+            // We can only return as a <div></div> a string but not Object, so for all object, we gotta do something with it, for example, convert the whole object into a string as well
+            // console.log(Object.prototype.toString.call(that.state.userInfo[eachKey]) === '[object Object]') returns true if object; false if not
+            if (Object.prototype.toString.call(this.state.userInfo[infoKey]) === '[object Object]') {
+                var illnessAndSymptoms = userInfo['Illnesses & Symptoms'];
+                console.log('illnessAndSymptoms', illnessAndSymptoms);
+
+                var illnessToShow = Object.keys(illnessAndSymptoms).map(function(illnessKey) {
+                    return <div> ***{illnessKey}:*** {illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
+                        return <div> <ul> <li> {eachSymptom} </li></ul> </div>;
+                    })} </div>;
+                });
+                return illnessToShow;
+            }
+
+            else {
+                return <div> {infoKey}: {this.state.userInfo[infoKey]} </div>;
+            }
+            //console.log(Object.prototype.toString.call(that.state.userInfo[eachKey]) === '[object Object]')
+        });
+
         return (
             <div className='triageCounselorTalking'>
                 <p>You are talking to a patient in triage</p>
@@ -129,11 +153,16 @@ var TriageCounselor = React.createClass({
                     {this._priorityUi()}{this._endCallUi()}
                 </div>
                 <div>
-                    counselor has the patient's firebase Id: {this._triageFirebaseId()}
+                    Patient Intake Form:
+                   {userInfoToShow}
                 </div>
             </div>
         );
     },
+
+
+
+
     _disconnected: function() {
         return (
             <div className='tCounselorWaiting'>

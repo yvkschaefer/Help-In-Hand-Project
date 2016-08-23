@@ -8,19 +8,30 @@ var fr = require('../../firebase/firebase.js');
 
 /*global localStorage*/
 
-var userId = localStorage.getItem('user');
-
 var Triage = React.createClass({
     getInitialState: function() {
         return {
-            connected: false
+            connected: false,
         };
     },
     componentDidMount: function() {
-        console.log('does I get userId ', userId);
         var socket = this.socket = io();
         var that = this;
-        socket.emit('triage patient', {userId: userId});
+        var userId = localStorage.getItem('user');
+        if (userId) {
+            fr.firebase.database().ref('users/' + userId).on('value', function(snapshot) {
+                console.log("USERINFO FROM DATABASE:", snapshot.val());
+                var triageFormData = snapshot.val();
+                socket.emit('triage patient', triageFormData);
+            });
+        }
+        else {
+            socket.emit('triage patient');
+            console.log('hey just a check here, the patient did not submit a form so that might be reason for problem');
+        }
+        
+  
+        // var that = this;
         socket.on('start stream', function() {
             that.setState({
                 connected: true
@@ -93,7 +104,9 @@ var Triage = React.createClass({
                 function gotHungUpOn() {
                     console.log('triage heard they were hung up on');
                     that.setState({
-                        hungUpOn: true
+                        hungUpOn: true,
+                        queued: false,
+                        connected: false
                     });
                     peer.destroy();
                     var tracks = stream.getTracks();
@@ -109,8 +122,21 @@ var Triage = React.createClass({
                 console.error(err);
             });
         });
+        
+
 
     },
+    // _handleUserSearch: function() {
+    //     var that = this;
+        
+    //     fr.firebase.database().ref('users/' + userId).on('value', function(snapshot) {
+    //         console.log(snapshot.val());
+    //         that.setState({
+    //             userInfo: snapshot.val()
+    //         })
+    //     });
+        
+    // },
     _stopCall: function() {
         this.socket.emit('patient ended conversation');
         this.setState({

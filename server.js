@@ -10,6 +10,7 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var nodemailer = require('nodemailer');
 
 app.use('/files', express.static(__dirname + '/public'));
 var triage = [];
@@ -57,6 +58,9 @@ function patientNext() {
 
 function getFirstFreeTriageCounselor() {
   return triageCounselors.find(function(tCounselor) {
+    
+    console.log(tCounselor)
+    
     return tCounselor.isFree === true; //if no counselors are free, will return undefined
   });
 }
@@ -72,19 +76,18 @@ function triageNext() {
     var triagePatient = getFirstTriagePatient();
 
     if (triagePatient) {
-
-      triagePatient.emit('start stream');
-      triageCounselor.emit('start stream');
-
       triageCounselor.isFree = false;
-
+      
       connections[triagePatient.id] = triageCounselor;
       //inside connections object, it is being assigned a key which is triagePatient.id, 
       //and the value is triageCounselor
       
-      triageCounselor.patientFirebaseId = triagePatient.userId;
-      console.log('looking for the patients firebase ', triageCounselor.patientFirebaseId);
       connections[triageCounselor.id] = triagePatient;
+      
+      triagePatient.emit('start stream');
+      triageCounselor.emit('start stream', triagePatient.formInfo);
+      
+      console.log('EMITTING this from triageNext to the triageCounselor ', triageCounselor.triageFormInfo);
       console.log('connected: triage counselor with patient');
     }
     else {
@@ -96,12 +99,20 @@ function triageNext() {
   }
 }
 
+function pushData(triageSocketWithForm){
+  var connectionEstablished = triageNext()
+}
+
+
+
 io.on('connection', function(socket) {
-  socket.on('triage patient', function(firebaseUserId) {
-    socket.userId = firebaseUserId;
+  
+  socket.on('triage patient', function(data) {
+    socket.formInfo = data;
     socket.isPatient = true;
     triage.push(socket);
     triageNext();
+    // pushData(socket);
   });
 
   socket.on('counselor', function() {
