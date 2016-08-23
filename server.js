@@ -66,9 +66,6 @@ function patientNext() {
 
 function getFirstFreeTriageCounselor() {
   return triageCounselors.find(function(tCounselor) {
-    
-    console.log(tCounselor)
-    
     return tCounselor.isFree === true; //if no counselors are free, will return undefined
   });
 }
@@ -95,7 +92,7 @@ function triageNext() {
       triagePatient.emit('start stream');
       triageCounselor.emit('start stream', triagePatient.formInfo);
       
-      console.log('EMITTING this from triageNext to the triageCounselor ', triageCounselor.triageFormInfo);
+      // console.log('EMITTING this from triageNext to the triageCounselor ', triageCounselor.triageFormInfo);
       console.log('connected: triage counselor with patient');
     }
     else {
@@ -107,9 +104,18 @@ function triageNext() {
   }
 }
 
-function pushData(triageSocketWithForm){
-  var connectionEstablished = triageNext()
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -120,7 +126,6 @@ io.on('connection', function(socket) {
     socket.isPatient = true;
     triage.push(socket);
     triageNext();
-    // pushData(socket);
   });
 
   socket.on('counselor', function() {
@@ -144,11 +149,11 @@ io.on('connection', function(socket) {
   });
 
   socket.on('queue', function(counselorsEvaluation) {
-    console.log('triage counselor made an evaluation ', counselorsEvaluation);
+    // console.log('triage counselor made an evaluation ', counselorsEvaluation);
     var patientSocket = connections[socket.id];
     if (patientSocket) {
       socket.isFree = true;
-      console.log('is the triage counselors socket really free ', socket.isFree);
+      // console.log('is the triage counselors socket really free, because it should be ', socket.isFree);
       patientSocket.priority = counselorsEvaluation.priority;
       patients.push(patientSocket);
       patients.sort(function(patient1, patient2) {
@@ -203,6 +208,7 @@ io.on('connection', function(socket) {
 
     triageNext();
   });
+  
   socket.on('patient ended conversation', function() {
     console.log('server heard that the patient stopped call');
     var counselorSocket = connections[socket.id];

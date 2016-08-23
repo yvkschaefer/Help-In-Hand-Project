@@ -120,49 +120,49 @@ var TriageCounselor = React.createClass({
         );
     },
     _connected: function() {
-        // var that = this;
         var userInfo = this.state.data;
 
-        var userInfoToShow = Object.keys(this.state.userInfo).map(function(infoKey) {
-
-            // We can only return as a <div></div> a string but not Object, so for all object, we gotta do something with it, for example, convert the whole object into a string as well
-            // console.log(Object.prototype.toString.call(that.state.userInfo[eachKey]) === '[object Object]') returns true if object; false if not
-            if (Object.prototype.toString.call(this.state.userInfo[infoKey]) === '[object Object]') {
+        var userInfoToShow =  Object.keys(userInfo).map(function(infoKey) {
+           
+            if (Object.prototype.toString.call(userInfo[infoKey]) === '[object Object]') {
                 var illnessAndSymptoms = userInfo['Illnesses & Symptoms'];
                 console.log('illnessAndSymptoms', illnessAndSymptoms);
-
+                
                 var illnessToShow = Object.keys(illnessAndSymptoms).map(function(illnessKey) {
-                    return <div> ***{illnessKey}:*** {illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
-                        return <div> <ul> <li> {eachSymptom} </li></ul> </div>;
-                    })} </div>;
+                    return (
+                        <div> ***{illnessKey}:*** {illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
+                            return (
+                                <div> <ul> <li> {eachSymptom} </li></ul> </div>
+                            );
+                        })} </div>
+                    );
                 });
                 return illnessToShow;
             }
-
+           
             else {
-                return <div> {infoKey}: {this.state.userInfo[infoKey]} </div>;
+                return (
+                    <div> {infoKey}: {userInfo[infoKey]} </div>
+                );
             }
-            //console.log(Object.prototype.toString.call(that.state.userInfo[eachKey]) === '[object Object]')
         });
-
-        return (
-            <div className='triageCounselorTalking'>
-                <p>You are talking to a patient in triage</p>
-                <video ref="videoPlayer"/>
-                <div className='tCounselorButtonsContainer'>
-                    {this._priorityUi()}{this._endCallUi()}
+        
+        
+            return (
+                <div className='triageCounselorTalking'>
+                    <p>You are talking to a patient in triage</p>
+                    <video ref="videoPlayer"/>
+                    <div className='tCounselorButtonsContainer'>
+                        {this._priorityUi()}{this._endCallUi()}
+                    </div>
+                    <div>
+                        Patient Intake Form:
+                        {userInfoToShow}
+                        
+                    </div>
                 </div>
-                <div>
-                    Patient Intake Form:
-                   {userInfoToShow}
-                </div>
-            </div>
-        );
+            );
     },
-
-
-
-
     _disconnected: function() {
         return (
             <div className='tCounselorWaiting'>
@@ -189,3 +189,5 @@ var TriageCounselor = React.createClass({
 });
 
 module.exports = TriageCounselor;
+
+//  {userInfoToShow}
