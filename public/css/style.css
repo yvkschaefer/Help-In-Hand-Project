@@ -43,29 +43,27 @@
     margin-right: 0.4em;
 }
 
-.loginText {
-    align-items: center;
-    font-size: 1.4em;
-    color: black;
-    padding: 0.3em;
+.loginButtons {
+    
 }
 
-.loginButtonHomepage {
-    background-color: black;
-    color: white;
-    padding: 0.9em 1.3em;
-    align-content: flex-end;
-}
+/*.loginText {*/
+/*    align-items: center;*/
+/*    font-size: 1.4em;*/
+/*    color: black;*/
+/*    padding: 0.3em;*/
+/*}*/
 
-.loginButtonHomepage:hover {
-    background-color: #4ddbff;
-}
+/*.loginButtonHomepage {*/
+/*    background-color: black;*/
+/*    color: white;*/
+/*    padding: 0.9em 1.3em;*/
+/*    align-content: flex-end;*/
+/*}*/
 
-.loginIcons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
+/*.loginButtonHomepage:hover {*/
+/*    background-color: #4ddbff;*/
+/*}*/
 
 .facebookImage {
     border: 2px solid black;

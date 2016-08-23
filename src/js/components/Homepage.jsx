@@ -131,7 +131,7 @@ var Homepage = React.createClass({
                                         <li><a href="#aboutUs"> About us </a></li>
                                         <li><a href="#services"> Services </a></li>
                                         <li><a href="#ourCounselors"> Our Counselors </a></li>
-                                        <div>
+                                        <div className="loginButtons">
                                             <li> <input type="image" src="files/images/facebook_logo.jpg" onClick={this._handleLogin} value="facebookButtonClicked"  className="facebookImage" /> </li>
                                             <li> <input type="image" src="files/images/twitter_logo.png" onClick={this._handleLogin} value="twitterButtonClicked"  className="twitterImage" /> </li>
                                             <li> <input type="image" src="files/images/google_logo.png" onClick={this._handleLogin} value="googleAccountButtonClicked" className="googleImage" /> </li>
