@@ -4,8 +4,9 @@ var Link = require('react-router').Link;
 var GotHungUpOn = React.createClass({
     render: function(){
         return(
-            <div>
-                <p>The call has ended. Thanks for visiting!</p>
+            <div className='patientHungUpOn'>
+                <p>The counselor has ended the call.</p> 
+                <p>Thanks for your visit today</p>
                 <Link to='/'>homepage</Link>
             </div>
         );

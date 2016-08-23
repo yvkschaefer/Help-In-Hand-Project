@@ -492,7 +492,7 @@ a:hover {
     padding: 3vh 0 0 0;
 }
 
-.videoTriage {
+.video {
     border-radius: 1%;
 }
 
@@ -506,6 +506,18 @@ a:hover {
     
 }
 
+.patientHungUpOn {
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+    opacity: 0.8;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    font-size: 5vh;
+    padding: 14vh 0 0 2vw;
+    color: rgba(13, 13, 37, 0.9), black;   
+}
+
 .youStoppedCall {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -515,6 +527,7 @@ a:hover {
     text-decoration: none;
     font-size: 6vh;
     padding: 8vh 0 0 2vw;
+    color: rgba(13, 13, 37, 0.9), black;
 }
 
 .tCounselorWaiting {

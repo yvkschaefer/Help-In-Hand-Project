@@ -155,7 +155,7 @@ var Triage = React.createClass({
                         :
                         <p>you are now connected with a triage counselor</p>
                 }
-                    <video className='videoTriage' ref="videoPlayer"/>
+                    <video className='video' ref="videoPlayer"/>
                 </div>
                     {this._endCallUi()}
             </div>

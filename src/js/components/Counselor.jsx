@@ -149,7 +149,7 @@ var Counselor = React.createClass({
                 <p>You are talking to a patient</p>
                 <div className='counselorConnectedMainContents'>
                     <div>
-                        <video ref="videoPlayer"/>
+                        <video className='video' ref="videoPlayer"/>
                         {this._endCallUi()}
                     </div>
                     <div>
