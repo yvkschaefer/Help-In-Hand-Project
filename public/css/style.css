@@ -11,9 +11,9 @@
 }
 
 
---------------------------------------------------------
+/*--------------------------------------------------------*/
 
-HOMEPAGE NAVIGATION BAR
+/*HOMEPAGE NAVIGATION BAR*/
 
 .homepageTopBar {
     display: flex;
@@ -33,9 +33,9 @@ HOMEPAGE NAVIGATION BAR
 
 
 
---------------------------------------------------------
+/*--------------------------------------------------------*/
 
-HOMEPAGE LOGIN FUNCTIONS
+/*HOMEPAGE LOGIN FUNCTIONS*/
 
 .login {
     display: flex;
@@ -44,25 +44,11 @@ HOMEPAGE LOGIN FUNCTIONS
 }
 
 .loginButtons {
-    
-}
-
-.loginText {
-    align-items: center;
-    font-size: 1.4em;
-    color: black;
-    padding: 0.3em;
-}
-
-.loginButtonHomepage {
-    background-color: black;
-    color: white;
-    padding: 0.9em 1.3em;
-    align-content: flex-end;
-}
-
-.loginButtonHomepage:hover {
-    background-color: #4ddbff;
+    display: flex;
+    /*align-content: flex-end;*/
+    border: 1px white solid;
+    justify-content: flex-end;
+    padding-top: 0.5em;
 }
 
 .facebookImage {
@@ -79,7 +65,6 @@ HOMEPAGE LOGIN FUNCTIONS
     height: 2.4em;
     width: 2.4em;
     padding: 0.3em;
-    border: 1px solid #66ffff;
 }
 
 .googleImage {
@@ -91,9 +76,9 @@ HOMEPAGE LOGIN FUNCTIONS
 }
 
 
---------------------------------------------------------
+/*--------------------------------------------------------*/
 
-LOGOUT BUTTON
+/*LOGOUT BUTTON*/
 
 .logoutButton {
     border-radius: 15%;
@@ -109,9 +94,15 @@ LOGOUT BUTTON
 }
 
 
---------------------------------------------------------
+/*--------------------------------------------------------*/
 
-HOMEPAGE INTRODUCTION
+/*HOMEPAGE INTRODUCTION*/
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
 
 
 .homepageIntroduction {
@@ -120,48 +111,14 @@ HOMEPAGE INTRODUCTION
     justify-content: center;
 }
 
-.mainBodyDiv {
-    background: url('./homepageBackground.jpg');
-    opacity: 0.65;
-    height: 100vh; 
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: -3em;
-}
-
-.mainBodyDiv {
-    background: url('../images/homepageBackground.jpg') no-repeat center center fixed;
-    background: cover;
-    position: relative;
-    opacity: 0.65;
-    height: 22em;
-    box-sizing: border-box; 
-    font-size: 2em;
+.item {
+    height: 96.5vh;
 }
 
 .mainBodyDiv h2 {
     font-size: 3em;
 }
 
-html { 
-  background: url(images/bg.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.mainBodyDiv {
-    padding: 1em 4em 1em 4em;
-    background: url('../images/homepageBackground.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-.mainBodyDiv:hover {
-    opacity: 1;
-}
 
 a:hover {
     text-decoration: none;
@@ -173,10 +130,6 @@ a:hover {
     font-family: 'Bitter', sans-serif;
 }
 
-.messageNotLoggedIn {
-
-}
-
 .homepageMessage1 {
     padding: 0.5em 0em 0em 0.5em;
     color: black;
@@ -186,26 +139,20 @@ a:hover {
     color: black;
     padding: 0.5em 0em 0em 0.5em;
     display: flex;
-    
+
 }
 
 .homepageBodyLinks {
     margin-left: 2em;
 }
 
---------------------------------------------------------
+/*--------------------------------------------------------*/
 
-BODY OF HOMEPAGE: About us, Services, Instructions
+/*BODY OF HOMEPAGE: About us, Services, Instructions*/
 
 .moreInfo {
     text-align: center;
     padding: 4em 6em;
-}
-
-.aboutUs,
-.services,
-.instructions {
-    padding: 3.5em 0em;
 }
 
 .textInHomepage {
@@ -229,11 +176,15 @@ BODY OF HOMEPAGE: About us, Services, Instructions
     border-bottom: 1px solid #ffffff;
 }
 
+#aboutUs, #services, #ourCounselors, #instructions {
+    padding: 3.5em 0em;
+}
 
---------------------------------------------------------
+
+/*--------------------------------------------------------*/
 
 
-BODY OF HOMEPAGE: Our Counselors
+/*BODY OF HOMEPAGE: Our Counselors*/
 
 .ourCounselorsHomepage {
     display: flex;
@@ -273,10 +224,9 @@ BODY OF HOMEPAGE: Our Counselors
     font-size: 1.2em;
 }
 
---------------------------------------------------------
+/*--------------------------------------------------------*/
 
-
-FOOTER OF ALL PAGE
+/*FOOTER OF ALL PAGE*/
 
 .footer {
     background-color: black;
@@ -320,10 +270,10 @@ FOOTER OF ALL PAGE
     font-size: 1.5em;
 }
 
---------------------------------------------------------
+/*--------------------------------------------------------*/
 
 
-FORM PAGE
+/*FORM PAGE*/
 
 .questionnaire_forms {
     padding: 1em 4em 1em 4em;
@@ -393,10 +343,10 @@ FORM PAGE
 }
 
 
---------------------------------------------------------
+/*--------------------------------------------------------*/
 
 
-COUNSELORS PROFILE PAGE
+/*COUNSELORS PROFILE PAGE*/
 
 .counselorsBackground {
     background-color: rgba(78, 78, 90, 0.7);
@@ -497,7 +447,7 @@ COUNSELORS PROFILE PAGE
 /*--------------------------------------------------------*/
 
 
-TRIAGE PAGE
+/*TRIAGE PAGE*/
 
 .triage {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
@@ -561,7 +511,7 @@ TRIAGE PAGE
 /*--------------------------------------------------------*/
 
 
-TRIAGE COUNSELOR PAGE
+/*TRIAGE COUNSELOR PAGE*/
 
 .tCounselorConnectedMainContents, .counselorConnectedMainContents {
     display: flex;
@@ -595,10 +545,10 @@ TRIAGE COUNSELOR PAGE
 }
 
 
---------------------------------------------------------
+/*--------------------------------------------------------*/
 
 
-VIDEO COUNSELOR PAGE
+/*VIDEO COUNSELOR PAGE*/
 
 
 
@@ -611,21 +561,17 @@ body {
 
 
 
-#aboutUs {padding-top:4em;color: black; border: 2px black solid;}
-#services {padding-top:4em;color: black; }
-#ourCounselors {padding-top:4em;color: black; }
-#instructions {padding-top:4em;color: black; }
-  
-  
-  --------------------------------------------------------
-  
-   CONTACT US PAGE 
-  
+  /*--------------------------------------------------------*/
+
+   /*CONTACT US PAGE*/
+
 .contactUsMainPage {
     background: url('../images/contactUsBackground.jpg') no-repeat center center fixed;
     background-size: cover;
+    height: 100em;
+    opacity: 0.7;
 }
-  
+
 .contactUsTopBar {
     display: flex;
     flex-wrap: wrap;
@@ -639,7 +585,7 @@ body {
     border-radius: 15%;
     height: 2.2em;
     width: 5em;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato' sans-serif;
     background-color: white;
     color: black;
 }
@@ -647,4 +593,13 @@ body {
 .homepageButtonLinkOnContactUs {
         padding-right: 1em;
 }
-      
+
+.contactUsFormInput {
+    font-size: 3em;
+    font-family: 'Bitter', sans-serif;
+}
+
+.contactUsText {
+    font-weight: bold;
+    color: green;
+}
