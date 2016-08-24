@@ -1,13 +1,3 @@
-// https://console.firebase.google.com/project/decodemtl-final-project/database/data
-
-// We are using firebase rather than mySQL to store and retrieve information
-// Firebase can take care of user authentication, which is much simpler to use!
-
-/*
-
-https://kara-new-branch-yvkschaefer.c9users.io/
-*/
-
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);

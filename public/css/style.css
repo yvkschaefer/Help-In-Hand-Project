@@ -67,6 +67,7 @@ hr.small {
 }
 
 
+
 /* Side Menu */
 
 #sidebar-wrapper {
@@ -167,6 +168,7 @@ hr.small {
     background-size: cover;
     -o-background-size: cover;
 }
+
 
 
 /* About */
@@ -990,72 +992,72 @@ footer {
 
 /*FORM PAGE*/
 
-.questionnaire_forms {
-    padding: 1em 4em 1em 4em;
-    background: url('../images/form-page-background.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+/*.questionnaire_forms {*/
+/*    padding: 1em 4em 1em 4em;*/
+/*    background: url('../images/form-page-background.jpg') no-repeat center center fixed;*/
+/*    -webkit-background-size: cover;*/
+/*    -moz-background-size: cover;*/
+/*    -o-background-size: cover;*/
+/*    background-size: cover;*/
+/*}*/
 
-.formHeader {
-    margin-bottom: 1em;
-}
+/*.formHeader {*/
+/*    margin-bottom: 1em;*/
+/*}*/
 
-.formHeader:after {
-    content: ' ';
-    display: block;
-    border: 1px solid black;
-}
+/*.formHeader:after {*/
+/*    content: ' ';*/
+/*    display: block;*/
+/*    border: 1px solid black;*/
+/*}*/
 
-.formCategory {
-    font-weight: bold;
-}
+/*.formCategory {*/
+/*    font-weight: bold;*/
+/*}*/
 
-.formHeader {
-    margin-bottom: 1em;
-    padding: 1em;
-    text-align: center;
-}
+/*.formHeader {*/
+/*    margin-bottom: 1em;*/
+/*    padding: 1em;*/
+/*    text-align: center;*/
+/*}*/
 
-.formHeader:after {
-    content: ' ';
-    display: block;
-    border: 1px solid black;
-    margin-top: 0.3em;
-}
+/*.formHeader:after {*/
+/*    content: ' ';*/
+/*    display: block;*/
+/*    border: 1px solid black;*/
+/*    margin-top: 0.3em;*/
+/*}*/
 
-.formCategory {
-    font-weight: bold;
-}
+/*.formCategory {*/
+/*    font-weight: bold;*/
+/*}*/
 
-.formsTopBar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    font-size: 1.5em;
-}
+/*.formsTopBar {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    background-color: black;*/
+/*    font-size: 1.5em;*/
+/*}*/
 
-.homepageButtonOnForms {
-    border-radius: 15%;
-    height: 2.2em;
-    width: 5em;
-    font-family: 'Lato', sans-serif;
-    background-color: white;
-    color: black;
-}
+/*.homepageButtonOnForms {*/
+/*    border-radius: 15%;*/
+/*    height: 2.2em;*/
+/*    width: 5em;*/
+/*    font-family: 'Lato', sans-serif;*/
+/*    background-color: white;*/
+/*    color: black;*/
+/*}*/
 
-.homepageButtonOnForms:hover {
-    text-decoration: none;
-    color: black;
-}
+/*.homepageButtonOnForms:hover {*/
+/*    text-decoration: none;*/
+/*    color: black;*/
+/*}*/
 
-.homepageButtonLinkOnForms {
-    padding-right: 1em;
-}
+/*.homepageButtonLinkOnForms {*/
+/*    padding-right: 1em;*/
+/*}*/
 
 
 /*--------------------------------------------------------*/
@@ -1378,250 +1380,3 @@ footer {
 .contactUsForm {
     padding-bottom: 3em;
 }
-
-
-/*#contact-form {*/
-
-
-/*   background-color: black;*/
-
-
-/*   padding: 10px 20px 30px 20px;*/
-
-
-/*   max-width:100%;*/
-
-
-/*   float: left;*/
-
-
-/*   position: relative;*/
-
-
-/*   margin-top:30px;*/
-
-
-/*   border-radius:7px;*/
-
-
-/*   -webkit-border-radius:7px;*/
-
-
-/*   -moz-border-radius:7px;*/
-
-
-/*}*/
-
-
-/*#contactFormText {*/
-
-
-/*    color: white;*/
-
-
-/*}*/
-
-
-/*#contact-form input,   */
-
-
-/*#contact-form select,   */
-
-
-/*#contact-form textarea,   */
-
-
-/*#contact-form label { */
-
-
-/*   font-size: 15px;  */
-
-
-/*   margin-bottom: 2px;*/
-
-
-/*   font-family: Arial, san-serif;*/
-
-
-/*} */
-
-
-/*#contact-form input,   */
-
-
-/*#contact-form select,   */
-
-
-/*#contact-form textarea { */
-
-
-/*   width:100%;*/
-
-
-/*   background: #fff;*/
-
-
-/*   border: 0; */
-
-
-/*   -moz-border-radius: 4px;  */
-
-
-/*   -webkit-border-radius: 4px;  */
-
-
-/*   border-radius: 4px;*/
-
-
-/*   margin-bottom: 25px;  */
-
-
-/*   padding: 5px;  */
-
-
-/*}  */
-
-
-/*#contact-form input:focus,   */
-
-
-/*#contact-form select:focus,   */
-
-
-/*#contact-form textarea:focus {  */
-
-
-/*   background-color: #E5E6E7; */
-
-
-/*}  */
-
-
-/*#contact-form textarea {*/
-
-
-/*   width:100%;*/
-
-
-/*   height: 150px;*/
-
-
-/*}*/
-
-
-/*#contact-form button[type="submit"] {*/
-
-
-/*   cursor:pointer;*/
-
-
-/*   width:100%;*/
-
-
-/*   border:none;*/
-
-
-/*   background:#991D57;*/
-
-
-/*   background-image:linear-gradient(bottom, #8C1C50 0%, #991D57 52%);*/
-
-
-/*   background-image:-moz-linear-gradient(bottom, #8C1C50 0%, #991D57 52%);*/
-
-
-/*   background-image:-webkit-linear-gradient(bottom, #8C1C50 0%, #991D57 52%);*/
-
-
-/*   color:white;*/
-
-
-/*   margin:0 0 5px;*/
-
-
-/*   padding:10px;*/
-
-
-/*   border-radius:5px;*/
-
-
-/*}*/
-
-
-/*#contact-form button[type="submit"]:hover {*/
-
-
-/*   background-image:linear-gradient(bottom, #9C215A 0%, #A82767 52%);*/
-
-
-/*   background-image:-moz-linear-gradient(bottom, #9C215A 0%, #A82767 52%);*/
-
-
-/*   background-image:-webkit-linear-gradient(bottom, #9C215A 0%, #A82767 52%);*/
-
-
-/*   -webkit-transition:background 0.3s ease-in-out;*/
-
-
-/*   -moz-transition:background 0.3s ease-in-out;*/
-
-
-/*   transition:background-color 0.3s ease-in-out;*/
-
-
-/*}*/
-
-
-/*#contact-form button[type="submit"]:active {*/
-
-
-/*   box-shadow:inset 0 1px 3px rgba(0,0,0,0.5);*/
-
-
-/*}*/
-
-
-/*input:required, textarea:required {  */
-
-
-/*   box-shadow: none;*/
-
-
-/*   -moz-box-shadow: none;  */
-
-
-/*   -webkit-box-shadow: none;  */
-
-
-/*   -o-box-shadow: none;  */
-
-
-/*} */
-
-
-/*#contact-form .required {  */
-
-
-/*   font-weight:bold;  */
-
-
-/*   color: white;      */
-
-
-/*}*/
-
-
-/* Hide success/failure message
-   (especially since the php is missing) */
-
-
-/*#failure, #success {*/
-
-
-/*   color: white; */
-
-
-/*   display:none;  */
-
-
-/*}*/
