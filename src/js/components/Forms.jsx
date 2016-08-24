@@ -218,7 +218,7 @@ var Forms = React.createClass({
 
         // this part is for Main Symptoms section
         var symptoms = this.state.selectedIllnesses.map(function(illness) {
-            console.log(illness, "THE ILENESS")
+            console.log(illness, "THE ILLNESS")
             return (
                 <CheckboxGroup value={that.state.selectedSymptoms[illness.id]} onChange={that._handleSymptoms(illness.id)} key={illness.id}>
                 {
