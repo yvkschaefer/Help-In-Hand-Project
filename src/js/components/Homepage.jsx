@@ -116,10 +116,10 @@ var Homepage = React.createClass({
             );
             showLoginLogoutButton = (
                 <div className="loginButtons">
-                    <ul>
-                        <li> <input type="image" src="files/images/facebook_logo.jpg" onClick={this._handleLogin} value="facebookButtonClicked"  className="facebookImage" /> </li>
-                        <li> <input type="image" src="files/images/twitter_logo.png" onClick={this._handleLogin} value="twitterButtonClicked"  className="twitterImage" /> </li>
-                        <li> <input type="image" src="files/images/google_logo.png" onClick={this._handleLogin} value="googleAccountButtonClicked" className="googleImage" /> </li>
+                    <ul className="loginLogoutButtonList">
+                        <li> <input type="image" src="files/images/facebook_logo_reformatted.jpg" onClick={this._handleLogin} value="facebookButtonClicked"  className="facebookImage" /> </li>
+                        <li> <input type="image" src="files/images/twitter_logo_reformatted.png" onClick={this._handleLogin} value="twitterButtonClicked"  className="twitterImage" /> </li>
+                        <li> <input type="image" src="files/images/google_logo_reformatted.png" onClick={this._handleLogin} value="googleAccountButtonClicked" className="googleImage" /> </li>
                     </ul>
                 </div>
             );
@@ -135,8 +135,8 @@ var Homepage = React.createClass({
         else {
             showLoginLogoutButton = (
                 <div className="loginButtons">
-                    <ul>
-                        <li> <button className="logoutButton" onClick={this._handleLogout} value="Logout"> Logout </button> </li>
+                    <ul className="loginLogoutButtonList">
+                        <li> <button className="btn btn-dark" onClick={this._handleLogout} value="Logout"> Logout </button> </li>
                     </ul>
                 </div>
             );
@@ -190,6 +190,7 @@ var Homepage = React.createClass({
                         <h3>We are here to help!</h3>
                         <br/>
                         <a href="#about" className="btn btn-dark btn-lg">Find Out More</a>
+                        {showLoginLogoutButton}
                     </div>
                 </header>
             
@@ -266,7 +267,7 @@ var Homepage = React.createClass({
                                                     <strong>Counselors</strong>
                                                 </h4>
                                                 <p>See the profiles of all of our counselors.</p>
-                                                <a href="/counselorsProfile" className="btn btn-light">Learn More</a>
+                                                <a href="/counselorsProfile" className="btn btn-light">Show more!</a>
                                             </div>
                                         </div>
                                     </div>

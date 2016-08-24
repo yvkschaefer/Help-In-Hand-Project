@@ -186,6 +186,7 @@ hr.small {
     width: 100%;
     height: 400px;
     color: #fff;
+    /*background: url('/files/images/homepageBackground.jpg') no-repeat center center scroll;*/
     background: url(../img/callout.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -368,7 +369,7 @@ footer {
 /*    margin: 0;*/
 /*  }*/
 
-} /* end media 768 */
+ /* end media 768 
 
 
 
@@ -382,52 +383,63 @@ footer {
 /*    margin-right: 0.4em;*/
 /*}*/
 
-/*.loginButtons {*/
-/*    display: flex;*/
+.loginButtons {
+    display: flex;
     /*align-content: flex-end;*/
     /*border: 1px white solid;*/
-/*    justify-content: flex-end;*/
-/*    padding-top: 0.5em;*/
-/*}*/
+    /*justify-content: flex-end;*/
+    /*padding-top: 0.5em;*/
+    border: 2px black solid;
+    text-decoration: none;
+    list-style: none;
+}
 
-/*.facebookImage {*/
-/*    border: 2px solid black;*/
-/*    border-radius: 20%;*/
-/*    margin: 0em 0.5em;*/
-/*    height: 2.8em;*/
-/*    width: 2.8em;*/
-/*}*/
+.loginLogoutButtonList {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+}
 
-/*.twitterImage {*/
-/*    border-radius: 20%;*/
-/*    margin: 0em 0.5em;*/
-/*    height: 2.8em;*/
-/*    width: 2.8em;*/
-/*    padding: 0.25em;*/
-/*}*/
+.facebookImage {
+    border-radius: 20%;
+    margin: 0em 1em;
+    /*height: 35px;*/
+    /*width: 35px;*/
 
-/*.googleImage {*/
-    /*border: 2px solid black;*/
-/*    border-radius: 20%;*/
-/*    margin: 0.1em 1em 0em 0.4em;*/
-/*    height: 2.6em;*/
-/*    width: 2.6em;*/
-/*}*/
+}
+
+.twitterImage {
+    border-radius: 20%;
+    margin: 0em 1em;
+    /*height: 35px;*/
+    /*width: 45px;*/
+}
+
+.googleImage {
+    border-radius: 20%;
+    margin: 0em 1em;
+    /*height: 35px;*/
+    /*width: 35px;*/
+}
 
 
 /*--------------------------------------------------------*/
 
 /*LOGOUT BUTTON*/
 
-/*.logoutButton {*/
-/*    border-radius: 15%;*/
-/*    height: 2.6em;*/
-/*    width: 5em;*/
-/*    font-family: 'Lato', sans-serif;*/
-/*    background-color: white;*/
-/*    color: black;*/
-/*    margin-right: 1em;*/
-/*}*/
+.logoutButton {
+    border-radius: 8%;
+    font-family: 'Lato', sans-serif;
+    background-color: #999999;
+    color: white;
+    /*margin-right: 1em;*/
+}
+
+.logoutButton:hover {
+    background-color: black;
+}
 
 /*.logoutButtonHomepage {*/
 /*    padding-right: 1em;*/
@@ -692,72 +704,72 @@ footer {
 
 /*FORM PAGE*/
 
-.questionnaire_forms {
-    padding: 1em 4em 1em 4em;
-    background: url('../images/form-page-background.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+/*.questionnaire_forms {*/
+/*    padding: 1em 4em 1em 4em;*/
+/*    background: url('../images/form-page-background.jpg') no-repeat center center fixed;*/
+/*    -webkit-background-size: cover;*/
+/*    -moz-background-size: cover;*/
+/*    -o-background-size: cover;*/
+/*    background-size: cover;*/
+/*}*/
 
-.formHeader {
-    margin-bottom: 1em;
-}
+/*.formHeader {*/
+/*    margin-bottom: 1em;*/
+/*}*/
 
-.formHeader:after {
-    content: ' ';
-    display: block;
-    border: 1px solid black;
-}
+/*.formHeader:after {*/
+/*    content: ' ';*/
+/*    display: block;*/
+/*    border: 1px solid black;*/
+/*}*/
 
-.formCategory {
-    font-weight: bold;
-}
+/*.formCategory {*/
+/*    font-weight: bold;*/
+/*}*/
 
-.formHeader {
-    margin-bottom: 1em;
-    padding: 1em;
-    text-align: center;
-}
+/*.formHeader {*/
+/*    margin-bottom: 1em;*/
+/*    padding: 1em;*/
+/*    text-align: center;*/
+/*}*/
 
-.formHeader:after {
-    content: ' ';
-    display: block;
-    border: 1px solid black;
-    margin-top: 0.3em;
-}
+/*.formHeader:after {*/
+/*    content: ' ';*/
+/*    display: block;*/
+/*    border: 1px solid black;*/
+/*    margin-top: 0.3em;*/
+/*}*/
 
-.formCategory {
-    font-weight: bold;
-}
+/*.formCategory {*/
+/*    font-weight: bold;*/
+/*}*/
 
-.formsTopBar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    font-size: 1.5em;
-}
+/*.formsTopBar {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    background-color: black;*/
+/*    font-size: 1.5em;*/
+/*}*/
 
-.homepageButtonOnForms {
-    border-radius: 15%;
-    height: 2.2em;
-    width: 5em;
-    font-family: 'Lato', sans-serif;
-    background-color: white;
-    color: black;
-}
+/*.homepageButtonOnForms {*/
+/*    border-radius: 15%;*/
+/*    height: 2.2em;*/
+/*    width: 5em;*/
+/*    font-family: 'Lato', sans-serif;*/
+/*    background-color: white;*/
+/*    color: black;*/
+/*}*/
 
-.homepageButtonOnForms:hover {
-    text-decoration: none;
-    color: black;
-}
+/*.homepageButtonOnForms:hover {*/
+/*    text-decoration: none;*/
+/*    color: black;*/
+/*}*/
 
-.homepageButtonLinkOnForms {
-    padding-right: 1em;
-}
+/*.homepageButtonLinkOnForms {*/
+/*    padding-right: 1em;*/
+/*}*/
 
 
 
@@ -1003,5 +1015,13 @@ footer {
    
 .contactUsForm {
     padding-bottom: 3em;
+}
+
+#textinput {
+    border: 2px solid black;
+}
+
+#textarea {
+    border: 2px solid black;
 }
  

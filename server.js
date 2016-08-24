@@ -255,6 +255,8 @@ io.on('connection', function(socket) {
 
 app.post("/contactUs", function(req, res){
   // setup e-mail data with unicode symbols
+  
+  console.log(req);
   var mailOptions = {
       from: '"Help in Hand" <robot@helpinhand.com>', // sender address
       to: 'helpinhandproject2016@gmail.com', // list of receivers

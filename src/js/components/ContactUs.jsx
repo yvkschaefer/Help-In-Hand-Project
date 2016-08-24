@@ -36,53 +36,44 @@ var ContactUs = React.createClass({
             
               <legend className="legend">Contact Us</legend>
 
-
-<div className="form-group">
-  <label className="col-md-4 control-label" for="textinput">Text Input</label>  
-  <div className="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="placeholder" className="form-control input-md" />
-  <span className="help-block">help</span>  
-  </div>
-</div>
-
-
-<div className="form-group">
-  <label className="col-md-4 control-label" for="textinput">Text Input</label>  
-  <div className="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="placeholder" className="form-control input-md"/>
-  <span className="help-block">help</span>  
-  </div>
-</div>
-
-
-<div className="form-group">
-  <label className="col-md-4 control-label" for="textarea">Text Area</label>
-  <div className="col-md-4">                     
-    <textarea className="form-control" id="textarea" name="textarea">default text</textarea>
-  </div>
-</div>
-
-
-<div className="form-group">
-  <label className="col-md-4 control-label" for="textinput">Text Input</label>  
-  <div className="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="placeholder" className="form-control input-md"/>
-  <span className="help-block">help</span>  
-  </div>
-</div>
-
-
-<div className="form-group">
-  <label className="col-md-4 control-label" for="singlebutton">Single Button</label>
-  <div className="col-md-4">
-    <button id="singlebutton" name="singlebutton" className="btn btn-primary">Button</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-	
-</div>
+                <div className="form-group">
+                  <label className="col-md-4 control-label" htmlFor="textinput">Username or Pseudonym: </label>  
+                  <div className="col-md-4">
+                  <input id="textinput" ref="contactUsUsernameEntry" type="text" placeholder="username or pseudonym" className="form-control input-md" />
+                  </div>
+                </div>
+                
+                
+                <div className="form-group">
+                  <label className="col-md-4 control-label" htmlFor="textinput">Email: </label>  
+                  <div className="col-md-4">
+                  <input id="textinput" ref="contactUsEmailEntry"  type="text" placeholder="email address" className="form-control input-md"/>
+                  </div>
+                </div>
+                
+                <div className="form-group">
+                  <label className="col-md-4 control-label" htmlFor="textinput">Title: </label>  
+                  <div className="col-md-4">
+                  <input id="textinput" ref="contactUsUserTitleEntry" type="text" placeholder="title" className="form-control input-md"/>
+                  </div>
+                </div>                
+                
+                <div className="form-group">
+                  <label className="col-md-4 control-label" htmlFor="textarea">Message: </label>
+                  <div className="col-md-4">                     
+                    <textarea className="form-control" ref="contactUsMessageEntry" id="textarea" name="textarea" placeholder="message"></textarea>
+                  </div>
+                </div>
+                
+                <div className="form-group">
+                  <label className="col-md-4 control-label" htmlFor="singlebutton"></label>
+                  <div className="col-md-4">
+                    <button id="singlebutton" className="btn btn-primary" onClick={this.submitEmailInfo}>Submit</button>
+                  </div>
+                </div>
+            </fieldset>
+          </form>
+	</div>
 	);
 	}
 });
