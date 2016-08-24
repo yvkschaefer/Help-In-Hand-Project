@@ -10,7 +10,6 @@ var transporter = nodemailer.createTransport('smtps://helpinhandproject2016%40gm
 app.use('/files', express.static(__dirname + '/public'));
 
 var bodyParser = require('body-parser');
-
 app.use(bodyParser.urlencoded());
 
 var triage = [];

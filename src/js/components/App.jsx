@@ -16,7 +16,7 @@ var App = React.createClass({
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-10 col-lg-offset-1 text-center">
-                                <h4><strong>Help In Hand</strong>
+                                <h4><strong><Link to='/'>Help In Hand</Link></strong>
                                 </h4>
                                 <p>4th floor, 3 Place Vill Marie
                                     <br />Montreal, QC</p>

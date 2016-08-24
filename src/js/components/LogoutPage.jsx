@@ -6,7 +6,7 @@ var LogoutPage = React.createClass({
         return(
             <div className='loggedOutPage'>
                 <p>Thanks for your work today. See you soon!</p>
-                <Link to='/'>homepage</Link>
+                <Link to='/' className='btn btn-primary'>homepage</Link>
             </div>
         );
     }
