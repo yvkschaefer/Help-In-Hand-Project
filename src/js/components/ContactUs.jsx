@@ -31,10 +31,10 @@ var ContactUs = React.createClass({
         	<div className="contactUsForm">
 
 					<form className="form-horizontal">
-<fieldset>
-
-
-<legend>Form Name</legend>
+            <fieldset>
+            
+            
+              <legend className="legend">Contact Us</legend>
 
 
 <div className="form-group">
