@@ -14,7 +14,15 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var nodemailer = require('nodemailer');
 
+// create reusable transporter object using the default SMTP transport
+var transporter = nodemailer.createTransport('smtps://helpinhandproject2016%40gmail.com:tkdproject2016@smtp.gmail.com');
+
 app.use('/files', express.static(__dirname + '/public'));
+
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded());
+
 var triage = [];
 var triageCounselors = [];
 var patients = [];
@@ -239,6 +247,32 @@ io.on('connection', function(socket) {
     socket.isFree = false;
     console.log('server heard triageCounselor logged out');
     socket.emit('logged out');
+  });
+});
+
+app.post("/contactUs", function(req, res){
+  // setup e-mail data with unicode symbols
+  var mailOptions = {
+      from: '"Help in Hand" <robot@helpinhand.com>', // sender address
+      to: 'helpinhandproject2016@gmail.com', // list of receivers
+      subject: 'You have a new contact', // Subject line
+      html: `
+<h1>You have a new contact</h1>
+<p>Username: ${req.body.username}</p>
+<p>Email: ${req.body.emailAddress}</p>
+<p>Title: ${req.body.title}</p>
+<p>Message: ${req.body.message}</p>
+  ` // html body
+  };
+  
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, function(error, info){
+      if(error){
+          res.send({error: true});
+      }
+      else {
+        res.send({ok: true});
+      }
   });
 });
 

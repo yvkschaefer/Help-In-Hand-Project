@@ -232,19 +232,6 @@ var Forms = React.createClass({
         return (
             
         <div>
-			<div>
-				<div className="formsTopBar">
-	                <p id="appName"> Help In Hand </p>
-	                <div>  
-	                    <div>
-	                        <div className="homepageButtonLinkOnForms">
-	                            <Link to="/"><button className="homepageButtonOnForms">Homepage</button></Link>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-            </div>
-
             
             <div className="questionnaire_forms">
             

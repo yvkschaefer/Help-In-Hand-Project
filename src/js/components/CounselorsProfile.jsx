@@ -85,33 +85,20 @@ var CounselorsProfile = React.createClass({
 		if (this.state) {
 			showAllCounselors =
 				<div>
-					<div className="nav">
-						<div className="counselorsTopBar">
-	                        <p id="appName"> Help In Hand </p>
-	                        <div>  
-	                            <div>
-	                                <div className="homepageButtonLinkOnCounselorsProfile">
-	                                	<Link to="/"><button className="homepageButtonOnCounselorsProfile">Homepage</button></Link>
-	                            	</div>
-	                            </div>
-	                        </div>
-	            		</div>
-                    </div>
-                    
 					<div className="counselorsHeaderText"> <h1>Our Counselors</h1> </div>
-	
 					<div className="counselorsProfilePage">
 						{this.state.listOfCounselors.map(function(counselor){
 							return (
 								<div className="counselorsInformation">
-								<img src={counselor.Photo} className="counselorsProfilePicture" />
+									<img src={counselor.Photo} className="counselorsProfilePicture" />
 									<div className="counselorsTextInformation">
 										<div className="counselorsName"><p>{counselor.Name}</p></div>
 										<div className="patientComments"><p>{counselor['Patient Comments']}</p></div>
 										<div className="counselorsCredentials"><p>{counselor.Credentials}</p></div>
 									</div>
-								</div>);
-							})}
+								</div>
+							);
+						})}
 					</div>
 				</div>
 		}
