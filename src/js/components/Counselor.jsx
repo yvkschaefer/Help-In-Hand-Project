@@ -78,22 +78,21 @@ var Counselor = React.createClass({
             });
         });
     },
-    
+
     _stopCall: function() {
         this.socket.emit('counselor conversation over');
     },
-    
+
     _endCallUi: function() {
         return (
             <div>
-                <button ref="endCall" onClick={this._stopCall}>stop call</button>
+                <button ref="endCall" className='counselorEndCallButton' onClick={this._stopCall}>stop call</button>
             </div>
         );
     },
-    
+
     _connected: function() {
         var userInfo = this.state.data;
-        console.log('USER INFO', userInfo);
         var userInfoToShow;
 
         if (userInfo) {
@@ -101,29 +100,42 @@ var Counselor = React.createClass({
 
                 if (Object.prototype.toString.call(userInfo[infoKey]) === '[object Object]') {
                     var illnessAndSymptoms = userInfo['Illnesses & Symptoms'];
-                    console.log('illnessAndSymptoms', illnessAndSymptoms);
-                    
-                    var illnessToShow = Object.keys(illnessAndSymptoms).map(function(illnessKey) {
-                        return (
-                            <div> ***{illnessKey}:*** {illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
+
+                    var illnessToShow = (
+                        <div key={infoKey}>
+                            <p>Illnesses:</p>
+                            <ul>
+                            {
+                                Object.keys(illnessAndSymptoms).map(function(illnessKey) {
                                 return (
-                                    <div>
-                                        <ul> 
-                                            <li>
-                                                {eachSymptom}
-                                            </li>
+                                    <li key={illnessKey}>
+                                        {illnessKey}:
+                                        <ul>
+                                        {
+                                            illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
+                                                return (
+                                                    <div key={eachSymptom}>
+                                                        <p>Symptoms:</p>
+                                                        <li key={eachSymptom}>
+                                                            {eachSymptom}
+                                                        </li>
+                                                    </div>
+                                                );
+                                            })
+                                        }
                                         </ul>
-                                    </div>
-                                    );
-                                })} 
-                            </div>
-                        );
-                    });
+                                    </li>
+                                );
+                            })
+                            }
+                            </ul>
+                        </div>
+                    );
                     return illnessToShow;
                 }
                 else {
                     return (
-                        <div>
+                        <div key={infoKey}>
                             {infoKey}: {userInfo[infoKey]}
                         </div>
                     );
@@ -136,30 +148,32 @@ var Counselor = React.createClass({
                             </div>;
         }
         return (
-            <div className='counselorTalking'>
-                <p>You are talking to a patient</p>
-                <div className='counselorConnectedMainContents'>
-                    <div>
-                        <video ref="videoPlayer"/>
-                        {this._endCallUi()}
-                    </div>
-                    <div>
-                        Patient Intake Form:
-                        {userInfoToShow}
+            <div className='counselorTalkingBackground'>
+                <div className='counselorTalkingAllContents'>
+                    <p className='counselorTopText'>You are now connected with a patient</p>
+                    <div className='counselorConnectedMainContents'>
+                        <div>
+                            <video className='video' ref="videoPlayer"/>
+                            {this._endCallUi()}
+                        </div>
+                        <div className='patientIntakeForm'>
+                            Patient Intake Form:
+                            {userInfoToShow}
+                        </div>
                     </div>
                 </div>
             </div>
         );
     },
-    
+
     _disconnected: function() {
         return (
-            <div className='counselorWaiting'>
+            <div className='tCounselorWaiting'>
                 There are no patients in the queue. Time to browse Reddit!
             </div>
         );
     },
-    
+
     render: function() {
         return (
             <div>
@@ -167,7 +181,7 @@ var Counselor = React.createClass({
             </div>
         );
     }
-    
+
 });
 
 module.exports = Counselor;

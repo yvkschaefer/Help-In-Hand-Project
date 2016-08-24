@@ -4,6 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+
 /* Global Styles */
 
 html,
@@ -13,7 +14,7 @@ body {
 }
 
 body {
-    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .text-vertical-center {
@@ -29,39 +30,43 @@ body {
     font-weight: 700;
 }
 
+
 /* Custom Button Styles */
 
 .btn-dark {
     border-radius: 0;
     color: #fff;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .btn-dark:hover,
 .btn-dark:focus,
 .btn-dark:active {
     color: #fff;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .btn-light {
     border-radius: 0;
     color: #333;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
 }
 
 .btn-light:hover,
 .btn-light:focus,
 .btn-light:active {
     color: #333;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255, 255, 255, 0.8);
 }
+
 
 /* Custom Horizontal Rule */
 
 hr.small {
     max-width: 100px;
 }
+
+
 
 /* Side Menu */
 
@@ -105,7 +110,7 @@ hr.small {
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #fff;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .sidebar-nav li a:active,
@@ -113,17 +118,17 @@ hr.small {
     text-decoration: none;
 }
 
-.sidebar-nav > .sidebar-brand {
+.sidebar-nav> .sidebar-brand {
     height: 55px;
     font-size: 18px;
     line-height: 55px;
 }
 
-.sidebar-nav > .sidebar-brand a {
+.sidebar-nav> .sidebar-brand a {
     color: #999;
 }
 
-.sidebar-nav > .sidebar-brand a:hover {
+.sidebar-nav> .sidebar-brand a:hover {
     color: #fff;
     background: none;
 }
@@ -149,6 +154,7 @@ hr.small {
     margin: 5px 5px 0 0;
 }
 
+
 /* Header */
 
 .header {
@@ -163,11 +169,14 @@ hr.small {
     -o-background-size: cover;
 }
 
+
+
 /* About */
 
 .about {
     padding: 50px 0;
 }
+
 
 /* Services */
 
@@ -178,6 +187,7 @@ hr.small {
 .service-item {
     margin-bottom: 30px;
 }
+
 
 /* Callout */
 
@@ -193,6 +203,7 @@ hr.small {
     background-size: cover;
     -o-background-size: cover;
 }
+
 
 /* Portfolio */
 
@@ -212,6 +223,7 @@ hr.small {
     opacity: 0.8;
 }
 
+
 /* Call to Action */
 
 .call-to-action {
@@ -221,6 +233,7 @@ hr.small {
 .call-to-action .btn {
     margin: 10px;
 }
+
 
 /* Map */
 
@@ -238,6 +251,7 @@ hr.small {
     pointer-events: none;
 }
 
+
 /* Footer */
 
 footer {
@@ -245,143 +259,13 @@ footer {
 }
 
 #to-top {
-  display: none;
-  position: fixed;
-  bottom: 5px;
-  right: 5px;
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
 }
 
 
-
-
-/*--------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/** {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    font-family: 'Bitter', sans-serif;*/
-/*}*/
-
-/*.mainContent {*/
-/*    position: relative;*/
-/*    overflow: hidden;*/
-/*    background-color: white;*/
-/*}*/
-
-
-/*--------------------------------------------------------*/
-
-/*HOMEPAGE NAVIGATION BAR*/
-
-
-/*.homepageNavigationCategory {*/
-/*    font-size: 1.5em;*/
-/*}*/
-
-/*.outerContainer {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*}*/
-
-/*.wrapper{*/
-/*  width: 100%;*/
-  /*max-width: 960px;*/
-/*  margin: 0 auto;*/
-/*  position: fixed;*/
-/*}*/
-
-
-/*nav{*/
-/*  background: #333;*/
-/*}*/
-
-/*nav ul{*/
-/*  list-style-type: none;*/
-/*  padding: 0;*/
-/*}*/
-
-/*nav a{*/
-/*  text-decoration: none;*/
-/*  text-align: center;*/
-/*  color: #fff;*/
-/*  display: block;*/
-/*  padding: 1em 1em 0em 1em;*/
-/*}*/
-
-/*nav a:hover{*/
-/*  background-color: #555;*/
-/*}*/
-
-/*@media screen and (min-width: 768px){*/
-
-/*  nav ul{*/
-/*    display: flex;*/
-/*  }*/
-  
-  /*nav li{*/
-  /*  flex: 1 1 0;*/
-  /*}*/
-  
-/*  nav {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*  }*/
-  
-/*  .social {*/
-/*    margin: 0;*/
-/*  }*/
-
- /* end media 768 
-
-
-
-/*--------------------------------------------------------*/
-
-/*HOMEPAGE LOGIN FUNCTIONS*/
-
-/*.login {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    margin-right: 0.4em;*/
-/*}*/
 
 .loginButtons {
     display: flex;
@@ -425,219 +309,15 @@ footer {
 }
 
 
-/*--------------------------------------------------------*/
-
-/*LOGOUT BUTTON*/
-
-/*.logoutButton {*/
-/*    border-radius: 8%;*/
-/*    font-family: 'Lato', sans-serif;*/
-/*    background-color: grey;*/
-/*    color: white;*/
-    /*margin-right: 1em;*/
-/*}*/
-
-/*.logoutButton:hover {*/
-/*    background-color: black;*/
-/*}*/
-
-/*.logoutButtonHomepage {*/
-/*    padding-right: 1em;*/
-/*}*/
 
 
 /*--------------------------------------------------------*/
 
-/*HOMEPAGE INTRODUCTION*/
-
-
-/*.choicesText {*/
-/*    background: url('http://www.it.kmitl.ac.th/~it58070143/blog/wp-content/uploads/2016/03/sky-03.jpg') no-repeat center center fixed;*/
-/*    opacity: 0.80;*/
-/*    background-size: cover;*/
-/*    height: 90vh;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*}*/
-
-
-/*.mainBodyDiv {*/
-/*    margin: -10px;*/
-/*}*/
-
-/*.homepageLanding {*/
-/*    padding: 40em 0em 0em 55em;*/
-    /*font: 10em;*/
-/*}*/
-
-/*.homepageLandingImage {*/
-/*    padding-left: 20em;*/
-/*}*/
-
-/*.homepageLandingText {*/
-/*    font-size: 6em;*/
-    /*padding-left: 3em;*/
-/*}*/
-
-
-
-/*.homepageIntroduction {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*}*/
-
-/*.item {*/
-/*    height: 75.5vh;*/
-/*}*/
-
-/*.mainBodyDiv h2 {*/
-/*    font-size: 3em;*/
-/*}*/
-
-
-/*a:hover {*/
-/*    text-decoration: none;*/
-/*    color: red;*/
-/*}*/
-
-/*.choicesText {*/
-/*    font-size: 0.6em;*/
-/*    font-family: 'Bitter', sans-serif;*/
-/*}*/
-
-/*.homepageMessage1 {*/
-/*    padding: 0.5em 0em 0em 0.5em;*/
-/*    color: black;*/
-/*}*/
-
-/*.homepageMessage2 {*/
-/*    color: black;*/
-/*    padding: 0.5em 0em 0em 0.5em;*/
-/*    display: flex;*/
-
-/*}*/
-
-/*.homepageBodyLinks {*/
-/*    margin-left: 2em;*/
-/*}*/
-
-
-/*--------------------------------------------------------*/
-
-/*BODY OF HOMEPAGE: About us, Services, Instructions*/
-
-/*.moreInfo {*/
-/*    text-align: center;*/
-/*    padding: 4em 6em;*/
-/*}*/
-
-/*.textInHomepage {*/
-/*    font-size: 1.2em;*/
-/*    color: #666666;*/
-/*}*/
-
-/*.lineSeparator {*/
-/*    display: block;*/
-/*    position: relative;*/
-/*    padding: 0;*/
-/*    margin: 8px auto;*/
-/*    height: 0;*/
-/*    width: 50%;*/
-/*    max-height: 0;*/
-/*    font-size: 1px;*/
-/*    line-height: 0;*/
-/*    clear: both;*/
-/*    border: none;*/
-/*    border-top: 1px solid #aaaaaa;*/
-/*    border-bottom: 1px solid #ffffff;*/
-/*}*/
-
-/*#aboutUs, #services, #ourCounselors, #instructions {*/
-/*    padding: 6em 0em;*/
-/*}*/
-
-
-/*--------------------------------------------------------*/
-
-
-/*BODY OF HOMEPAGE: Our Counselors*/
-
-/*.ourCounselorsHomepage {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    justify-content: space-between;*/
-/*    padding-bottom: 3.5em;*/
-/*}*/
-
-/*.ourCounselorsHomepageHeaderText {*/
-/*    padding: 3.5em 0em 3em 0em;*/
-/*}*/
-
-/*.ourCounselor1, .ourCounselor2 {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    width: 47%;*/
-/*    padding: 0% 1%;*/
-/*}*/
-
-/*.counselorsProfilePictureHomepage {*/
-/*    height: 13em;*/
-/*    width: 13em;*/
-/*    border-radius: 60%;*/
-/*}*/
-
-/*.counselorNameOnHomepage {*/
-/*    font-weight: bold;*/
-/*    font-size: 2em;*/
-/*}*/
-
-/*.counselorDescriptionOnHomepage {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    font-size: 1.2em;*/
-/*}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*--------------------------------------------------------*/
 
 /*FOOTER OF ALL PAGE*/
 
 .footer {
     background-color: black;
-
     padding: 1em 0em 1em 7.5em;
     padding: 1em 1em 0.3em 1em;
     font-weight: bold;
@@ -677,120 +357,6 @@ footer {
     font-size: 1.5em;
 }
 
-/*--------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*FORM PAGE*/
-
-/*.questionnaire_forms {*/
-/*    padding: 1em 4em 1em 4em;*/
-    /*background: url('../images/form-page-background.jpg') no-repeat center center fixed;*/
-/*    -webkit-background-size: cover;*/
-/*    -moz-background-size: cover;*/
-/*    -o-background-size: cover;*/
-/*    background-size: cover;*/
-/*}*/
-
-/*.formHeader {*/
-/*    margin-bottom: 1em;*/
-/*}*/
-
-/*.formHeader:after {*/
-/*    content: ' ';*/
-/*    display: block;*/
-/*    border: 1px solid black;*/
-/*}*/
-
-/*.formCategory {*/
-/*    font-weight: bold;*/
-/*}*/
-
-/*.formHeader {*/
-/*    margin-bottom: 1em;*/
-/*    padding: 1em;*/
-/*    text-align: center;*/
-/*}*/
-
-/*.formHeader:after {*/
-/*    content: ' ';*/
-/*    display: block;*/
-/*    border: 1px solid black;*/
-/*    margin-top: 0.3em;*/
-/*}*/
-
-/*.formCategory {*/
-/*    font-weight: bold;*/
-/*}*/
-
-/*.formsTopBar {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-/*    background-color: black;*/
-/*    font-size: 1.5em;*/
-/*}*/
-
-/*.homepageButtonOnForms {*/
-/*    border-radius: 15%;*/
-/*    height: 2.2em;*/
-/*    width: 5em;*/
-/*    font-family: 'Lato', sans-serif;*/
-/*    background-color: white;*/
-/*    color: black;*/
-/*}*/
-
-/*.homepageButtonOnForms:hover {*/
-/*    text-decoration: none;*/
-/*    color: black;*/
-/*}*/
-
-/*.homepageButtonLinkOnForms {*/
-/*    padding-right: 1em;*/
-/*}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -798,6 +364,7 @@ footer {
 
 
 /*COUNSELORS PROFILE PAGE*/
+
 .counselorsBackground {
     margin-top: -1.4em;
     background-color: black;
@@ -823,7 +390,6 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     border-bottom: 2px solid black;
-
 }
 
 .counselorsProfilePicture {
@@ -924,29 +490,60 @@ footer {
     margin: 0 0 0 0.08em;
 }
 
-.triageTalking,
-.triageCounselorTalking,
-.counselorTalking {
-    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+.counselorTalkingBackground,
+.triageTalkingBackground,
+.triageCounselorTalking {
+    background: url('../images/video-background-white.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 90vh;
 }
 
-.triageTalkingText {
+.triageTalking {
     font-family: 'Lato', sans-serif;
     font-size: 2em;
-    color: #0D0D25;
-    padding: 8vh 0 0 1vh;
+    color: rgba(28, 28, 22, 0.49);
+    margin: 0 0 0 2vw;
+    padding: 2vh 0 0 0;
+}
+
+.video {
+    border-radius: 1%;
 }
 
 .stopCallButton {
-    margin: 0 0 1vh 0;
-    border-radius: 20%;
+    margin: 0 0 1vh 2vw;
+    border-radius: 8%;
+    border: none;
     padding: 0 0.2em 0 0.2em;
     font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    background: white;
 }
 
-.youStoppedCall,
+.patientHungUpOn {
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+    opacity: 0.8;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    font-size: 5vh;
+    padding: 14vh 0 0 2vw;
+    color: rgba(13, 13, 37, 0.9), black;
+}
+
+.youStoppedCall {
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+    opacity: 0.8;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    font-size: 6vh;
+    padding: 8vh 0 0 2vw;
+    color: rgba(13, 13, 37, 0.9), black;
+}
+
 .tCounselorWaiting {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -962,10 +559,54 @@ footer {
 
 /*TRIAGE COUNSELOR PAGE*/
 
-.tCounselorConnectedMainContents, .counselorConnectedMainContents {
+.tCounselorMainContents,
+.tCounselorButtonsContainer {
     display: flex;
 }
 
+.tCounselorTopText {
+    color: rgba(28, 28, 22, 0.45);
+}
+
+.tCounselorAllContents {
+    padding: 2vh 0 0 0;
+    margin: 0 0 0 2vw;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+}
+
+.priorityTextInput {
+    border-radius: 3%;
+    border: solid black 0.03em;
+    font-family: sans-serif;
+    padding: 0 0 0 0.3em;
+    font-size: 0.9em;
+    width: 15vw;
+}
+
+.priorityButton {
+    border: none;
+    border-radius: 8%;
+    background: white;
+    padding: 0 0.2em 0 0.2em;
+    margin: 0 0.2em 1em 0.4em;
+    font-family: sans-serif;
+}
+
+.tCounselorStopCallButton {
+    margin: 0 0 1vh 2vw;
+    border-radius: 8%;
+    border: none;
+    padding: 0 0.2em 0 0.2em;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    background: white;
+}
+
+.patientIntakeForm {
+    margin: 0 0 0 4vw;
+    font-size: 0.4em;
+}
 
 .tCounselorWaiting,
 .counselorWaiting {
@@ -979,6 +620,7 @@ footer {
 .tCounselorLogoutButton {
     border-radius: 10%;
     padding: 0 0.2em 0 0.2em;
+    border: none;
 }
 
 .loggedOutPage {
@@ -999,14 +641,41 @@ footer {
 
 /*VIDEO COUNSELOR PAGE*/
 
+.counselorTopText {
+    color: rgba(28, 28, 22, 0.45);
+    margin: 2vh 0 0 0;
+}
+
+.counselorTalkingAllContents {
+    font-size: 2em;
+    margin: 0 0 0 2vw;
+}
+
+.counselorConnectedMainContents {
+    display: flex;
+    font-family: 'Lato', sans-serif;
+    padding: 2vh 0 0 0;
+}
 
 
+/*this className .counselorEndCallButton showed up as a conflict. I kept it in - Kara*/
+
+.counselorEndCallButton {
+    border: none;
+    border-radius: 8%;
+    background: white;
+    padding: 0 0.2em 0 0.2em;
+    font-family: sans-serif;
+    height: 1.3em;
+    font-size: 0.8em;
+    align-content: center;
+}
 
 
+/*--------------------------------------------------------*/
 
 
-
-  /*--------------------------------------------------------*/
+/*CONTACT US PAGE*/
 
    /*CONTACT US PAGE*/
 .legend {
@@ -1025,3 +694,5 @@ footer {
     border: 2px solid black;
 }
  
+
+

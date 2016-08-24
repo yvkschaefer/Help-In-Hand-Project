@@ -7,7 +7,9 @@ var $ = require('jquery');
 
 
 var ContactUs = React.createClass({
-	submitEmailInfo: function () {
+	submitEmailInfo: function (e) {
+	  e.preventDefault();
+	  
 		$.post('/contactUs', {
 			username: this.refs.contactUsUsernameEntry.value,
 			emailAddress: this.refs.contactUsEmailEntry.value,
@@ -30,7 +32,7 @@ var ContactUs = React.createClass({
         return (
         	<div className="contactUsForm">
 
-					<form className="form-horizontal">
+					<form className="form-horizontal" onSubmit={this.submitEmailInfo}>
             <fieldset>
             
             
@@ -68,7 +70,7 @@ var ContactUs = React.createClass({
                 <div className="form-group">
                   <label className="col-md-4 control-label" htmlFor="singlebutton"></label>
                   <div className="col-md-4">
-                    <button id="singlebutton" className="btn btn-primary" onClick={this.submitEmailInfo}>Submit</button>
+                    <button id="singlebutton" className="btn btn-primary" type="submit">Submit</button>
                   </div>
                 </div>
             </fieldset>

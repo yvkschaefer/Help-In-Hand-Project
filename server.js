@@ -1,16 +1,3 @@
-// https://console.firebase.google.com/project/decodemtl-final-project/database/data
-
-// We are using firebase rather than mySQL to store and retrieve information
-// Firebase can take care of user authentication, which is much simpler to use!
-
-/*
-
-IN CASE YOU FORGET THE PASSWORD TO DO A GIT PUSH ETC: 
-  username: tkd-project
-  password: tkd-project1
-
-*/
-
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
