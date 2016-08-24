@@ -178,10 +178,13 @@ hr.small {
     
 }
 
+<<<<<<< HEAD
 .formTitle {
     text-align: center;
 }
 
+=======
+>>>>>>> origin/kara-styles
 /* About */
 
 .about {
@@ -279,6 +282,15 @@ footer {
 
 
 .loginButtons {
+<<<<<<< HEAD
+=======
+    display: flex;
+    /*align-content: flex-end;*/
+    /*border: 1px white solid;*/
+    /*justify-content: flex-end;*/
+    /*padding-top: 0.5em;*/
+    /*border: 2px black solid;*/
+>>>>>>> origin/kara-styles
     text-decoration: none;
     list-style: none;
 }
@@ -469,11 +481,31 @@ footer {
 
 /*TRIAGE PAGE*/
 
+.centerBox {
+    display: block;
+}
+
+.centerBox p {
+    text-align: center;
+}
+.centerBox video {
+    display: block;
+    margin: 0 auto;
+}
+.centerBox button {
+    display: block;
+    margin: 0 auto;
+}
+
+.buttonHolder {
+    margin: 2vh 0 0 0;
+}
+
 .triage {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 90vh;
-    opacity: 0.8;
+    height: 85vh;
+    opacity: 0.7;
 }
 
 .triageText {
@@ -488,7 +520,7 @@ footer {
     left: 0;
     top: 0;
     width: 100%;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .dots {
@@ -515,45 +547,23 @@ footer {
     border-radius: 1%;
 }
 
-.stopCallButton {
-    margin: 0 0 1vh 2vw;
-    border-radius: 8%;
-    border: none;
-    padding: 0 0.2em 0 0.2em;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.5em;
-    background: white;
-}
-
-.patientHungUpOn {
+.patientDisconnectedByButton {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 90vh;
-    opacity: 0.8;
+    height: 83vh;
+    opacity: 0.7;
     font-family: 'Lato', sans-serif;
     text-decoration: none;
     font-size: 5vh;
-    padding: 14vh 0 0 2vw;
-    color: rgba(13, 13, 37, 0.9), black;
-}
-
-.youStoppedCall {
-    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 90vh;
-    opacity: 0.8;
-    font-family: 'Lato', sans-serif;
-    text-decoration: none;
-    font-size: 6vh;
-    padding: 8vh 0 0 2vw;
-    color: rgba(13, 13, 37, 0.9), black;
+    padding: 20vh 0 0 2vw;
+    color: rgba(0, 0, 0, 0.85), black;
 }
 
 .tCounselorWaiting {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 90vh;
-    opacity: 0.8;
+    height: 85vh;
+    opacity: 0.7;
     font-family: 'Lato', sans-serif;
     text-decoration: none;
 }
@@ -580,37 +590,14 @@ footer {
     font-size: 2em;
 }
 
-.priorityTextInput {
-    border-radius: 3%;
-    border: solid black 0.03em;
-    font-family: sans-serif;
-    padding: 0 0 0 0.3em;
-    font-size: 0.9em;
-    width: 15vw;
-}
-
-.priorityButton {
-    border: none;
-    border-radius: 8%;
-    background: white;
-    padding: 0 0.2em 0 0.2em;
-    margin: 0 0.2em 1em 0.4em;
-    font-family: sans-serif;
-}
-
-.tCounselorStopCallButton {
-    margin: 0 0 1vh 2vw;
-    border-radius: 8%;
-    border: none;
-    padding: 0 0.2em 0 0.2em;
-    font-family: sans-serif;
-    font-size: 1.5em;
-    background: white;
-}
-
 .patientIntakeForm {
     margin: 0 0 0 4vw;
     font-size: 0.4em;
+}
+
+.tCounsButtons {
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    margin: 0 0 0 0.1em;
 }
 
 .tCounselorWaiting,
@@ -622,17 +609,11 @@ footer {
     text-decoration: none;
 }
 
-.tCounselorLogoutButton {
-    border-radius: 10%;
-    padding: 0 0.2em 0 0.2em;
-    border: none;
-}
-
 .loggedOutPage {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 90vh;
-    opacity: 0.8;
+    height: 100vh;
+    opacity: 0.7;
     padding: 25vh 0 0 2vh;
     font-family: 'Lato', sans-serif;
     font-size: 2em;
@@ -682,6 +663,7 @@ footer {
 
 /*CONTACT US PAGE*/
 
+<<<<<<< HEAD
 .legend {
     display: flex;
     justify-content: space-between;
@@ -697,6 +679,25 @@ footer {
 
 #contactFormUsernameInput {
     padding-top: 2em;
+=======
+   /*CONTACT US PAGE*/
+.legend {
+    text-align: left;
+    font-size: 3em;
+}
+
+#homepageButtonOnContactUs {
+    color: white;
+    
+}
+   
+.contactUsForm {
+    /*padding-bottom: 3em;*/
+}
+
+#contactFormUsernameInput {
+    padding-top: 7em;
+>>>>>>> origin/kara-styles
     font-size: 1.5em;
 }
 
@@ -708,6 +709,7 @@ footer {
     font-size: 1.2em;
 }
 
+<<<<<<< HEAD
 #contactFormHomepageButton {
     font-size: 1em;
 }
@@ -716,6 +718,8 @@ footer {
     font-size: 1.2em;
 }
 
+=======
+>>>>>>> origin/kara-styles
 #textinput {
     border: 2px solid black;
 }
@@ -728,6 +732,7 @@ footer {
     padding-top: 1em;
 }
 
+<<<<<<< HEAD
 /*.form-horizontal {*/
 /*    padding-bottom: -1em;*/
 /*}*/
@@ -896,3 +901,6 @@ h4,
     margin-bottom:-8px;
     padding:23px;    
 }
+=======
+
+>>>>>>> origin/kara-styles

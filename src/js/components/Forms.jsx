@@ -216,7 +216,8 @@ var Forms = React.createClass({
 
         // this part is for Main Symptoms section
         var symptoms = this.state.selectedIllnesses.map(function(illness) {
-            console.log(illness, "THE ILENESS")
+
+            //console.log(illness, "THE ILLNESS")
             return (
                 <CheckboxGroup value={that.state.selectedSymptoms[illness.id]} onChange={that._handleSymptoms(illness.id)} key={illness.id}>
                 {
@@ -239,6 +240,7 @@ var Forms = React.createClass({
                 <form onSubmit={this._handleText} className="form-horizontal">
                     
                     <fieldset className="well well-lg">
+
                     
 
                     <div className="form-group">
@@ -246,6 +248,7 @@ var Forms = React.createClass({
                         <div className="col-md-4">
                             <input id="textinput" className="textinput" ref="userInputBirthDate" type="text" placeholder="Date of Birth" className="form-control input-md"/>
                         </div>
+
                     </div>
                         
                         
@@ -256,6 +259,7 @@ var Forms = React.createClass({
                         </div>
                     </div>
                     
+
                         <div className="form-group">
                             <label className="col-md-4 control-label" htmlFor="textinput">Nationality:</label>  
                             <div className="col-md-4">
@@ -269,6 +273,7 @@ var Forms = React.createClass({
                             <div className="col-md-4">
                                 <input id="textinput" className="textinput" ref="userInputCareer" type="text" placeholder="Occupation" className="form-control input-md"/>
                             </div>
+
                         </div>
                     
                         
@@ -315,6 +320,7 @@ var Forms = React.createClass({
                           
                         </div>
                         </div>
+
                         
                         
                     {/*<!-- Multiple Checkboxes -->*/}
@@ -336,9 +342,8 @@ var Forms = React.createClass({
             
                       </div>
                     </div>
-                    
 
-                    
+
                     {/*<!-- Multiple Checkboxes -->*/}
                     <div className="form-group">
                       <label className="col-md-4 control-label" htmlFor="checkboxes">Symptoms: (Select all that apply)</label>
@@ -358,6 +363,7 @@ var Forms = React.createClass({
                         
                         
                     {/*<!-- Textarea -->*/}
+
                     <div className="form-group">
                       <label className="col-md-4 control-label" htmlFor="textarea">Describe your concerns in your own words:</label>
                       <div className="col-md-4">                     
@@ -368,6 +374,7 @@ var Forms = React.createClass({
                         
                     {/*<!-- Button -->*/}
                     <div className="form-group">
+
                       <label className="col-md-4 control-label" htmlFor="singlebutton"></label>
                       <div className="col-md-4">
                         <button id="singlebutton" name="singlebutton" className="btn btn-primary" onClick={this._submitForm}>Submit</button>
@@ -390,108 +397,3 @@ var Forms = React.createClass({
 var FormsWithRouter = withRouter(Forms);
 
 module.exports = FormsWithRouter;
-
-
-            // <div className="questionnaire_forms">
-            
-            //     <h3 className="formHeader"> Please complete this form </h3>
-                
-            //     <form onSubmit={this._handleText}>
-                    
-            //         <div className="form-group">
-            //             <label> <h4 className="formCategory"> Date of Birth: </h4> </label>
-            //             <input type="date"  ref="userInputBirthDate" className="form-control" />
-            //         </div> 
-                    
-                    
-            //         <div className="form-group">
-            //             <label> <h4 className="formCategory"> Gender: </h4> </label>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="gender" value="male" /> Male </label>
-            //             </div>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="gender" value="female" /> Female </label>
-            //             </div>
-            //         </div>
-                    
-            //         <div className="form-group">
-            //             <label> <h4 className="formCategory"> Nationality: </h4> </label>
-            //             <input type="text" ref="userInputNationality" className="form-control"/>
-            //         </div>
-                    
-            //         <div className="form-group">
-            //             <label> <h4 className="formCategory"> Occupation: </h4> </label>
-            //             <input type="text" ref="userInputCareer" className="form-control" /> 
-            //         </div>
-
-            //         <div className="form-group">
-            //             <label> <h4 className="formCategory"> Sexual Orientation: </h4> </label>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="heterosexual" /> Heterosexual </label> 
-            //             </div>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="gay" /> Gay </label> 
-            //             </div>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="lesbian" /> Lesbian </label> 
-            //             </div>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="bisexual" /> Bisexual </label> 
-            //             </div>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="transgender" /> Transgender </label> 
-            //             </div>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="other" /> Other </label>                        
-            //             </div>
-            //         </div>
-
-            //         <div className="form-group">
-            //             <label> <h4 className="formCategory"> Income: </h4> </label>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="income" value="0-20,000" /> $0-$20,000 </label>
-            //             </div>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="income" value="20,000-40,000" /> $20,000-$40,000 </label>
-            //             </div>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="income" value="40,000-60,000" /> $40,000-$60,000 </label>
-            //             </div>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="income" value="60,000-80,000" /> $60,000-$80,000 </label>
-            //             </div>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="income" value="80,000-100,000" /> $80,000-$100,000 </label>
-            //             </div>
-            //             <div className="radio">
-            //                 <label> <input type="radio" onChange={this._handleChangeRadio} name="income" value="100,000+" /> $100,000+ </label>
-            //             </div>
-            //         </div>
-                    
-            //         <div className="form-group">
-            //             <label> <h4 className="formCategory"> Major Illnesses: (Select all that apply) </h4> </label>
-            //             <CheckboxGroup value={this.state.selectedIllnesses} onChange={this._handleIllness} name="major_illnesses">
-            //                 {
-            //                     Object.keys(illnesses).map(function(illness) {
-            //                         return <div className="checkbox" key={illness}><label><Checkbox value={illnesses[illness]}/> {illness}</label></div>;
-            //                     })
-            //                 }
-            //             </CheckboxGroup>
-            //         </div>
-                    
-            //         <div className="form-group">
-            //             <label> <h4 className="formCategory"> Symptoms: (Select all that apply) </h4> </label>
-            //             {symptoms}
-            //         </div>
-
-                    
-            //         <div className="form-group">
-            //               <label> <h4 className="formCategory"> Describe your concerns in your own words: </h4> </label>
-            //               <textarea className="form-control" ref="userInputDescriptionInOwnWords" rows="5" id="comment"></textarea>
-            //         </div>
-                    
-                    
-            //         <button onClick={this._submitForm}> Submit </button>
-            //     </form>
-                
-            // </div>

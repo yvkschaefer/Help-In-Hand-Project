@@ -78,130 +78,154 @@ var CounselorsProfile = React.createClass({
 			})
 		});
 	},
+	_renderContent: function() {
+		if(this.state.listOfCounselors.length > 0) {
+			
+			
+			
+			return (
+				
+					this.state.listOfCounselors.map(function(counselor){
+						return (
+								<div className="container">
+					        <div className="row">
+					            <div className="team">
+					                <div className="teamimg"></div>
+					                <h4 className="profileHeaderStyling">Alex Morrison</h4>
+					                <p className="profilePStylingOne">GRAPHIC DESIGNER / CO-FOUNDER</p>
+					                <p className="profilePStylingTwo">Maecenas non elit egestas, interdum elit eget, ornare massa. Vestibulum imperdiet urna at rutrum interdum. Nullam luctus lorem non magna commodo mattis. Curabitur pharetra pulvinar quam et viverra. Duis interdum et nunc sed laoreet. Cras
+					                    ultrices dolor id ipsum malesuada congue.Quisque luctus.</p>
+					                <div className="teamsocial">
+					                    <ul>
+					                        <li className="liStyling">
+					                            <a href="#" title="Facebook">
+					                                <div className="facebook-team">
+					                                	<i className="fa fa-facebook"></i>
+					                                </div>
+					                            </a>
+					                        </li>
+					                        <li className="liStyling">
+					                            <a href="#" title="Twitter">
+					                                <div className="twitter-team"><i className="fa fa-twitter"></i></div>
+					                            </a>
+					                        </li>
+					                        <li className="liStyling">
+					                            <a href="#" title="Google">
+					                                <div className="google-team">
+					                                	<i className="fa fa-google-plus"></i>
+					                                </div>
+					                            </a>
+					                        </li>
+					                        <li className="liStyling">
+					                            <a href="#" title="Pinterest">
+					                                <div className="pinterest-team">
+					                                	<i className="fa fa-pinterest"></i>
+					                                </div>
+					                            </a>
+					                        </li>
+					                    </ul>
+					                </div>
+					            </div>
+					            <div className="team">
+					                 <div className="teamimg"></div>
+					                <h4 className="profileHeaderStyling">Bryan Jones</h4>
+					                <p className="profilePStylingOne">UI / UX DESIGNER</p>
+					                <p className="profilePStylingTwo">Quisque dapibus tincidunt luctus. Nulla consequat lorem vel turpis porta pharetra. Aliquam faucibus magna erat, a gravida dui bibendum eu. Curabitur elementum nibh vel diam luctus varius. Curabitur sem lectus, viverra ultricies quam iaculis,
+					                    elementum dapibus dui. Phasellus viverra fringilla nunc varius dictum.</p>
+					                <div className="teamsocial">
+					                    <ul>
+					                        <li className="liStyling">
+					                            <a href="#" title="Facebook">
+					                                <div className="facebook-team">
+					                                	<i className="fa fa-facebook"></i>
+					                                </div>
+					                            </a>
+					                        </li>
+					                        <li className="liStyling">
+					                            <a href="#" title="Twitter">
+					                                <div className="twitter-team"><i className="fa fa-twitter"></i></div>
+					                            </a>
+					                        </li>
+					                        <li className="liStyling">
+					                            <a href="#" title="Google">
+					                                <div className="google-team">
+					                                	<i className="fa fa-google-plus"></i>
+					                                </div>
+					                            </a>
+					                        </li>
+					                        <li className="liStyling">
+					                            <a href="#" title="Pinterest">
+					                                <div className="pinterest-team">
+					                                	<i className="fa fa-pinterest"></i>
+					                                </div>
+					                            </a>
+					                        </li>
+					                    </ul>
+					                </div>
+					            </div>
+					            <div className="team">
+					               <div className="teamimg"></div>
+					                <h4 className="profileHeaderStyling">Gabrielle Vasques</h4>
+					                <p className="profilePStylingOne">ILLUSTRATOR / CO-FOUNDER</p>
+					                <p className="profilePStylingTwo">Ut tincidunt sollicitudin arcu, non bibendum mi adipiscing sit amet. Nulla et facilisis orci. Fusce bibendum leo sodales, sollicitudin turpis eu, scelerisque nulla. Aliquam et urna ac felis ornare consectetur at vitae libero. Donec nec
+					                    quam ut odio suscipit aliquam. Nulla sit amet tortor molestie, blandit justo non, imperdiet velit.</p>
+					                <div className="teamsocial">
+					                    <ul>
+					                        <li className="liStyling">
+					                            <a href="#" title="Facebook">
+					                                <div className="facebook-team">
+					                                	<i className="fa fa-facebook"></i>
+					                                </div>
+					                            </a>
+					                        </li>
+					                        <li className="liStyling">
+					                            <a href="#" title="Twitter">
+					                                <div className="twitter-team"><i className="fa fa-twitter"></i></div>
+					                            </a>
+					                        </li>
+					                        <li className="liStyling">
+					                            <a href="#" title="Google">
+					                                <div className="google-team">
+					                                	<i className="fa fa-google-plus"></i>
+					                                </div>
+					                            </a>
+					                        </li>
+					                        <li className="liStyling">
+					                            <a href="#" title="Pinterest">
+					                                <div className="pinterest-team">
+					                                	<i className="fa fa-pinterest"></i>
+					                                </div>
+					                            </a>
+					                        </li>
+					                    </ul>
+					                </div>
+					            </div>
+					        </div>
+    				</div>
+							
+							);
+					
+					})
+				);
+		}
+	},
 	render: function() {
 		// console.log("COMES IN HERE SECOND");
 		var showAllCounselors;
 		// console.log(this.state);
-		if (this.state) {
-			showAllCounselors =
-				<div className="container" style="padding-top: 130px;margin-bottom:48px;">
-			        <div className="row">
-			            <div className="team">
-			                <div className="teamimg"></div>
-			                <h4 className="profileHeaderStyling">Alex Morrison</h4>
-			                <p className="profilePStylingOne">GRAPHIC DESIGNER / CO-FOUNDER</p>
-			                <p className="profilePStylingTwo">Maecenas non elit egestas, interdum elit eget, ornare massa. Vestibulum imperdiet urna at rutrum interdum. Nullam luctus lorem non magna commodo mattis. Curabitur pharetra pulvinar quam et viverra. Duis interdum et nunc sed laoreet. Cras
-			                    ultrices dolor id ipsum malesuada congue.Quisque luctus.</p>
-			                <div className="teamsocial">
-			                    <ul>
-			                        <li className="liStyling">
-			                            <a href="#" title="Facebook">
-			                                <div className="facebook-team">
-			                                	<i className="fa fa-facebook"></i>
-			                                </div>
-			                            </a>
-			                        </li>
-			                        <li className="liStyling">
-			                            <a href="#" title="Twitter">
-			                                <div className="twitter-team"><i className="fa fa-twitter"></i></div>
-			                            </a>
-			                        </li>
-			                        <li className="liStyling">
-			                            <a href="#" title="Google">
-			                                <div className="google-team">
-			                                	<i className="fa fa-google-plus"></i>
-			                                </div>
-			                            </a>
-			                        </li>
-			                        <li className="liStyling">
-			                            <a href="#" title="Pinterest">
-			                                <div className="pinterest-team">
-			                                	<i className="fa fa-pinterest"></i>
-			                                </div>
-			                            </a>
-			                        </li>
-			                    </ul>
-			                </div>
-			            </div>
-			            <div className="team">
-			                 <div className="teamimg"></div>
-			                <h4 className="profileHeaderStyling">Bryan Jones</h4>
-			                <p className="profilePStylingOne">UI / UX DESIGNER</p>
-			                <p className="profilePStylingTwo">Quisque dapibus tincidunt luctus. Nulla consequat lorem vel turpis porta pharetra. Aliquam faucibus magna erat, a gravida dui bibendum eu. Curabitur elementum nibh vel diam luctus varius. Curabitur sem lectus, viverra ultricies quam iaculis,
-			                    elementum dapibus dui. Phasellus viverra fringilla nunc varius dictum.</p>
-			                <div className="teamsocial">
-			                    <ul>
-			                        <li className="liStyling">
-			                            <a href="#" title="Facebook">
-			                                <div className="facebook-team">
-			                                	<i className="fa fa-facebook"></i>
-			                                </div>
-			                            </a>
-			                        </li>
-			                        <li className="liStyling">
-			                            <a href="#" title="Twitter">
-			                                <div className="twitter-team"><i className="fa fa-twitter"></i></div>
-			                            </a>
-			                        </li>
-			                        <li className="liStyling">
-			                            <a href="#" title="Google">
-			                                <div className="google-team">
-			                                	<i className="fa fa-google-plus"></i>
-			                                </div>
-			                            </a>
-			                        </li>
-			                        <li className="liStyling">
-			                            <a href="#" title="Pinterest">
-			                                <div className="pinterest-team">
-			                                	<i className="fa fa-pinterest"></i>
-			                                </div>
-			                            </a>
-			                        </li>
-			                    </ul>
-			                </div>
-			            </div>
-			            <div className="team">
-			               <div className="teamimg"></div>
-			                <h4 className="profileHeaderStyling">Gabrielle Vasques</h4>
-			                <p className="profilePStylingOne">ILLUSTRATOR / CO-FOUNDER</p>
-			                <p className="profilePStylingTwo">Ut tincidunt sollicitudin arcu, non bibendum mi adipiscing sit amet. Nulla et facilisis orci. Fusce bibendum leo sodales, sollicitudin turpis eu, scelerisque nulla. Aliquam et urna ac felis ornare consectetur at vitae libero. Donec nec
-			                    quam ut odio suscipit aliquam. Nulla sit amet tortor molestie, blandit justo non, imperdiet velit.</p>
-			                <div className="teamsocial">
-			                    <ul>
-			                        <li className="liStyling">
-			                            <a href="#" title="Facebook">
-			                                <div className="facebook-team">
-			                                	<i className="fa fa-facebook"></i>
-			                                </div>
-			                            </a>
-			                        </li>
-			                        <li className="liStyling">
-			                            <a href="#" title="Twitter">
-			                                <div className="twitter-team"><i className="fa fa-twitter"></i></div>
-			                            </a>
-			                        </li>
-			                        <li className="liStyling">
-			                            <a href="#" title="Google">
-			                                <div className="google-team">
-			                                	<i className="fa fa-google-plus"></i>
-			                                </div>
-			                            </a>
-			                        </li>
-			                        <li className="liStyling">
-			                            <a href="#" title="Pinterest">
-			                                <div className="pinterest-team">
-			                                	<i className="fa fa-pinterest"></i>
-			                                </div>
-			                            </a>
-			                        </li>
-			                    </ul>
-			                </div>
-			            </div>
-			        </div>
-    </div>
+		if (this.state.listOfCounselors.length > 0) {
+
+			<div>
+				<div className="counselorsHeaderText"> <h1>Our Counselors</h1> </div>
+				<div className="counselorsProfilePage">
+					{this.state.listOfCounselors.map(function(counselor){
+					return ('dd')
+					
+					})}
+				</div>
 			
+					
 		}
-		
 		
 		return (
 			<div classNameName="counselorsBackground">
