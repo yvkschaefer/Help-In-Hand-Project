@@ -169,7 +169,18 @@ hr.small {
     -o-background-size: cover;
 }
 
+.questionnaire_forms {
+    padding: 3em;
+}
 
+.contactUsForm {
+    padding: 8em 8em 0em 8em;
+    
+}
+
+.formTitle {
+    text-align: center;
+}
 
 /* About */
 
@@ -255,7 +266,7 @@ hr.small {
 /* Footer */
 
 footer {
-    padding: 100px 0;
+    padding: 25px 0;
 }
 
 #to-top {
@@ -268,12 +279,6 @@ footer {
 
 
 .loginButtons {
-    display: flex;
-    /*align-content: flex-end;*/
-    /*border: 1px white solid;*/
-    /*justify-content: flex-end;*/
-    /*padding-top: 0.5em;*/
-    /*border: 2px black solid;*/
     text-decoration: none;
     list-style: none;
 }
@@ -677,23 +682,21 @@ footer {
 
 /*CONTACT US PAGE*/
 
-   /*CONTACT US PAGE*/
 .legend {
-    text-align: left;
-    font-size: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    padding-left: 12em;
+    padding-right: 12em;
 }
 
-#homepageButtonOnContactUs {
-    color: white;
-    
-}
-   
-.contactUsForm {
-    /*padding-bottom: 3em;*/
+.legendText {
+    font-size: 2em;
 }
 
 #contactFormUsernameInput {
-    padding-top: 7em;
+    padding-top: 2em;
     font-size: 1.5em;
 }
 
@@ -702,6 +705,14 @@ footer {
     font-size: 1.5em;
 }
 .form-control{
+    font-size: 1.2em;
+}
+
+#contactFormHomepageButton {
+    font-size: 1em;
+}
+
+#contactFormSubmitButton {
     font-size: 1.2em;
 }
 
@@ -717,4 +728,171 @@ footer {
     padding-top: 1em;
 }
 
+/*.form-horizontal {*/
+/*    padding-bottom: -1em;*/
+/*}*/
 
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    background: rgba(0,0,0,0.5);
+}
+
+/* Counselor's Profiles Bootstrap CSS*/
+
+
+
+body {
+    color: #858585;
+    font-family: 'Raleway',sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+h4,
+.h4{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.container {
+    width: 1170px;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.team
+{
+    width: 370px;
+    min-height: 100%;
+    border: 1px solid rgba(133,133,133,.15);
+    background-color: #fff;
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,.09);
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,.09);
+    box-shadow: 0 0 8px rgba(0,0,0,.09);
+    float: left;
+    margin-left: 16px;
+}
+.teamimg
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-top: -80px;
+    width:170px;
+    height:170px;
+    background: #1bbc9d;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.09);
+}
+
+.teamsocial
+{
+    height: 48px;
+    background-color: #f7f5f5;
+    position: relative;
+    bottom: -14px;
+    left: 0;
+}
+
+.facebook-team
+{
+    float: left;
+    width: 48px;
+    height: 48px;
+    color: #D1CFCF;
+    display:block;
+    font-size:30px;
+    padding: 7px;
+}
+
+.twitter-team
+{
+    float: left;
+    width: 48px;
+    height: 48px;
+    color: #D1CFCF;
+    display:block;
+    font-size:30px;
+    padding: 7px;
+}
+
+.google-team
+{
+    float: left;
+    width: 48px;
+    height: 48px;
+    color: #D1CFCF;
+    display:block;
+    font-size:30px;
+    padding: 7px;
+}
+
+.pinterest-team
+{
+    float: left;
+    width: 48px;
+    height: 48px;
+    color: #D1CFCF;
+    display:block;
+    font-size:30px;
+    padding: 7px;
+}
+
+.facebook-team:hover
+{
+    color: #3B5998;
+}
+
+.twitter-team:hover
+{
+    color: #29B3E1;
+}
+
+.google-team:hover
+{
+    color: #DE5845;
+}
+
+.pinterest-team:hover
+{
+    color: #C51C23;
+}
+
+.container {
+     padding-top: 130px;
+     margin-bottom:48px;
+}
+
+.liStyling {
+    float:left;
+    list-style: none outside none;
+}
+
+.profileHeaderStyling {
+    text-align:center;
+    margin-bottom: 2px;
+    margin-top: 25px
+}
+
+.profilePStylingOne {
+    text-align:center;
+}
+
+.profilePStylingTwo {
+    text-align:center;
+    margin-top: -14px;
+    margin-bottom:-8px;
+    padding:23px;    
+}

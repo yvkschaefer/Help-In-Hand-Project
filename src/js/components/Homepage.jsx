@@ -156,7 +156,7 @@ var Homepage = React.createClass({
             <div>
             
             <Element name="home" className="element">
-            
+                
                 {/*<!-- Navigation -->*/}
                 <a onClick={this._menuToggle} id="menu-toggle" className="btn btn-dark btn-lg toggle"><i className="fa fa-bars"></i></a>
                 <nav id="sidebar-wrapper">
@@ -177,9 +177,6 @@ var Homepage = React.createClass({
                         <li>
                             <ScrollLink activeClass="active" className="test1" to="ourCounselors" spy={true} smooth={true} duration={500} onClick={this._menuClose}>Counselors</ScrollLink>
                         </li>
-                        <li>
-                            {showLoginLogoutButton}
-                        </li>
                     </ul>
                 </nav>
             
@@ -187,9 +184,9 @@ var Homepage = React.createClass({
                 <header id="top" className="header">
                     <div className="text-vertical-center">
                         <h1>Help In Hand</h1>
-                        <h3>We are here to help!</h3>
                         <br/>
-                        <a href="#about" className="btn btn-dark btn-lg">Find Out More</a>
+                        <a href="/triage" className="btn btn-dark btn-lg">Speak to a Counselor</a>
+                        <h3>Login below</h3>
                         {showLoginLogoutButton}
                     </div>
                 </header>

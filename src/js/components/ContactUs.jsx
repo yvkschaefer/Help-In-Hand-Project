@@ -31,19 +31,18 @@ var ContactUs = React.createClass({
     render: function() {
         return (
         	<div className="contactUsForm">
-
-					<form className="form-horizontal" onSubmit={this.submitEmailInfo}>
-            <fieldset>
+          
+            <legend className="legend"><div className="legendText">Contact Us</div>
+                  <div><Link to="/"><button className="btn btn-primary" id="contactFormHomepageButton">Homepage</button></Link></div>
+            </legend>
+          
+  					<form className="form-horizontal" onSubmit={this.submitEmailInfo}>
+              <fieldset className="well well-lg">
             
-            
-              <legend className="legend">Contact Us
-  
-              </legend>
- 
                 <div className="form-group" id="contactFormUsernameInput">
-                  <label className="col-md-4 control-label">Username or Pseudonym: </label>
+                  <label className="col-md-4 control-label">Username: </label>
                   <div className="col-md-4">
-                  <input id="textinput" ref="contactUsUsernameEntry" type="text" placeholder="username or pseudonym" className="form-control input-md" />
+                  <input id="textinput" ref="contactUsUsernameEntry" type="text" placeholder="username" className="form-control input-md" />
                   </div>
                 </div>
                 
@@ -72,7 +71,7 @@ var ContactUs = React.createClass({
                 <div className="form-group">
                   <label className="col-md-4 control-label" htmlFor="singlebutton"></label>
                   <div className="col-md-4">
-                    <button id="singlebutton" className="btn btn-primary" type="submit">Submit</button>
+                    <button id="contactFormSubmitButton" className="btn btn-primary" type="submit">Submit</button>
                   </div>
                 </div>
             </fieldset>
