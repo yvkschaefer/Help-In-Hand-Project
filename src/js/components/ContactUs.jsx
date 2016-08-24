@@ -36,32 +36,34 @@ var ContactUs = React.createClass({
             <fieldset>
             
             
-              <legend className="legend">Contact Us</legend>
-
-                <div className="form-group">
-                  <label className="col-md-4 control-label" htmlFor="textinput">Username or Pseudonym: </label>  
+              <legend className="legend">Contact Us
+  
+              </legend>
+ 
+                <div className="form-group" id="contactFormUsernameInput">
+                  <label className="col-md-4 control-label">Username or Pseudonym: </label>
                   <div className="col-md-4">
                   <input id="textinput" ref="contactUsUsernameEntry" type="text" placeholder="username or pseudonym" className="form-control input-md" />
                   </div>
                 </div>
                 
                 
-                <div className="form-group">
-                  <label className="col-md-4 control-label" htmlFor="textinput">Email: </label>  
+                <div className="form-group" id="contactFormInputAreas">
+                  <label className="col-md-4 control-label">Email: </label>  
                   <div className="col-md-4">
                   <input id="textinput" ref="contactUsEmailEntry"  type="text" placeholder="email address" className="form-control input-md"/>
                   </div>
                 </div>
                 
-                <div className="form-group">
-                  <label className="col-md-4 control-label" htmlFor="textinput">Title: </label>  
+                <div className="form-group" id="contactFormInputAreas">
+                  <label className="col-md-4 control-label">Title: </label>  
                   <div className="col-md-4">
                   <input id="textinput" ref="contactUsUserTitleEntry" type="text" placeholder="title" className="form-control input-md"/>
                   </div>
                 </div>                
                 
-                <div className="form-group">
-                  <label className="col-md-4 control-label" htmlFor="textarea">Message: </label>
+                <div className="form-group" id="contactFormInputAreas">
+                  <label className="col-md-4 control-label">Message: </label>
                   <div className="col-md-4">                     
                     <textarea className="form-control" ref="contactUsMessageEntry" id="textarea" name="textarea" placeholder="message"></textarea>
                   </div>
@@ -75,6 +77,7 @@ var ContactUs = React.createClass({
                 </div>
             </fieldset>
           </form>
+        
 	</div>
 	);
 	}

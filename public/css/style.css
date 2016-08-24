@@ -679,11 +679,30 @@ footer {
 
    /*CONTACT US PAGE*/
 .legend {
-    text-align: center;
+    text-align: left;
+    font-size: 3em;
+}
+
+#homepageButtonOnContactUs {
+    color: white;
+    
 }
    
 .contactUsForm {
-    padding-bottom: 3em;
+    /*padding-bottom: 3em;*/
+}
+
+#contactFormUsernameInput {
+    padding-top: 7em;
+    font-size: 1.5em;
+}
+
+#contactFormInputAreas {
+    padding-top: 1.5em;
+    font-size: 1.5em;
+}
+.form-control{
+    font-size: 1.2em;
 }
 
 #textinput {
@@ -693,6 +712,9 @@ footer {
 #textarea {
     border: 2px solid black;
 }
- 
+
+.form-group {
+    padding-top: 1em;
+}
 
 
