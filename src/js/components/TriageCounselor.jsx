@@ -102,9 +102,11 @@ var TriageCounselor = React.createClass({
 
     _priorityUi: function() {
         return (
-            <div>
+            <div className='tCounselorButtonsContainer'>
                 <input type="text" className='form-control' placeholder='priority rating 1-5'ref="priorityInput"/>
-                <button className='btn btn-primary' onClick={this._handleAssign}><h4>assign priority</h4></button>
+                <div className='tCounsButtons'>
+                    <button className='btn btn-primary' onClick={this._handleAssign}><h4>assign priority</h4></button>
+                </div>
             </div>
         );
     },
@@ -115,7 +117,7 @@ var TriageCounselor = React.createClass({
 
     _endCallUi: function() {
         return (
-            <div>
+            <div className='tCounsButtons'>
                 <button className='btn btn-primary' ref='endCall' onClick={this._stopCall}><h4>stop call</h4></button>
             </div>
         );
@@ -204,7 +206,7 @@ var TriageCounselor = React.createClass({
         return (
             <div className='tCounselorWaiting'>
                 <p>There are no patients in the queue. Time to browse Reddit!</p>
-                <button className='btn btn-primary' onClick={this._logout}>logout</button>
+                <button className='btn btn-default' onClick={this._logout}>logout</button>
             </div>
         );
     },
