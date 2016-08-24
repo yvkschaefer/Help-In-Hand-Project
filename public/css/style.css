@@ -479,6 +479,7 @@ a:hover {
     margin: 0 0 0 0.08em;
 }
 
+.counselorTalkingBackground,
 .triageTalkingBackground,
 .triageCounselorTalking {
     background: url('../images/video-background-white.jpg') no-repeat center center fixed;
@@ -548,7 +549,6 @@ a:hover {
 /*TRIAGE COUNSELOR PAGE*/
 
 .tCounselorMainContents,
-.counselorConnectedMainContents,
 .tCounselorButtonsContainer {
     display: flex;
 }
@@ -567,6 +567,10 @@ a:hover {
 .priorityTextInput {
     border-radius: 3%;
     border: solid black 0.03em;
+    font-family: sans-serif;
+    padding: 0 0 0 0.3em;
+    font-size: 0.9em;
+    width: 15vw;
 }
 
 .priorityButton {
@@ -574,15 +578,18 @@ a:hover {
     border-radius: 8%;
     background: white;
     padding: 0 0.2em 0 0.2em;
-    margin: 0 0.2em 1em 0.2em;
+    margin: 0 0.2em 1em 0.4em;
+    font-family: sans-serif;
 }
 
 .tCounselorStopCallButton {
-    border: none;
+    margin: 0 0 1vh 2vw;
     border-radius: 8%;
-    background: white;
+    border: none;
     padding: 0 0.2em 0 0.2em;
-    margin: 0 0 0 0.2em;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    background: white;
 }
 
 .patientIntakeForm {
@@ -623,12 +630,33 @@ a:hover {
 
 /*VIDEO COUNSELOR PAGE*/
 
-.counselorTalking {
-    background: url('../images/video-background-white.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 90vh;
+.counselorTopText {
+    color: rgba(28, 28, 22, 0.45);
+    margin: 2vh 0 0 0;
 }
 
+.counselorTalkingAllContents {
+    font-size: 2em;
+    margin: 0 0 0 2vw;
+}
+
+.counselorConnectedMainContents {
+    display: flex;
+    font-family: 'Lato', sans-serif;
+    padding: 2vh 0 0 0;
+
+}
+
+.counselorEndCallButton {
+    border: none;
+    border-radius: 8%;
+    background: white;
+    padding: 0 0.2em 0 0.2em;
+    font-family: sans-serif;
+    height: 1.3em;
+    font-size: 0.8em;
+    align-content: center;
+}
 
 /*--------------------------------------------------------*/
 

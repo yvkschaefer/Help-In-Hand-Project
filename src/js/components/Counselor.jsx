@@ -86,7 +86,7 @@ var Counselor = React.createClass({
     _endCallUi: function() {
         return (
             <div>
-                <button ref="endCall" onClick={this._stopCall}>stop call</button>
+                <button ref="endCall" className='counselorEndCallButton' onClick={this._stopCall}>stop call</button>
             </div>
         );
     },
@@ -148,16 +148,18 @@ var Counselor = React.createClass({
                             </div>;
         }
         return (
-            <div className='counselorTalking'>
-                <p>You are talking to a patient</p>
-                <div className='counselorConnectedMainContents'>
-                    <div>
-                        <video className='video' ref="videoPlayer"/>
-                        {this._endCallUi()}
-                    </div>
-                    <div className='patientIntakeForm'>
-                        Patient Intake Form:
-                        {userInfoToShow}
+            <div className='counselorTalkingBackground'>
+                <div className='counselorTalkingAllContents'>
+                    <p className='counselorTopText'>You are now connected with a patient</p>
+                    <div className='counselorConnectedMainContents'>
+                        <div>
+                            <video className='video' ref="videoPlayer"/>
+                            {this._endCallUi()}
+                        </div>
+                        <div className='patientIntakeForm'>
+                            Patient Intake Form:
+                            {userInfoToShow}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -166,7 +168,7 @@ var Counselor = React.createClass({
 
     _disconnected: function() {
         return (
-            <div className='counselorWaiting'>
+            <div className='tCounselorWaiting'>
                 There are no patients in the queue. Time to browse Reddit!
             </div>
         );

@@ -177,7 +177,7 @@ var TriageCounselor = React.createClass({
         return (
             <div className='triageCounselorTalking'>
                 <div className='tCounselorAllContents'>
-                    <p className='tCounselorTopText'>You are talking to a patient in triage</p>
+                    <p className='tCounselorTopText'>You are now connected with a patient</p>
                     <div className='tCounselorMainContents'>
                         <div>
                             <video className='video' ref="videoPlayer"/>
