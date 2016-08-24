@@ -140,7 +140,7 @@ var Triage = React.createClass({
     _endCallUi: function() {
         return (
             <div className='buttonHolder'>
-                <button className='btn btn-primary' ref='endCall' onClick={this._stopCall}>stop call</button>
+                <button className='btn btn-danger' ref='endCall' onClick={this._stopCall}>stop call</button>
             </div>
         );
     },

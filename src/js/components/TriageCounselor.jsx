@@ -103,10 +103,9 @@ var TriageCounselor = React.createClass({
     _priorityUi: function() {
         return (
             <div className='tCounselorButtonsContainer'>
-                <input type="text" className='form-control' placeholder='priority rating 1-5'ref="priorityInput"/>
-                <div className='tCounsButtons'>
-                    <button className='btn btn-primary' onClick={this._handleAssign}><h4>assign priority</h4></button>
-                </div>
+                <input type="text" placeholder='1-5'ref="priorityInput" size="3" />
+                <button className='btn btn-primary' onClick={this._handleAssign}>Assign Priority</button>
+                <button className='btn btn-danger' onClick={this._stopCall}>Stop Call</button>
             </div>
         );
     },
@@ -141,21 +140,8 @@ var TriageCounselor = React.createClass({
                                 Object.keys(illnessAndSymptoms).map(function(illnessKey) {
                                 return (
                                     <li key={illnessKey}>
-                                        {illnessKey}:
-                                        <ul>
-                                        {
-                                            illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
-                                                return (
-                                                    <div key={eachSymptom}>
-                                                        <p>Symptoms:</p>
-                                                        <li key={eachSymptom}>
-                                                            {eachSymptom}
-                                                        </li>
-                                                    </div>
-                                                );
-                                            })
-                                        }
-                                        </ul>
+                                        <p><strong>{illnessKey}</strong></p>
+                                        <p>Symptoms: {illnessAndSymptoms[illnessKey].join(', ')}</p>
                                     </li>
                                 );
                             })
@@ -187,13 +173,10 @@ var TriageCounselor = React.createClass({
                                 <div>
                                     {this._priorityUi()}
                                 </div>
-                                <div>
-                                    {this._endCallUi()}
-                                </div>
                             </div>
                         </div>
                         <div className='patientIntakeForm'>
-                            Patient Intake Form:
+                            <h2>Patient Intake Form</h2>
                             {userInfoToShow}
                         </div>
                     </div>

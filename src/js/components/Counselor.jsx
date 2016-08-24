@@ -86,7 +86,7 @@ var Counselor = React.createClass({
     _endCallUi: function() {
         return (
             <div>
-                <button ref="endCall" className='btn btn-primary' onClick={this._stopCall}>stop call</button>
+                <button ref="endCall" className='btn btn-danger' onClick={this._stopCall}>stop call</button>
             </div>
         );
     },
@@ -109,21 +109,8 @@ var Counselor = React.createClass({
                                 Object.keys(illnessAndSymptoms).map(function(illnessKey) {
                                 return (
                                     <li key={illnessKey}>
-                                        {illnessKey}:
-                                        <ul>
-                                        {
-                                            illnessAndSymptoms[illnessKey].map(function(eachSymptom) {
-                                                return (
-                                                    <div key={eachSymptom}>
-                                                        <p>Symptoms:</p>
-                                                        <li key={eachSymptom}>
-                                                            {eachSymptom}
-                                                        </li>
-                                                    </div>
-                                                );
-                                            })
-                                        }
-                                        </ul>
+                                        <p><strong>{illnessKey}</strong></p>
+                                        <p>Symptoms: {illnessAndSymptoms[illnessKey].join(', ')}</p>
                                     </li>
                                 );
                             })
@@ -157,7 +144,7 @@ var Counselor = React.createClass({
                             {this._endCallUi()}
                         </div>
                         <div className='patientIntakeForm'>
-                            Patient Intake Form:
+                            <h2>Patient Intake Form</h2>
                             {userInfoToShow}
                         </div>
                     </div>

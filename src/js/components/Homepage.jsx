@@ -47,7 +47,7 @@ var Homepage = React.createClass({
                 loggedIn: true
             });
 
-            alert("You have successfully logged in!");
+            
 
         }).catch(function(err) {
             console.log(err);
@@ -62,7 +62,7 @@ var Homepage = React.createClass({
                 loggedIn: false
             });
 
-            alert("You have successfully signed out!");
+            
             // When signed out, the user is redirected to the homepage
             that.props.router.push('/');
         });
@@ -108,7 +108,8 @@ var Homepage = React.createClass({
 
         var showLoginLogoutButton;
         var seeCounselors;
-        var homepageText;
+
+        var loginBelow;
 
         if (!this.state.loggedIn) {
             seeCounselors = (
@@ -123,13 +124,8 @@ var Homepage = React.createClass({
                     </ul>
                 </div>
             );
-            homepageText = (
-                <div className="homepageLanding">
-                    <img className="homepageLandingImage"src="/files/images/logo.png" />
-                    <p className="homepageLandingText">We're here to help.</p>
-                    <p>Login to speak to a counselor.</p>
-                </div>
-            );
+            
+            loginBelow = 'Login Below'
         }
 
         else {
@@ -140,16 +136,7 @@ var Homepage = React.createClass({
                     </ul>
                 </div>
             );
-            homepageText = (
-                <div className="landingPageText">
-                    <div className='homepageBodyLinks'>
-                        <h2><Link to="/forms">Intake Questionnaire</Link></h2>
-                        <p>Please answer this brief questionnaire so that our volunteers may better help you.</p>
-                        <h2><Link to='/counselorsprofile'>Counselors</Link></h2>
-                        <p>Click <Link to='/triage'>here</Link> if you are in crisis and <br /> need immediate assistance</p>
-                    </div>
-                </div>
-            );
+            
         }
 
         return (
@@ -185,8 +172,8 @@ var Homepage = React.createClass({
                     <div className="text-vertical-center">
                         <h1>Help In Hand</h1>
                         <br/>
-                        <a href="/triage" className="btn btn-dark btn-lg">Speak to a Counselor</a>
-                        <h3>Login below</h3>
+                        <a href="#services" className="btn btn-dark btn-lg">Speak to a Counselor</a>
+                        <p className="loginBelow">{loginBelow} </p>
                         {showLoginLogoutButton}
                     </div>
                 </header>
@@ -222,10 +209,10 @@ var Homepage = React.createClass({
                                                 <i className="fa fa-cloud fa-stack-1x text-primary"></i>
                                             </span>
                                                 <h4>
-                                                    <strong>Fill out the form!</strong>
+                                                    <strong>Please fill out the form</strong>
                                                 </h4>
-                                                <p>Please answer this questionnaire so we may better help you.</p>
-                                                <a href="/forms" className="btn btn-light">Fill out!</a>
+                                                <p>This will help us better help you.</p>
+                                                <a href="/forms" className="btn btn-light">Fill out</a>
                                             </div>
                                         </div>
                                         <div className="col-md-3 col-sm-6">
@@ -237,8 +224,8 @@ var Homepage = React.createClass({
                                                 <h4>
                                                     <strong>Talk to a Counselor</strong>
                                                 </h4>
-                                                <p>You can talk to a counselor even if you're not logged in' </p>
-                                                <a href="/triage" className="btn btn-light">Talk!</a>
+                                                <p>Please login to speak to a counselor</p>
+                                                <a href="/triage" className="btn btn-light">Talk</a>
                                             </div>
                                         </div>
                                         <div className="col-md-3 col-sm-6">
@@ -251,7 +238,7 @@ var Homepage = React.createClass({
                                                     <strong>Become a Counselor</strong>
                                                 </h4>
                                                 <p>You can fill out the form, and we will contact you shortly.</p>
-                                                <a href="#" className="btn btn-light">Fill out!</a>
+                                                <a href="#" className="btn btn-light">Fill out</a>
                                             </div>
                                         </div>
                                         <div className="col-md-3 col-sm-6">
@@ -264,7 +251,7 @@ var Homepage = React.createClass({
                                                     <strong>Counselors</strong>
                                                 </h4>
                                                 <p>See the profiles of all of our counselors.</p>
-                                                <a href="/counselorsProfile" className="btn btn-light">Show more!</a>
+                                                <a href="/counselorsProfile" className="btn btn-light">Show more</a>
                                             </div>
                                         </div>
                                     </div>

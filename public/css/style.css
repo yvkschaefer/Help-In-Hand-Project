@@ -174,17 +174,15 @@ hr.small {
 }
 
 .contactUsForm {
-    padding: 8em 8em 0em 8em;
+    padding: 0em 8em 0em 8em;
     
 }
 
-<<<<<<< HEAD
 .formTitle {
     text-align: center;
 }
 
-=======
->>>>>>> origin/kara-styles
+
 /* About */
 
 .about {
@@ -222,7 +220,7 @@ hr.small {
 /* Portfolio */
 
 .portfolio {
-    padding: 50px 0;
+    padding: 50px 0 0 0;
 }
 
 .portfolio-item {
@@ -268,7 +266,7 @@ hr.small {
 
 /* Footer */
 
-footer {
+.footer {
     padding: 25px 0;
 }
 
@@ -282,15 +280,6 @@ footer {
 
 
 .loginButtons {
-<<<<<<< HEAD
-=======
-    display: flex;
-    /*align-content: flex-end;*/
-    /*border: 1px white solid;*/
-    /*justify-content: flex-end;*/
-    /*padding-top: 0.5em;*/
-    /*border: 2px black solid;*/
->>>>>>> origin/kara-styles
     text-decoration: none;
     list-style: none;
 }
@@ -300,7 +289,7 @@ footer {
     list-style: none;
     display: flex;
     justify-content: center;
-    padding: 2em;
+    padding: 0.3em 2em 2em 2em;
 }
 
 .facebookImage {
@@ -325,6 +314,10 @@ footer {
     /*width: 35px;*/
 }
 
+.loginBelow {
+    margin-top: 1em;
+    /*font: ;*/
+}
 
 
 
@@ -382,376 +375,29 @@ footer {
 
 /*COUNSELORS PROFILE PAGE*/
 
-.counselorsBackground {
-    margin-top: -1.4em;
-    background-color: black;
-}
-
-.counselorsProfilePage {
-    background: url('../images/counselor-profile-background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.2em;
-    padding: 0em 1em 1em 1em;
-}
-
 .counselorsHeaderText {
-    font-size: 3em;
-    text-align: center;
-    padding-top: 0.2em;
-}
-
-.counselorsInformation {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    border-bottom: 2px solid black;
-}
-
-.counselorsProfilePicture {
-    width: 10em;
-    height: 10em;
-    display: flex;
-    margin: 1.2em;
-    border-radius: 60%;
-}
-
-.counselorsTextInformation {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: flex-start;
-}
-
-.counselorsName {
-    font-weight: bold;
-    /*margin-top: -45px;*/
-    /*height: 150px;*/
-    font-size: 2.2em;
-}
-
-.patientComments {
-    font-size: 1.1em;
-}
-
-.counselorsCredentials {
-    font-size: 1.1em;
-}
-
-.counselorsStatus {
-    justify-content: flex-end;
-}
-
-.counselorsTopBar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    font-size: 1.5em;
-}
-
-.counselorsHeaderText {
-    color: white;
-    font-family: 'Bitter', sans-serif;
-}
-
-.homepageButtonOnCounselorsProfile {
-    border-radius: 15%;
-    height: 2.2em;
-    width: 5em;
-    font-family: 'Lato', sans-serif;
-    background-color: white;
-    color: black;
-}
-
-.homepageButtonOnCounselorsProfile:hover {
-    text-decoration: none;
-    color: black;
-}
-
-.homepageButtonLinkOnCounselorsProfile {
-    padding-right: 1em;
-}
-
-
-/*--------------------------------------------------------*/
-
-
-/*TRIAGE PAGE*/
-
-.centerBox {
-    display: block;
-}
-
-.centerBox p {
-    text-align: center;
-}
-.centerBox video {
-    display: block;
-    margin: 0 auto;
-}
-.centerBox button {
-    display: block;
-    margin: 0 auto;
-}
-
-.buttonHolder {
-    margin: 2vh 0 0 0;
-}
-
-.triage {
-    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 85vh;
-    opacity: 0.7;
-}
-
-.triageText {
-    padding: 25vh 0 0 2vh;
-    font-family: 'Lato', sans-serif;
-    font-size: 2em;
-    color: #0D0D25;
-}
-
-.triageWaiting img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    opacity: 0.7;
-}
-
-.dots {
-    margin: 0 0 0 0.08em;
-}
-
-.counselorTalkingBackground,
-.triageTalkingBackground,
-.triageCounselorTalking {
-    background: url('../images/video-background-white.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 90vh;
-}
-
-.triageTalking {
-    font-family: 'Lato', sans-serif;
-    font-size: 2em;
-    color: rgba(28, 28, 22, 0.49);
-    margin: 0 0 0 2vw;
-    padding: 2vh 0 0 0;
-}
-
-.video {
-    border-radius: 1%;
-}
-
-.patientDisconnectedByButton {
-    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 83vh;
-    opacity: 0.7;
-    font-family: 'Lato', sans-serif;
-    text-decoration: none;
-    font-size: 5vh;
-    padding: 20vh 0 0 2vw;
-    color: rgba(0, 0, 0, 0.85), black;
-}
-
-.tCounselorWaiting {
-    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 85vh;
-    opacity: 0.7;
-    font-family: 'Lato', sans-serif;
-    text-decoration: none;
-}
-
-
-/*--------------------------------------------------------*/
-
-
-/*TRIAGE COUNSELOR PAGE*/
-
-.tCounselorMainContents,
-.tCounselorButtonsContainer {
-    display: flex;
-}
-
-.tCounselorTopText {
-    color: rgba(28, 28, 22, 0.45);
-}
-
-.tCounselorAllContents {
-    padding: 2vh 0 0 0;
-    margin: 0 0 0 2vw;
-    font-family: 'Lato', sans-serif;
-    font-size: 2em;
-}
-
-.patientIntakeForm {
-    margin: 0 0 0 4vw;
-    font-size: 0.4em;
-}
-
-.tCounsButtons {
-    padding: 0.2em 0.5em 0.2em 0.5em;
-    margin: 0 0 0 0.1em;
-}
-
-.tCounselorWaiting,
-.counselorWaiting {
-    padding: 25vh 0 0 2vh;
-    font-family: 'Lato', sans-serif;
-    font-size: 2em;
-    color: #0D0D25;
-    text-decoration: none;
-}
-
-.loggedOutPage {
-    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-    opacity: 0.7;
-    padding: 25vh 0 0 2vh;
-    font-family: 'Lato', sans-serif;
-    font-size: 2em;
-    color: #234C75;
-    text-decoration: none;
-}
-
-
-/*--------------------------------------------------------*/
-
-
-/*VIDEO COUNSELOR PAGE*/
-
-.counselorTopText {
-    color: rgba(28, 28, 22, 0.45);
-    margin: 2vh 0 0 0;
-}
-
-.counselorTalkingAllContents {
-    font-size: 2em;
-    margin: 0 0 0 2vw;
-}
-
-.counselorConnectedMainContents {
-    display: flex;
-    font-family: 'Lato', sans-serif;
-    padding: 2vh 0 0 0;
-}
-
-
-/*this className .counselorEndCallButton showed up as a conflict. I kept it in - Kara*/
-
-.counselorEndCallButton {
-    border: none;
-    border-radius: 8%;
-    background: white;
-    padding: 0 0.2em 0 0.2em;
-    font-family: sans-serif;
-    height: 1.3em;
-    font-size: 0.8em;
-    align-content: center;
-}
-
-
-/*--------------------------------------------------------*/
-
-
-/*CONTACT US PAGE*/
-
-<<<<<<< HEAD
-.legend {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.2em;
-    padding-left: 12em;
-    padding-right: 12em;
+    padding-left: 2em;
+    padding-right: 2em;
+
 }
 
-.legendText {
-    font-size: 2em;
-}
-
-#contactFormUsernameInput {
-    padding-top: 2em;
-=======
-   /*CONTACT US PAGE*/
-.legend {
-    text-align: left;
-    font-size: 3em;
-}
-
-#homepageButtonOnContactUs {
-    color: white;
-    
-}
-   
-.contactUsForm {
-    /*padding-bottom: 3em;*/
-}
-
-#contactFormUsernameInput {
-    padding-top: 7em;
->>>>>>> origin/kara-styles
-    font-size: 1.5em;
-}
-
-#contactFormInputAreas {
-    padding-top: 1.5em;
-    font-size: 1.5em;
-}
-.form-control{
-    font-size: 1.2em;
-}
-
-<<<<<<< HEAD
-#contactFormHomepageButton {
-    font-size: 1em;
-}
-
-#contactFormSubmitButton {
-    font-size: 1.2em;
-}
-
-=======
->>>>>>> origin/kara-styles
-#textinput {
-    border: 2px solid black;
-}
-
-#textarea {
-    border: 2px solid black;
-}
-
-.form-group {
+.contactFormHomepageButton {
     padding-top: 1em;
+    font-size: 1.2em;
 }
 
-<<<<<<< HEAD
-/*.form-horizontal {*/
-/*    padding-bottom: -1em;*/
-/*}*/
-
-
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top:0;
-    left: 0;
-    right: auto;
-    bottom: auto;
-    background: rgba(0,0,0,0.5);
+.profilePictures {
+    width: 11em;
+    height: 11em;
+    display: block;
+    margin: 10px auto;
 }
 
 /* Counselor's Profiles Bootstrap CSS*/
-
-
 
 body {
     color: #858585;
@@ -760,21 +406,35 @@ body {
     font-weight: 200;
 }
 
-h4,
+
 .h4{
     font-size: 18px;
     font-weight: bold;
 }
 
-.container {
-    width: 1170px;
+.counselorsProfilePage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+.profileContainer {
+    width: 500px;
+}
+
+.profileContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.profileRow {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 .team
@@ -791,7 +451,6 @@ h4,
 }
 .teamimg
 {
-    display: block;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -876,7 +535,7 @@ h4,
 }
 
 .container {
-     padding-top: 130px;
+     padding-top: 25px;
      margin-bottom:48px;
 }
 
@@ -901,6 +560,254 @@ h4,
     margin-bottom:-8px;
     padding:23px;    
 }
-=======
 
->>>>>>> origin/kara-styles
+
+/*--------------------------------------------------------*/
+
+
+/*TRIAGE PAGE*/
+
+.centerBox {
+    display: block;
+}
+
+.centerBox p {
+    text-align: center;
+}
+.centerBox video {
+    display: block;
+    margin: 0 auto;
+}
+.centerBox button {
+    display: block;
+    margin: 0 auto;
+}
+
+.buttonHolder {
+    margin: 2vh 0 0 0;
+}
+
+.triage {
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 85vh;
+    opacity: 0.7;
+}
+
+.triageText {
+    padding: 25vh 0 0 2vh;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: #0D0D25;
+}
+
+.triageWaiting img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0.7;
+}
+
+.dots {
+    margin: 0 0 0 0.08em;
+}
+
+.counselorTalkingBackground,
+.triageTalkingBackground,
+.triageCounselorTalking {
+    background: url('../images/video-background-white.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+}
+
+.triageTalking {
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: rgba(28, 28, 22, 0.49);
+    margin: 0 0 0 2vw;
+    padding: 2vh 0 0 0;
+}
+
+.video {
+    border-radius: 1%;
+}
+
+.patientDisconnectedByButton {
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 83vh;
+    opacity: 0.7;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    font-size: 5vh;
+    padding: 20vh 0 0 2vw;
+    color: black;
+}
+
+.tCounselorWaiting {
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 85vh;
+    opacity: 0.7;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+/*TRIAGE COUNSELOR PAGE*/
+
+.tCounselorMainContents,
+.tCounselorButtonsContainer {
+    display: flex;
+}
+
+.tCounselorButtonsContainer button {
+    font-size: 0.7em;
+}
+
+.tCounselorTopText {
+    color: rgba(28, 28, 22, 0.45);
+}
+
+.tCounselorAllContents {
+    padding: 2vh 0 0 0;
+    margin: 0 0 0 2vw;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+}
+
+.patientIntakeForm {
+    margin: 0 3vw 0 3vw;
+    font-size: 0.5em;
+}
+
+.tCounsButtons {
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    margin: 0 0 0 0.1em;
+}
+
+.tCounselorWaiting,
+.counselorWaiting {
+    padding: 25vh 0 0 2vh;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: #0D0D25;
+    text-decoration: none;
+}
+
+.loggedOutPage {
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    opacity: 0.7;
+    padding: 25vh 0 0 2vh;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: #234C75;
+    text-decoration: none;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+/*VIDEO COUNSELOR PAGE*/
+
+.counselorTopText {
+    color: rgba(28, 28, 22, 0.45);
+    margin: 2vh 0 0 0;
+}
+
+.counselorTalkingAllContents {
+    font-size: 2em;
+    margin: 0 0 0 2vw;
+}
+
+.counselorConnectedMainContents {
+    display: flex;
+    font-family: 'Lato', sans-serif;
+    padding: 2vh 0 0 0;
+}
+
+
+/*this className .counselorEndCallButton showed up as a conflict. I kept it in - Kara*/
+
+.counselorEndCallButton {
+    border: none;
+    border-radius: 8%;
+    background: white;
+    padding: 0 0.2em 0 0.2em;
+    font-family: sans-serif;
+    height: 1.3em;
+    font-size: 0.8em;
+    align-content: center;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+/*CONTACT US PAGE*/
+
+.legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    padding-left: 12em;
+    padding-right: 12em;
+}
+
+.legendText {
+    font-size: 2em;
+}
+
+#contactFormUsernameInput {
+    padding-top: 2em;
+    font-size: 1.5em;
+}
+
+#contactFormInputAreas {
+    padding-top: 1.5em;
+    font-size: 1.5em;
+}
+.form-control{
+    font-size: 1.2em;
+}
+
+#contactFormHomepageButton {
+    font-size: 1em;
+}
+
+#contactFormSubmitButton {
+    font-size: 1.2em;
+}
+
+
+#textinput {
+    border: 2px solid black;
+}
+
+#textarea {
+    border: 2px solid black;
+}
+
+.form-group {
+    padding-top: 1em;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    background: rgba(0,0,0,0.5);
+}
+
