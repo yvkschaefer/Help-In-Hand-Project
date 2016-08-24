@@ -17,10 +17,10 @@ var App = React.createClass({
                         <div className="row">
                             <div className="col-lg-10 col-lg-offset-1 text-center">
 
-                                <h4><strong><Link to='/'>Help In Hand</Link></strong>
+                                <h4><strong><a href='/'>Help In Hand</a></strong>
                                 
                                 </h4>
-                                <p>4th floor, 3 Place Vill Marie
+                                <p>4th floor, 3 Place Ville Marie
                                     <br />Montreal, QC</p>
                                 <ul className="list-unstyled">
                                     <li><i className="fa fa-phone fa-fw"></i> (123) 456-7890</li>

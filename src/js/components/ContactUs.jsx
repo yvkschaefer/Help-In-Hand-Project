@@ -40,9 +40,9 @@ var ContactUs = React.createClass({
               <fieldset className="well well-lg">
             
                 <div className="form-group" id="contactFormUsernameInput">
-                  <label className="col-md-4 control-label">Username: </label>
+                  <label className="col-md-4 control-label">Name: </label>
                   <div className="col-md-4">
-                  <input id="textinput" ref="contactUsUsernameEntry" type="text" placeholder="username" className="form-control input-md" />
+                  <input id="textinput" ref="contactUsUsernameEntry" type="text" placeholder="preferred name" className="form-control input-md" />
 
                   </div>
                 </div>

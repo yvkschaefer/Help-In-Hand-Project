@@ -75,11 +75,15 @@ var CounselorsProfile = React.createClass({
 			// console.log("COMES IN HERE THIRD BECAUSE OF CALLBACK; render happens before setState beneath");
 			that.setState({
 				listOfCounselors: snapshot.val()
-			})
+			});
 		});
 	},
 	_renderContent: function() {
+		
 		if(this.state && this.state.listOfCounselors.length > 0) {
+			
+			console.log("LIST OF COUNSELORS:", this.state.listOfCounselors);
+			
 			return (
 				<div>
 					<div className="counselorsHeaderText">

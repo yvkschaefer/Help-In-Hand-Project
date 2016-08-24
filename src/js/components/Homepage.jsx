@@ -110,7 +110,8 @@ var Homepage = React.createClass({
         var seeCounselors;
 
         var loginBelow;
-
+        var speakToCounselorButton;
+        
         if (!this.state.loggedIn) {
             seeCounselors = (
                 <p className="textInHomepage"> A full list of our talented volunteers can be found once you've logged in.</p>
@@ -125,7 +126,8 @@ var Homepage = React.createClass({
                 </div>
             );
             
-            loginBelow = 'Login Below'
+            loginBelow = 'Login Below';
+            speakToCounselorButton = <a href="#services" className="btn btn-dark btn-lg">Speak to a Counselor</a>;
         }
 
         else {
@@ -136,6 +138,7 @@ var Homepage = React.createClass({
                     </ul>
                 </div>
             );
+            speakToCounselorButton = <a href="/triage" className="btn btn-dark btn-lg">Speak to a Counselor</a>;
             
         }
 
@@ -172,7 +175,7 @@ var Homepage = React.createClass({
                     <div className="text-vertical-center">
                         <h1>Help In Hand</h1>
                         <br/>
-                        <a href="#services" className="btn btn-dark btn-lg">Speak to a Counselor</a>
+                        {speakToCounselorButton}
                         <p className="loginBelow">{loginBelow} </p>
                         {showLoginLogoutButton}
                     </div>
@@ -224,7 +227,7 @@ var Homepage = React.createClass({
                                                 <h4>
                                                     <strong>Talk to a Counselor</strong>
                                                 </h4>
-                                                <p>Please login to speak to a counselor</p>
+                                                <p>Please login to speak to a counselor.</p>
                                                 <a href="/triage" className="btn btn-light">Talk</a>
                                             </div>
                                         </div>
@@ -303,30 +306,30 @@ var Homepage = React.createClass({
                                 <div className="row">
                                     <div className="col-md-6">
                                         <div className="portfolio-item">
-                                            <a href="#">
+                                            <div>
                                                 <img className="img-portfolio img-responsive counselorsPictureOnHomepage" src="/files/images/homepageCounselor1.jpg" />
-                                            </a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="portfolio-item">
-                                            <a href="#">
+                                            <div>
                                                 <img className="img-portfolio img-responsive counselorsPictureOnHomepage"  src="/files/images/homepageCounselor2.png" />
-                                            </a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="portfolio-item">
-                                            <a href="#">
+                                            <div>
                                                 <img className="img-portfolio img-responsive counselorsPictureOnHomepage" src="/files/images/homepageCounselor3.jpg" />
-                                            </a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="portfolio-item">
-                                            <a href="#">
+                                            <div>
                                                 <img className="img-portfolio img-responsive" src="/files/images/homepageCounselor4.jpg" />
-                                            </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
