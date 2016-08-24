@@ -7,7 +7,9 @@ var $ = require('jquery');
 
 
 var ContactUs = React.createClass({
-	submitEmailInfo: function () {
+	submitEmailInfo: function (e) {
+	  e.preventDefault();
+	  
 		$.post('/contactUs', {
 			username: this.refs.contactUsUsernameEntry.value,
 			emailAddress: this.refs.contactUsEmailEntry.value,
@@ -30,59 +32,53 @@ var ContactUs = React.createClass({
         return (
         	<div className="contactUsForm">
 
-					<form className="form-horizontal">
-<fieldset>
-
-
-<legend>Form Name</legend>
-
-
-<div className="form-group">
-  <label className="col-md-4 control-label" for="textinput">Text Input</label>  
-  <div className="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="placeholder" className="form-control input-md" />
-  <span className="help-block">help</span>  
-  </div>
-</div>
-
-
-<div className="form-group">
-  <label className="col-md-4 control-label" for="textinput">Text Input</label>  
-  <div className="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="placeholder" className="form-control input-md"/>
-  <span className="help-block">help</span>  
-  </div>
-</div>
-
-
-<div className="form-group">
-  <label className="col-md-4 control-label" for="textarea">Text Area</label>
-  <div className="col-md-4">                     
-    <textarea className="form-control" id="textarea" name="textarea">default text</textarea>
-  </div>
-</div>
-
-
-<div className="form-group">
-  <label className="col-md-4 control-label" for="textinput">Text Input</label>  
-  <div className="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="placeholder" className="form-control input-md"/>
-  <span className="help-block">help</span>  
-  </div>
-</div>
-
-
-<div className="form-group">
-  <label className="col-md-4 control-label" for="singlebutton">Single Button</label>
-  <div className="col-md-4">
-    <button id="singlebutton" name="singlebutton" className="btn btn-primary">Button</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-	
-</div>
+					<form className="form-horizontal" onSubmit={this.submitEmailInfo}>
+            <fieldset>
+            
+            
+              <legend className="legend">Contact Us
+  
+              </legend>
+ 
+                <div className="form-group" id="contactFormUsernameInput">
+                  <label className="col-md-4 control-label">Username or Pseudonym: </label>
+                  <div className="col-md-4">
+                  <input id="textinput" ref="contactUsUsernameEntry" type="text" placeholder="username or pseudonym" className="form-control input-md" />
+                  </div>
+                </div>
+                
+                
+                <div className="form-group" id="contactFormInputAreas">
+                  <label className="col-md-4 control-label">Email: </label>  
+                  <div className="col-md-4">
+                  <input id="textinput" ref="contactUsEmailEntry"  type="text" placeholder="email address" className="form-control input-md"/>
+                  </div>
+                </div>
+                
+                <div className="form-group" id="contactFormInputAreas">
+                  <label className="col-md-4 control-label">Title: </label>  
+                  <div className="col-md-4">
+                  <input id="textinput" ref="contactUsUserTitleEntry" type="text" placeholder="title" className="form-control input-md"/>
+                  </div>
+                </div>                
+                
+                <div className="form-group" id="contactFormInputAreas">
+                  <label className="col-md-4 control-label">Message: </label>
+                  <div className="col-md-4">                     
+                    <textarea className="form-control" ref="contactUsMessageEntry" id="textarea" name="textarea" placeholder="message"></textarea>
+                  </div>
+                </div>
+                
+                <div className="form-group">
+                  <label className="col-md-4 control-label" htmlFor="singlebutton"></label>
+                  <div className="col-md-4">
+                    <button id="singlebutton" className="btn btn-primary" type="submit">Submit</button>
+                  </div>
+                </div>
+            </fieldset>
+          </form>
+        
+	</div>
 	);
 	}
 });
