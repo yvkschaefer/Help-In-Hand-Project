@@ -254,13 +254,13 @@ var Forms = React.createClass({
                       <label className="col-md-4 control-label" htmlFor="radios">Gender:</label>
                       <div className="col-md-4">
                       <div className="radio">
-                        <label for="radios-0">
+                        <label hmtlFor="radios-0">
                           <input type="radio" onChange={this._handleChangeRadio} id="radios-0" name="gender" value="male" />
                           Male
                         </label>
                     	</div>
                       <div className="radio">
-                        <label for="radios-1">
+                        <label hmtlFor="radios-1">
                           <input type="radio" onChange={this._handleChangeRadio} id="radios-1" name="gender" value="female"/>
                           Female
                         </label>
@@ -288,37 +288,37 @@ var Forms = React.createClass({
                           <label className="col-md-4 control-label" htmlFor="radios">Sexual Orientation:</label>
                           <div className="col-md-4">
                           <div className="radio">
-                            <label for="radios-0">
+                            <label hmtlFor="radios-0">
                               <input type="radio"  id="radios-0" onChange={this._handleChangeRadio} name="sexual_orientation" value="heterosexual"/>
                               Heterosexual
                             </label>
                           </div>
                           <div className="radio">
-                            <label for="radios-1">
+                            <label hmtlFor="radios-1">
                               <input type="radio"  id="radios-1" onChange={this._handleChangeRadio} name="sexual_orientation" value="gay"/>
                               Gay
                             </label>
                         </div>
                         <div className="radio">
-                            <label for="radios-0">
+                            <label hmtlFor="radios-0">
                               <input type="radio"  id="radios-2" onChange={this._handleChangeRadio} name="sexual_orientation" value="lesbian" />
                               Lesbian
                             </label>
                           </div>
                           <div className="radio">
-                            <label for="radios-0">
+                            <label hmtlFor="radios-0">
                               <input type="radio"  id="radios-3" onChange={this._handleChangeRadio} name="sexual_orientation" value="bisexual" />
                               Bixesual
                             </label>
                           </div>
                           <div className="radio">
-                            <label for="radios-0">
+                            <label hmtlFor="radios-0">
                               <input type="radio"  id="radios-4" onChange={this._handleChangeRadio} name="sexual_orientation" value="transgender" />
                               Transgender
                             </label>
                           </div>
                           <div className="radio">
-                            <label for="radios-0">
+                            <label htmlFor="radios-0">
                               <input type="radio"  id="radios-5" onChange={this._handleChangeRadio} name="sexual_orientation" value="other" />
                               Other
                             </label>
@@ -332,37 +332,37 @@ var Forms = React.createClass({
                           <label className="col-md-4 control-label" htmlFor="radios">Income:</label>
                           <div className="col-md-4">
                           <div className="radio">
-                            <label for="radios-0">
+                            <label htmlFor="radios-0">
                               <input type="radio"  id="radios-0" onChange={this._handleChangeRadio} name="income" value="0-20,000"/>
                               $0-$20,000
                             </label>
                           </div>
                           <div className="radio">
-                            <label for="radios-1">
+                            <label htmlFor="radios-1">
                               <input type="radio"  id="radios-1" onChange={this._handleChangeRadio} name="income" value="20,000-40,000"/>
                               $20,000-$40,000
                             </label>
                         </div>
                         <div className="radio">
-                            <label for="radios-0">
+                            <label hmtlFor="radios-0">
                               <input type="radio"  id="radios-2" onChange={this._handleChangeRadio} name="income" value="40,000-60,000" />
                               $40,000-$60,000
                             </label>
                           </div>
                           <div className="radio">
-                            <label for="radios-0">
+                            <label hmtlFor="radios-0">
                               <input type="radio"  id="radios-3" onChange={this._handleChangeRadio} name="income" value="60,000-80,000" />
                                $60,000-$80,000
                             </label>
                           </div>
                           <div className="radio">
-                            <label for="radios-0">
+                            <label hmtlFor="radios-0">
                               <input type="radio"  id="radios-4" onChange={this._handleChangeRadio} name="income" value="80,000-100,000" />
                               $80,000-$100,000
                             </label>
                           </div>
                           <div className="radio">
-                            <label for="radios-0">
+                            <label hmtlFor="radios-0">
                               <input type="radio"  id="radios-5"onChange={this._handleChangeRadio} name="income" value="100,000+" />
                               $100,000+
                             </label>
@@ -372,21 +372,7 @@ var Forms = React.createClass({
                         </div>
                         
                         
-                        
-                        
-                        <div className="form-group">
-                            <label> <h4 className="formCategory"> Major Illnesses: (Select all that apply) </h4> </label>
-                            <CheckboxGroup value={this.state.selectedIllnesses} onChange={this._handleIllness} name="major_illnesses">
-                                {
-                                    Object.keys(illnesses).map(function(illness) {
-                                        return <div className="checkbox" key={illness}><label><Checkbox value={illnesses[illness]}/> {illness}</label></div>;
-                                    })
-                                }
-                            </CheckboxGroup>
-                        </div>
-                        
-                        
-                                            {/*<!-- Multiple Checkboxes -->*/}
+                    {/*<!-- Multiple Checkboxes -->*/}
                     <div className="form-group">
                       <label className="col-md-4 control-label" htmlFor="checkboxes">Major Illnesses: (Select all that apply)</label>
                       <div className="col-md-4">
@@ -402,13 +388,7 @@ var Forms = React.createClass({
                         </label>
                     	</div>
                       
-                      
-                      <div className="checkbox">
-                        <label for="checkboxes-1">
-                          <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2"/>
-                          Option two
-                        </label>
-                    	</div>
+            
                       </div>
                     </div>
                         

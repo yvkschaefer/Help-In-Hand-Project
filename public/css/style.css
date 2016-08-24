@@ -389,7 +389,7 @@ footer {
     /*border: 1px white solid;*/
     /*justify-content: flex-end;*/
     /*padding-top: 0.5em;*/
-    border: 2px black solid;
+    /*border: 2px black solid;*/
     text-decoration: none;
     list-style: none;
 }
@@ -429,17 +429,17 @@ footer {
 
 /*LOGOUT BUTTON*/
 
-.logoutButton {
-    border-radius: 8%;
-    font-family: 'Lato', sans-serif;
-    background-color: #999999;
-    color: white;
+/*.logoutButton {*/
+/*    border-radius: 8%;*/
+/*    font-family: 'Lato', sans-serif;*/
+/*    background-color: grey;*/
+/*    color: white;*/
     /*margin-right: 1em;*/
-}
+/*}*/
 
-.logoutButton:hover {
-    background-color: black;
-}
+/*.logoutButton:hover {*/
+/*    background-color: black;*/
+/*}*/
 
 /*.logoutButtonHomepage {*/
 /*    padding-right: 1em;*/
@@ -706,7 +706,7 @@ footer {
 
 /*.questionnaire_forms {*/
 /*    padding: 1em 4em 1em 4em;*/
-/*    background: url('../images/form-page-background.jpg') no-repeat center center fixed;*/
+    /*background: url('../images/form-page-background.jpg') no-repeat center center fixed;*/
 /*    -webkit-background-size: cover;*/
 /*    -moz-background-size: cover;*/
 /*    -o-background-size: cover;*/
