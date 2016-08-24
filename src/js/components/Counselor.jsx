@@ -86,7 +86,7 @@ var Counselor = React.createClass({
     _endCallUi: function() {
         return (
             <div>
-                <button ref="endCall" className='counselorEndCallButton' onClick={this._stopCall}>stop call</button>
+                <button ref="endCall" className='btn btn-primary' onClick={this._stopCall}>stop call</button>
             </div>
         );
     },

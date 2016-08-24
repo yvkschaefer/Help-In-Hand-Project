@@ -140,7 +140,7 @@ var Triage = React.createClass({
     _endCallUi: function() {
         return (
             <div>
-                <button className='stopCallButton' ref='endCall' onClick={this._stopCall}>stop call</button>
+                <button className='btn btn-primary' ref='endCall' onClick={this._stopCall}>stop call</button>
             </div>
         );
     },
@@ -156,8 +156,8 @@ var Triage = React.createClass({
                         <p>you are now connected with a triage counselor</p>
                 }
                     <video className='video' ref="videoPlayer"/>
-                </div>
                     {this._endCallUi()}
+                </div>    
             </div>
         );
     },

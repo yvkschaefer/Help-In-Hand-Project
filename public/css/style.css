@@ -1167,7 +1167,7 @@ footer {
 .triage {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     opacity: 0.8;
 }
 
@@ -1195,7 +1195,7 @@ footer {
 .triageCounselorTalking {
     background: url('../images/video-background-white.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
 }
 
 .triageTalking {
@@ -1210,20 +1210,10 @@ footer {
     border-radius: 1%;
 }
 
-.stopCallButton {
-    margin: 0 0 1vh 2vw;
-    border-radius: 8%;
-    border: none;
-    padding: 0 0.2em 0 0.2em;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.5em;
-    background: white;
-}
-
 .patientHungUpOn {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     opacity: 0.8;
     font-family: 'Lato', sans-serif;
     text-decoration: none;
@@ -1235,7 +1225,7 @@ footer {
 .youStoppedCall {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     opacity: 0.8;
     font-family: 'Lato', sans-serif;
     text-decoration: none;
@@ -1247,7 +1237,7 @@ footer {
 .tCounselorWaiting {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     opacity: 0.8;
     font-family: 'Lato', sans-serif;
     text-decoration: none;
@@ -1284,25 +1274,6 @@ footer {
     width: 15vw;
 }
 
-.priorityButton {
-    border: none;
-    border-radius: 8%;
-    background: white;
-    padding: 0 0.2em 0 0.2em;
-    margin: 0 0.2em 1em 0.4em;
-    font-family: sans-serif;
-}
-
-.tCounselorStopCallButton {
-    margin: 0 0 1vh 2vw;
-    border-radius: 8%;
-    border: none;
-    padding: 0 0.2em 0 0.2em;
-    font-family: sans-serif;
-    font-size: 1.5em;
-    background: white;
-}
-
 .patientIntakeForm {
     margin: 0 0 0 4vw;
     font-size: 0.4em;
@@ -1317,16 +1288,10 @@ footer {
     text-decoration: none;
 }
 
-.tCounselorLogoutButton {
-    border-radius: 10%;
-    padding: 0 0.2em 0 0.2em;
-    border: none;
-}
-
 .loggedOutPage {
     background: url('../images/triageBackground.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     opacity: 0.8;
     padding: 25vh 0 0 2vh;
     font-family: 'Lato', sans-serif;
