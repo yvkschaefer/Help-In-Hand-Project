@@ -218,6 +218,7 @@ var Forms = React.createClass({
 
         // this part is for Main Symptoms section
         var symptoms = this.state.selectedIllnesses.map(function(illness) {
+            console.log(illness, "THE ILLNESS")
             return (
                 <CheckboxGroup value={that.state.selectedSymptoms[illness.id]} onChange={that._handleSymptoms(illness.id)} key={illness.id}>
                 {
@@ -254,13 +255,13 @@ var Forms = React.createClass({
                       <label className="col-md-4 control-label" htmlFor="radios">Gender:</label>
                       <div className="col-md-4">
                       <div className="radio">
-                        <label hmtlFor="radios-0">
+                        <label htmlFor="radios-0">
                           <input type="radio" onChange={this._handleChangeRadio} id="radios-0" name="gender" value="male" />
                           Male
                         </label>
                     	</div>
                       <div className="radio">
-                        <label hmtlFor="radios-1">
+                        <label htmlFor="radios-1">
                           <input type="radio" onChange={this._handleChangeRadio} id="radios-1" name="gender" value="female"/>
                           Female
                         </label>
@@ -288,31 +289,31 @@ var Forms = React.createClass({
                           <label className="col-md-4 control-label" htmlFor="radios">Sexual Orientation:</label>
                           <div className="col-md-4">
                           <div className="radio">
-                            <label hmtlFor="radios-0">
+                            <label htmlFor="radios-0">
                               <input type="radio"  id="radios-0" onChange={this._handleChangeRadio} name="sexual_orientation" value="heterosexual"/>
                               Heterosexual
                             </label>
                           </div>
                           <div className="radio">
-                            <label hmtlFor="radios-1">
+                            <label htmlFor="radios-1">
                               <input type="radio"  id="radios-1" onChange={this._handleChangeRadio} name="sexual_orientation" value="gay"/>
                               Gay
                             </label>
                         </div>
                         <div className="radio">
-                            <label hmtlFor="radios-0">
+                            <label htmlFor="radios-0">
                               <input type="radio"  id="radios-2" onChange={this._handleChangeRadio} name="sexual_orientation" value="lesbian" />
                               Lesbian
                             </label>
                           </div>
                           <div className="radio">
-                            <label hmtlFor="radios-0">
+                            <label htmlFor="radios-0">
                               <input type="radio"  id="radios-3" onChange={this._handleChangeRadio} name="sexual_orientation" value="bisexual" />
                               Bixesual
                             </label>
                           </div>
                           <div className="radio">
-                            <label hmtlFor="radios-0">
+                            <label htmlFor="radios-0">
                               <input type="radio"  id="radios-4" onChange={this._handleChangeRadio} name="sexual_orientation" value="transgender" />
                               Transgender
                             </label>
@@ -344,25 +345,25 @@ var Forms = React.createClass({
                             </label>
                         </div>
                         <div className="radio">
-                            <label hmtlFor="radios-0">
+                            <label htmlFor="radios-0">
                               <input type="radio"  id="radios-2" onChange={this._handleChangeRadio} name="income" value="40,000-60,000" />
                               $40,000-$60,000
                             </label>
                           </div>
                           <div className="radio">
-                            <label hmtlFor="radios-0">
+                            <label htmlFor="radios-0">
                               <input type="radio"  id="radios-3" onChange={this._handleChangeRadio} name="income" value="60,000-80,000" />
                                $60,000-$80,000
                             </label>
                           </div>
                           <div className="radio">
-                            <label hmtlFor="radios-0">
+                            <label htmlFor="radios-0">
                               <input type="radio"  id="radios-4" onChange={this._handleChangeRadio} name="income" value="80,000-100,000" />
                               $80,000-$100,000
                             </label>
                           </div>
                           <div className="radio">
-                            <label hmtlFor="radios-0">
+                            <label htmlFor="radios-0">
                               <input type="radio"  id="radios-5"onChange={this._handleChangeRadio} name="income" value="100,000+" />
                               $100,000+
                             </label>
@@ -377,7 +378,7 @@ var Forms = React.createClass({
                       <label className="col-md-4 control-label" htmlFor="checkboxes">Major Illnesses: (Select all that apply)</label>
                       <div className="col-md-4">
                       <div className="checkbox">
-                        <label hmtlFor="checkboxes-0">
+                        <label htmlFor="checkboxes-0">
                             <CheckboxGroup value={this.state.selectedIllnesses} onChange={this._handleIllness} name="major_illnesses">
                                 {
                                     Object.keys(illnesses).map(function(illness) {
@@ -391,13 +392,23 @@ var Forms = React.createClass({
             
                       </div>
                     </div>
-                        
-                        
-                        <div className="form-group">
-                            <label> <h4 className="formCategory"> Symptoms: (Select all that apply) </h4> </label>
-                            {symptoms}
-                        </div>
-    
+                    
+
+                    
+                    {/*<!-- Multiple Checkboxes -->*/}
+                    <div className="form-group">
+                      <label className="col-md-4 control-label" htmlFor="checkboxes">Symptoms: (Select all that apply)</label>
+                      <div className="col-md-4">
+                      <div className="checkbox">
+                        <label htmlFor="checkboxes-0">
+                          {symptoms}
+                        </label>
+                    	</div>
+                      </div>
+                    </div>
+                    
+
+                    
                       
                       
                         
@@ -413,7 +424,7 @@ var Forms = React.createClass({
                         
                     {/*<!-- Button -->*/}
                     <div className="form-group">
-                      <label className="col-md-4 control-label" htmlFor="singlebutton">Single Button</label>
+                      <label className="col-md-4 control-label" htmlFor="singlebutton"></label>
                       <div className="col-md-4">
                         <button id="singlebutton" name="singlebutton" className="btn btn-primary" onClick={this._submitForm}>Submit</button>
                       </div>
