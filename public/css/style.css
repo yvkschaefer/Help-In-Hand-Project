@@ -67,6 +67,7 @@ hr.small {
 
 #sidebar-wrapper {
     z-index: 1000;
+    top: 0;
     position: fixed;
     right: 0;
     width: 250px;
@@ -153,8 +154,8 @@ hr.small {
 .header {
     display: table;
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: url(../img/bg.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -248,3 +249,840 @@ footer {
   bottom: 5px;
   right: 5px;
 }
+
+
+
+
+/*--------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    font-family: 'Bitter', sans-serif;*/
+/*}*/
+
+/*.mainContent {*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*    background-color: white;*/
+/*}*/
+
+
+/*--------------------------------------------------------*/
+
+/*HOMEPAGE NAVIGATION BAR*/
+
+
+/*.homepageNavigationCategory {*/
+/*    font-size: 1.5em;*/
+/*}*/
+
+/*.outerContainer {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+/*.wrapper{*/
+/*  width: 100%;*/
+  /*max-width: 960px;*/
+/*  margin: 0 auto;*/
+/*  position: fixed;*/
+/*}*/
+
+
+/*nav{*/
+/*  background: #333;*/
+/*}*/
+
+/*nav ul{*/
+/*  list-style-type: none;*/
+/*  padding: 0;*/
+/*}*/
+
+/*nav a{*/
+/*  text-decoration: none;*/
+/*  text-align: center;*/
+/*  color: #fff;*/
+/*  display: block;*/
+/*  padding: 1em 1em 0em 1em;*/
+/*}*/
+
+/*nav a:hover{*/
+/*  background-color: #555;*/
+/*}*/
+
+/*@media screen and (min-width: 768px){*/
+
+/*  nav ul{*/
+/*    display: flex;*/
+/*  }*/
+  
+  /*nav li{*/
+  /*  flex: 1 1 0;*/
+  /*}*/
+  
+/*  nav {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*  }*/
+  
+/*  .social {*/
+/*    margin: 0;*/
+/*  }*/
+
+} /* end media 768 */
+
+
+
+/*--------------------------------------------------------*/
+
+/*HOMEPAGE LOGIN FUNCTIONS*/
+
+/*.login {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    margin-right: 0.4em;*/
+/*}*/
+
+/*.loginButtons {*/
+/*    display: flex;*/
+    /*align-content: flex-end;*/
+    /*border: 1px white solid;*/
+/*    justify-content: flex-end;*/
+/*    padding-top: 0.5em;*/
+/*}*/
+
+/*.facebookImage {*/
+/*    border: 2px solid black;*/
+/*    border-radius: 20%;*/
+/*    margin: 0em 0.5em;*/
+/*    height: 2.8em;*/
+/*    width: 2.8em;*/
+/*}*/
+
+/*.twitterImage {*/
+/*    border-radius: 20%;*/
+/*    margin: 0em 0.5em;*/
+/*    height: 2.8em;*/
+/*    width: 2.8em;*/
+/*    padding: 0.25em;*/
+/*}*/
+
+/*.googleImage {*/
+    /*border: 2px solid black;*/
+/*    border-radius: 20%;*/
+/*    margin: 0.1em 1em 0em 0.4em;*/
+/*    height: 2.6em;*/
+/*    width: 2.6em;*/
+/*}*/
+
+
+/*--------------------------------------------------------*/
+
+/*LOGOUT BUTTON*/
+
+/*.logoutButton {*/
+/*    border-radius: 15%;*/
+/*    height: 2.6em;*/
+/*    width: 5em;*/
+/*    font-family: 'Lato', sans-serif;*/
+/*    background-color: white;*/
+/*    color: black;*/
+/*    margin-right: 1em;*/
+/*}*/
+
+/*.logoutButtonHomepage {*/
+/*    padding-right: 1em;*/
+/*}*/
+
+
+/*--------------------------------------------------------*/
+
+/*HOMEPAGE INTRODUCTION*/
+
+
+/*.choicesText {*/
+/*    background: url('http://www.it.kmitl.ac.th/~it58070143/blog/wp-content/uploads/2016/03/sky-03.jpg') no-repeat center center fixed;*/
+/*    opacity: 0.80;*/
+/*    background-size: cover;*/
+/*    height: 90vh;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
+
+/*.mainBodyDiv {*/
+/*    margin: -10px;*/
+/*}*/
+
+/*.homepageLanding {*/
+/*    padding: 40em 0em 0em 55em;*/
+    /*font: 10em;*/
+/*}*/
+
+/*.homepageLandingImage {*/
+/*    padding-left: 20em;*/
+/*}*/
+
+/*.homepageLandingText {*/
+/*    font-size: 6em;*/
+    /*padding-left: 3em;*/
+/*}*/
+
+
+
+/*.homepageIntroduction {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.item {*/
+/*    height: 75.5vh;*/
+/*}*/
+
+/*.mainBodyDiv h2 {*/
+/*    font-size: 3em;*/
+/*}*/
+
+
+/*a:hover {*/
+/*    text-decoration: none;*/
+/*    color: red;*/
+/*}*/
+
+/*.choicesText {*/
+/*    font-size: 0.6em;*/
+/*    font-family: 'Bitter', sans-serif;*/
+/*}*/
+
+/*.homepageMessage1 {*/
+/*    padding: 0.5em 0em 0em 0.5em;*/
+/*    color: black;*/
+/*}*/
+
+/*.homepageMessage2 {*/
+/*    color: black;*/
+/*    padding: 0.5em 0em 0em 0.5em;*/
+/*    display: flex;*/
+
+/*}*/
+
+/*.homepageBodyLinks {*/
+/*    margin-left: 2em;*/
+/*}*/
+
+
+/*--------------------------------------------------------*/
+
+/*BODY OF HOMEPAGE: About us, Services, Instructions*/
+
+/*.moreInfo {*/
+/*    text-align: center;*/
+/*    padding: 4em 6em;*/
+/*}*/
+
+/*.textInHomepage {*/
+/*    font-size: 1.2em;*/
+/*    color: #666666;*/
+/*}*/
+
+/*.lineSeparator {*/
+/*    display: block;*/
+/*    position: relative;*/
+/*    padding: 0;*/
+/*    margin: 8px auto;*/
+/*    height: 0;*/
+/*    width: 50%;*/
+/*    max-height: 0;*/
+/*    font-size: 1px;*/
+/*    line-height: 0;*/
+/*    clear: both;*/
+/*    border: none;*/
+/*    border-top: 1px solid #aaaaaa;*/
+/*    border-bottom: 1px solid #ffffff;*/
+/*}*/
+
+/*#aboutUs, #services, #ourCounselors, #instructions {*/
+/*    padding: 6em 0em;*/
+/*}*/
+
+
+/*--------------------------------------------------------*/
+
+
+/*BODY OF HOMEPAGE: Our Counselors*/
+
+/*.ourCounselorsHomepage {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: space-between;*/
+/*    padding-bottom: 3.5em;*/
+/*}*/
+
+/*.ourCounselorsHomepageHeaderText {*/
+/*    padding: 3.5em 0em 3em 0em;*/
+/*}*/
+
+/*.ourCounselor1, .ourCounselor2 {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    width: 47%;*/
+/*    padding: 0% 1%;*/
+/*}*/
+
+/*.counselorsProfilePictureHomepage {*/
+/*    height: 13em;*/
+/*    width: 13em;*/
+/*    border-radius: 60%;*/
+/*}*/
+
+/*.counselorNameOnHomepage {*/
+/*    font-weight: bold;*/
+/*    font-size: 2em;*/
+/*}*/
+
+/*.counselorDescriptionOnHomepage {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    font-size: 1.2em;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------*/
+
+/*FOOTER OF ALL PAGE*/
+
+.footer {
+    background-color: black;
+
+    padding: 1em 0em 1em 7.5em;
+    padding: 1em 1em 0.3em 1em;
+    font-weight: bold;
+}
+
+.mainPageButtons {
+    flex: 1 0 200px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: .5em;
+    margin-left: 1em;
+    margin-top: 1em;
+    color: white;
+    font-size: 2em;
+}
+
+.mainPageLinkButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.googleSearch {
+    padding-left: 3em;
+}
+
+.linksToOtherPages {
+    padding: 0em 12em;
+}
+
+.homepageFooterContact {
+    padding-right: 3em;
+}
+
+.contactUs {
+    font-size: 1.5em;
+}
+
+/*--------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*FORM PAGE*/
+
+.questionnaire_forms {
+    padding: 1em 4em 1em 4em;
+    background: url('../images/form-page-background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.formHeader {
+    margin-bottom: 1em;
+}
+
+.formHeader:after {
+    content: ' ';
+    display: block;
+    border: 1px solid black;
+}
+
+.formCategory {
+    font-weight: bold;
+}
+
+.formHeader {
+    margin-bottom: 1em;
+    padding: 1em;
+    text-align: center;
+}
+
+.formHeader:after {
+    content: ' ';
+    display: block;
+    border: 1px solid black;
+    margin-top: 0.3em;
+}
+
+.formCategory {
+    font-weight: bold;
+}
+
+.formsTopBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    font-size: 1.5em;
+}
+
+.homepageButtonOnForms {
+    border-radius: 15%;
+    height: 2.2em;
+    width: 5em;
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    color: black;
+}
+
+.homepageButtonOnForms:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.homepageButtonLinkOnForms {
+    padding-right: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------*/
+
+
+/*COUNSELORS PROFILE PAGE*/
+.counselorsBackground {
+    margin-top: -1.4em;
+    background-color: black;
+}
+
+.counselorsProfilePage {
+    background: url('../images/counselor-profile-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    padding: 0em 1em 1em 1em;
+}
+
+.counselorsHeaderText {
+    font-size: 3em;
+    text-align: center;
+    padding-top: 0.2em;
+}
+
+.counselorsInformation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 2px solid black;
+
+}
+
+.counselorsProfilePicture {
+    width: 10em;
+    height: 10em;
+    display: flex;
+    margin: 1.2em;
+    border-radius: 60%;
+}
+
+.counselorsTextInformation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+.counselorsName {
+    font-weight: bold;
+    /*margin-top: -45px;*/
+    /*height: 150px;*/
+    font-size: 2.2em;
+}
+
+.patientComments {
+    font-size: 1.1em;
+}
+
+.counselorsCredentials {
+    font-size: 1.1em;
+}
+
+.counselorsStatus {
+    justify-content: flex-end;
+}
+
+.counselorsTopBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    font-size: 1.5em;
+}
+
+.counselorsHeaderText {
+    color: white;
+    font-family: 'Bitter', sans-serif;
+}
+
+.homepageButtonOnCounselorsProfile {
+    border-radius: 15%;
+    height: 2.2em;
+    width: 5em;
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    color: black;
+}
+
+.homepageButtonOnCounselorsProfile:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.homepageButtonLinkOnCounselorsProfile {
+    padding-right: 1em;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+/*TRIAGE PAGE*/
+
+.triage {
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+    opacity: 0.8;
+}
+
+.triageText {
+    padding: 25vh 0 0 2vh;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: #0D0D25;
+}
+
+.triageWaiting img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.dots {
+    margin: 0 0 0 0.08em;
+}
+
+.triageTalking,
+.triageCounselorTalking,
+.counselorTalking {
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+}
+
+.triageTalkingText {
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: #0D0D25;
+    padding: 8vh 0 0 1vh;
+}
+
+.stopCallButton {
+    margin: 0 0 1vh 0;
+    border-radius: 20%;
+    padding: 0 0.2em 0 0.2em;
+    font-family: 'Lato', sans-serif;
+}
+
+.youStoppedCall,
+.tCounselorWaiting {
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+    opacity: 0.8;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+/*TRIAGE COUNSELOR PAGE*/
+
+.tCounselorConnectedMainContents, .counselorConnectedMainContents {
+    display: flex;
+}
+
+
+.tCounselorWaiting,
+.counselorWaiting {
+    padding: 25vh 0 0 2vh;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: #0D0D25;
+    text-decoration: none;
+}
+
+.tCounselorLogoutButton {
+    border-radius: 10%;
+    padding: 0 0.2em 0 0.2em;
+}
+
+.loggedOutPage {
+    background: url('../images/triageBackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+    opacity: 0.8;
+    padding: 25vh 0 0 2vh;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: #234C75;
+    text-decoration: none;
+}
+
+
+/*--------------------------------------------------------*/
+
+
+/*VIDEO COUNSELOR PAGE*/
+
+
+
+
+
+
+
+
+  /*--------------------------------------------------------*/
+
+   /*CONTACT US PAGE*/
+.contactUsForm {
+    padding-bottom: 3em;
+}
+   
+/*#contact-form {*/
+/*   background-color: black;*/
+/*   padding: 10px 20px 30px 20px;*/
+/*   max-width:100%;*/
+/*   float: left;*/
+/*   position: relative;*/
+/*   margin-top:30px;*/
+/*   border-radius:7px;*/
+/*   -webkit-border-radius:7px;*/
+/*   -moz-border-radius:7px;*/
+/*}*/
+
+/*#contactFormText {*/
+/*    color: white;*/
+/*}*/
+/*#contact-form input,   */
+/*#contact-form select,   */
+/*#contact-form textarea,   */
+/*#contact-form label { */
+/*   font-size: 15px;  */
+/*   margin-bottom: 2px;*/
+/*   font-family: Arial, san-serif;*/
+/*} */
+/*#contact-form input,   */
+/*#contact-form select,   */
+/*#contact-form textarea { */
+/*   width:100%;*/
+/*   background: #fff;*/
+/*   border: 0; */
+/*   -moz-border-radius: 4px;  */
+/*   -webkit-border-radius: 4px;  */
+/*   border-radius: 4px;*/
+/*   margin-bottom: 25px;  */
+/*   padding: 5px;  */
+/*}  */
+/*#contact-form input:focus,   */
+/*#contact-form select:focus,   */
+/*#contact-form textarea:focus {  */
+/*   background-color: #E5E6E7; */
+/*}  */
+/*#contact-form textarea {*/
+/*   width:100%;*/
+/*   height: 150px;*/
+/*}*/
+/*#contact-form button[type="submit"] {*/
+/*   cursor:pointer;*/
+/*   width:100%;*/
+/*   border:none;*/
+/*   background:#991D57;*/
+/*   background-image:linear-gradient(bottom, #8C1C50 0%, #991D57 52%);*/
+/*   background-image:-moz-linear-gradient(bottom, #8C1C50 0%, #991D57 52%);*/
+/*   background-image:-webkit-linear-gradient(bottom, #8C1C50 0%, #991D57 52%);*/
+/*   color:white;*/
+/*   margin:0 0 5px;*/
+/*   padding:10px;*/
+/*   border-radius:5px;*/
+/*}*/
+/*#contact-form button[type="submit"]:hover {*/
+/*   background-image:linear-gradient(bottom, #9C215A 0%, #A82767 52%);*/
+/*   background-image:-moz-linear-gradient(bottom, #9C215A 0%, #A82767 52%);*/
+/*   background-image:-webkit-linear-gradient(bottom, #9C215A 0%, #A82767 52%);*/
+/*   -webkit-transition:background 0.3s ease-in-out;*/
+/*   -moz-transition:background 0.3s ease-in-out;*/
+/*   transition:background-color 0.3s ease-in-out;*/
+/*}*/
+/*#contact-form button[type="submit"]:active {*/
+/*   box-shadow:inset 0 1px 3px rgba(0,0,0,0.5);*/
+/*}*/
+/*input:required, textarea:required {  */
+/*   box-shadow: none;*/
+/*   -moz-box-shadow: none;  */
+/*   -webkit-box-shadow: none;  */
+/*   -o-box-shadow: none;  */
+/*} */
+/*#contact-form .required {  */
+/*   font-weight:bold;  */
+/*   color: white;      */
+/*}*/
+
+/* Hide success/failure message
+   (especially since the php is missing) */
+/*#failure, #success {*/
+/*   color: white; */
+/*   display:none;  */
+/*}*/

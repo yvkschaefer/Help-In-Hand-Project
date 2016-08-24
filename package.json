@@ -37,6 +37,7 @@
     "react-checkbox-group": "^3.0.0",
     "react-dom": "^15.3.1",
     "react-router": "^2.7.0",
+    "react-scroll": "^1.2.0",
     "secure-random": "^1.1.1",
     "simple-peer": "^6.0.7",
     "socket.io": "^1.4.8",

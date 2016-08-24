@@ -5,6 +5,7 @@ var withRouter = require('react-router').withRouter;
 var fr = require('../../firebase/firebase.js');
 var $ = require('jquery');
 
+
 var ContactUs = React.createClass({
 	submitEmailInfo: function () {
 		$.post('/contactUs', {
@@ -27,38 +28,66 @@ var ContactUs = React.createClass({
 	},
     render: function() {
         return (
-            <div>
-                <div className="contactUsTopBar">
-	                <p id="appName"> Help In Hand </p>
-	                <div className="homepageButtonLinkOnContactUs">
-	                	<Link to="/"><button className='homepageButtonOnContactUs'>Homepage</button></Link>
-	                </div>
-	            </div>
-	            <div className="contactUsMainPage">
-	            	<div className="contactUsFormInput">
-	            		<p className="contactUsText">Please enter your name or pseudonym</p>
-	            		<input type="text" className="contactUsUsername" ref="contactUsUsernameEntry" />
-	            		<br />
-	            		<br />
-	            		<p className="contactUsText">Email Address</p>
-	            		<input type="text" className ="contactUsEmailAddress" ref="contactUsEmailEntry" />
-	            		<br />
-	            		<br />
-	            		<p className="contactUsText">Please write a relevant email title so that our counselors can adequately place you</p>
-	            		<input type="text" className="contactUsTitle" ref="contactUsUserTitleEntry" />
-	            		<br />
-	            		<br />
-	            		<p className="contactUsText">Leave your message here:</p>
-	            		<textarea className ="contactUsMessage" ref="contactUsMessageEntry" rows="5"></textarea>
-	            		<br />
-	            		<button onClick={this.submitEmailInfo}>Submit your info</button>
-	            	</div>
-	            </div>
-            </div>
-        );
-    }
-    
+        	<div className="contactUsForm">
+
+					<form className="form-horizontal">
+<fieldset>
+
+
+<legend>Form Name</legend>
+
+
+<div className="form-group">
+  <label className="col-md-4 control-label" for="textinput">Text Input</label>  
+  <div className="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="placeholder" className="form-control input-md" />
+  <span className="help-block">help</span>  
+  </div>
+</div>
+
+
+<div className="form-group">
+  <label className="col-md-4 control-label" for="textinput">Text Input</label>  
+  <div className="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="placeholder" className="form-control input-md"/>
+  <span className="help-block">help</span>  
+  </div>
+</div>
+
+
+<div className="form-group">
+  <label className="col-md-4 control-label" for="textarea">Text Area</label>
+  <div className="col-md-4">                     
+    <textarea className="form-control" id="textarea" name="textarea">default text</textarea>
+  </div>
+</div>
+
+
+<div className="form-group">
+  <label className="col-md-4 control-label" for="textinput">Text Input</label>  
+  <div className="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="placeholder" className="form-control input-md"/>
+  <span className="help-block">help</span>  
+  </div>
+</div>
+
+
+<div className="form-group">
+  <label className="col-md-4 control-label" for="singlebutton">Single Button</label>
+  <div className="col-md-4">
+    <button id="singlebutton" name="singlebutton" className="btn btn-primary">Button</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+	
+</div>
+	);
+	}
 });
+
+
 
 var ContactUsWithRoute = withRouter(ContactUs);
 
