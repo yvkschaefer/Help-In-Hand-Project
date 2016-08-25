@@ -380,7 +380,7 @@ var Forms = React.createClass({
 
                       <label className="col-md-4 control-label" htmlFor="singlebutton"></label>
                       <div className="col-md-4">
-                        <button id="singlebutton" name="singlebutton" className="btn btn-primary" onClick={this._submitForm}>Submit</button>
+                        <button id="singlebutton" name="singlebutton" className="btn btn-primary" onClick={this._submitForm}>Submit and Speak with a Counselor</button>
                       </div>
                     </div>
                     
