@@ -234,9 +234,12 @@ var Forms = React.createClass({
         <div>
             
             <div className="questionnaire_forms">
-            
-                <legend className="formTitle">Please complete this form</legend>
-                
+                <legend>
+                <div  className="formTitle">
+                    <h2>Questionnaire</h2>
+                    <Link to="/"><button className="btn btn-primary" id="counselorProfileHomepageButton">Homepage</button></Link>
+                </div>
+                </legend>
                 <form onSubmit={this._handleText} className="form-horizontal">
                     
                     <fieldset className="well well-lg">

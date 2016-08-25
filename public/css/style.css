@@ -170,7 +170,7 @@ hr.small {
 }
 
 .questionnaire_forms {
-    padding: 3em;
+    padding-top: 1em;
 }
 
 .contactUsForm {
@@ -179,7 +179,13 @@ hr.small {
 }
 
 .formTitle {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-left: 3em;
+    padding-right: 3em;
+    font-size: 2em;
 }
 
 
@@ -773,8 +779,8 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 1.2em;
-    padding-left: 12em;
-    padding-right: 12em;
+    padding-left: 3em;
+    padding-right: 3em;
 }
 
 .legendText {
@@ -792,10 +798,6 @@ body {
 }
 .form-control{
     font-size: 1.2em;
-}
-
-#contactFormHomepageButton {
-    font-size: 1em;
 }
 
 #contactFormSubmitButton {
