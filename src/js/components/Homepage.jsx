@@ -173,7 +173,8 @@ var Homepage = React.createClass({
                 {/*<!-- Header -->*/}
                 <header id="top" className="header">
                     <div className="text-vertical-center">
-                        <h1>Help In Hand</h1>
+                        <h1 className="homepageTitle">Help In Hand</h1>
+                        <h3 className="homepageTitle">We Connect You With Local Counselors</h3>
                         <br/>
                         {speakToCounselorButton}
                         <p className="loginBelow">{loginBelow} </p>
@@ -195,9 +196,70 @@ var Homepage = React.createClass({
                         </div>
                     </section>
                 </Element>
+                
+                
+                    {/*<!-- EXPERIMENTAL SERVICES -->*/}
+                
+                 <Element name="services" className="element" >
+                    <section id="services" className="services bg-primary">
+                        <div className="container">
+                            <div className="row text-center">
+                                <div className="col-lg-10 col-lg-offset-1">
+                                    <h2>Our Services</h2>
+                                    <hr className="small" />
+                                    <div className="row">
+                                        <div className="col-md-4 col-sm-6">
+                                            <div className="service-item">
+                                                <span className="fa-stack fa-4x">
+                                                <i className="fa fa-circle fa-stack-2x"></i>
+                                                <i className="fa fa-cloud fa-stack-1x text-primary"></i>
+                                            </span>
+                                                <h4>
+                                                    <strong>Become a Patient</strong>
+                                                </h4>
+                                                <p>Please fill out our form to help us understand you.</p>
+                                                <a href="/forms" className="btn btn-light servicesBtn">Fill out</a>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 col-sm-6">
+                                            <div className="service-item">
+                                                <span className="fa-stack fa-4x">
+                                                <i className="fa fa-circle fa-stack-2x"></i>
+                                                <i className="fa fa-compass fa-stack-1x text-primary"></i>
+                                            </span>
+                                                <h4>
+                                                    <strong>Talk to a Counselor</strong>
+                                                </h4>
+                                                <p className='lowerDown'>Please login to speak with one of our counselors.</p>
+                                                <a href="/triage" className="btn btn-light servicesBtn">Talk</a>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 col-sm-6">
+                                            <div className="service-item">
+                                                <span className="fa-stack fa-4x">
+                                                <i className="fa fa-circle fa-stack-2x"></i>
+                                                <i className="fa fa-flask fa-stack-1x text-primary"></i>
+                                            </span>
+                                                <h4>
+                                                    <strong>Become a Counselor</strong>
+                                                </h4>
+                                                <p>Join our team of volunteers and help someone in need.</p>
+                                                <a href="#" className="btn btn-light servicesBtn">Join</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </Element>
+                
+                
+                
+                
     
                 {/*<!-- Services -->*/}
-                <Element name="services" className="element" >
+                {/*<Element name="services" className="element" >
                     <section id="services" className="services bg-primary">
                         <div className="container">
                             <div className="row text-center">
@@ -262,7 +324,7 @@ var Homepage = React.createClass({
                             </div>
                         </div>
                     </section>
-                </Element>
+                </Element>*/}
                 
                 
                 {/*<!-- Instructions -->*/}
@@ -286,7 +348,7 @@ var Homepage = React.createClass({
             {/*<!-- Callout -->*/}
             <aside className="callout">
                 <div className="text-vertical-center">
-                    <h1>We are ready to help you no matter what the problem</h1>
+                    <p className="homepageMessage">We are ready to help you <br/>no matter what the problem</p>
                 </div>
             </aside>
                     
@@ -301,7 +363,7 @@ var Homepage = React.createClass({
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-10 col-lg-offset-1 text-center">
-                                <h2> Our Counselors </h2>
+                                <Link to="counselorsProfile"> <h2> Our Counselors </h2> </Link>
                                 <hr className="small" />
                                 <div className="row">
                                     <div className="col-md-6">

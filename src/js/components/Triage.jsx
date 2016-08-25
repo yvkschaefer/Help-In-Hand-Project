@@ -152,9 +152,9 @@ var Triage = React.createClass({
                     <div className='centerBox'>
                     {
                         this.state.queued ?
-                            <p>you are now connected with a counselor</p>
+                            <p className='topText'>you are now connected with a counselor</p>
                             :
-                            <p>you are now connected with a triage counselor</p>
+                            <p className='topText'>you are now connected with a triage counselor</p>
                     }
                         <video className='video' ref="videoPlayer"/>
                         {this._endCallUi()}
@@ -173,7 +173,7 @@ var Triage = React.createClass({
                         :
                         this.state.queued ?
                             <div className="triage">
-                                <div className="triageText">
+                                <div className="triageLoggedOutText">
                                     <p>You are in a queue to talk to a counselor.</p>
                                     <p>Please wait :) </p>
                                 </div>
@@ -183,7 +183,7 @@ var Triage = React.createClass({
                                 <GotHungUpOn/>
                                 :
                                 <div className="triage">
-                                    <div className='triageText'>
+                                    <div className='triageLoggedOutText'>
                                         <p>You are in a queue for triage</p>
                                         <p>
                                             Thanks for your patience
