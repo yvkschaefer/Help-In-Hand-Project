@@ -38,3 +38,16 @@ Webview browser.
 Thanks for checking out our project!
 
 yvkschaefer@gmail.com
+
+
+LandingPage:
+
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-homepage.png?raw=true "landing page")
+
+Form Example:
+
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-form.png?raw=true "form")
+
+WebRTC stream example:  
+
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-WebRTC.png?raw=true "WebRTC")
