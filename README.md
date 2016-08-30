@@ -41,4 +41,4 @@ yvkschaefer@gmail.com
 
 Hello
 
-![Alt text](/files/images/screencapture-help-in-hand.png?raw=true)
+![Alt text](/files/images/screencapture-help-in-hand.png?raw=true "Title")
