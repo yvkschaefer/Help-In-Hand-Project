@@ -4,6 +4,7 @@ DecodeMTL Final Project
 <br/>August 2016
 
 Dylan Pelletier, Takanari Sasaki, Kara Schaefer
+<br/>
 <br/>Advisor: Ziad Saab
 <br/>Special thanks: @ziad-saab, @nyanofthemoon, @dcodus, & @HarrisRobin
 
