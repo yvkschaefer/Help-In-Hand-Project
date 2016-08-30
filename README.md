@@ -35,9 +35,9 @@ Webview browser.
 Thanks for checking out our project!
 
 yvkschaefer@gmail.com
-<p align="center">
-    <img src="/files/images/screencapture-help-in-hand.png" />
-</p>
+<br>
+    <img src="/files/images/screencapture-help-in-hand.png" width="350" />
+<br>
 
 Hello
 
