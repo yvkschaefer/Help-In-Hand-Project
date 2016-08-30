@@ -41,4 +41,4 @@ yvkschaefer@gmail.com
 
 Hello
 
-![Screenshot](/help-in-hand-project/public/images/screencapture-help-in-hand.png)
+![Alt text]('/help-in-hand-project/public/images/screencapture-help-in-hand.png')
