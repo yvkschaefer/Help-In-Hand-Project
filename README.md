@@ -38,6 +38,14 @@ Thanks for checking out our project!
 
 yvkschaefer@gmail.com
 
-screencapture-help-in-hand-project-dysupes-c9users-io-1472571581069
+Landing Page:
 
-![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-help-in-hand-project-dysupes-c9users-io-1472571581069.png?raw=true "landing page")
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-homepage.png?raw=true "landing page")
+
+Form Example:
+
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-form.png?raw=true "form")
+
+WebRTC stream example:
+
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-WebRTC.png?raw=true "WebRTC")
