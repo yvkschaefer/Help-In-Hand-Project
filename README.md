@@ -35,6 +35,10 @@ Webview browser.
 Thanks for checking out our project!
 
 yvkschaefer@gmail.com
-<a href>
+<p align="center">
     <img src="/files/images/screencapture-help-in-hand.png" />
-</a>
+</p>
+
+Hello
+
+![Alt text](/files/images/screencapture-help-in-hand.png?raw=true)
