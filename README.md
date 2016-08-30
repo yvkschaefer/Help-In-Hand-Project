@@ -36,7 +36,7 @@ Thanks for checking out our project!
 
 yvkschaefer@gmail.com
 <br>
-    <img src="/help-in-hand-project/public/images/screencapture-help-in-hand.png" width="350" />
+    <img src="/screencapture-help-in-hand.png" width="350" />
 <br>
 
 <!--![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-help-in-hand.png?raw=true "landing page")-->
