@@ -38,6 +38,7 @@ Thanks for checking out our project!
 
 yvkschaefer@gmail.com
 
+
 Landing Page:
 
 ![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-homepage.png?raw=true "landing page")
