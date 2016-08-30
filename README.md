@@ -25,6 +25,15 @@ after the homepage link. You may assign a priority there, this puts the patient 
 If you would like to access the counselor page to speak with the patient, simply type '/counselor' 
 after the homepage link and you will be connected as a counselor.
 
+
+A few notes:
+- At the time of writing, our WebRTC is not available on mobile devices, unless you have the Android 
+Webview browser. 
+- Our WebRTC is best accessed from Chrome browsers.
+
+
 Thanks for checking out our project!
 
 yvkschaefer@gmail.com
+
+<img src="/files/images/screencapture-help-in-hand.png" />
