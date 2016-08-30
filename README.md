@@ -42,12 +42,12 @@ yvkschaefer@gmail.com
 
 LandingPage:
 
-![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-homepage.png?raw=true "landing page")
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/master/screencapture-homepage.png?raw=true "landing page")
 
 Form Example:
 
-![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-form.png?raw=true "form")
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/master/screencapture-form.png?raw=true "form")
 
 WebRTC stream example:  
 
-![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-WebRTC.png?raw=true "WebRTC")
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/master/screencapture-WebRTC.png?raw=true "WebRTC")
