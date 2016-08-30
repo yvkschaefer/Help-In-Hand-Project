@@ -6,7 +6,6 @@ DecodeMTL Final Project
 Dylan Pelletier, Takanari Sasaki, Kara Schaefer
 <br/>
 <br/>Advisor: Ziad Saab
-<br/>Special thanks: @ziad-saab, @nyanofthemoon, @dcodus, & @HarrisRobin
 
 Help in Hand is a web application that targets people in need of immediate help. Patients can 
 fill out a form that describes their problem, and talk to a counselor about their concerns. 
