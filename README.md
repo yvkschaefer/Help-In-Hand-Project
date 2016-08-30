@@ -41,4 +41,4 @@ yvkschaefer@gmail.com
     <img src="/screencapture-help-in-hand.png" width="350" />
 <br>
 
-<!--![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-help-in-hand.png?raw=true "landing page")-->
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-help-in-hand.png?raw=true "landing page")
