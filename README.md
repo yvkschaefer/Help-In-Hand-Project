@@ -41,4 +41,4 @@ yvkschaefer@gmail.com
 
 Hello
 
-![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/files/images/screencapture-help-in-hand.png)
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/files/images/screencapture-help-in-hand.png?raw=true "landing page")
