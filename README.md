@@ -1,9 +1,11 @@
 #Help-in-Hand
 
 DecodeMTL Final Project
-August 2016
+<br/>August 2016
 
 Dylan Pelletier, Takanari Sasaki, Kara Schaefer
+<br/>
+<br/>Advisor: Ziad Saab
 
 Help in Hand is a web application that targets people in need of immediate help. Patients can 
 fill out a form that describes their problem, and talk to a counselor about their concerns. 
@@ -25,10 +27,26 @@ after the homepage link. You may assign a priority there, this puts the patient 
 If you would like to access the counselor page to speak with the patient, simply type '/counselor' 
 after the homepage link and you will be connected as a counselor.
 
+
+A few notes:
+- At the time of writing, our WebRTC is not available on mobile devices, unless you have the Android 
+Webview browser. 
+- Our WebRTC is best accessed from Chrome browsers.
+
+
 Thanks for checking out our project!
 
 yvkschaefer@gmail.com
 
-screencapture-help-in-hand-project-dysupes-c9users-io-1472571581069
 
-![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-help-in-hand-project-dysupes-c9users-io-1472571581069.png?raw=true "landing page")
+Landing Page:
+
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-homepage.png?raw=true "landing page")
+
+Form Example:
+
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-form.png?raw=true "form")
+
+WebRTC stream example:
+
+![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-WebRTC.png?raw=true "WebRTC")
