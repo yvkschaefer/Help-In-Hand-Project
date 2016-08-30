@@ -9,6 +9,8 @@ var Checkbox = ReactCheckboxGroup.Checkbox;
 var withRouter = require('react-router').withRouter;
 var fr = require('../../firebase/firebase.js');
 
+var bootstrap = require('bootstrap');
+
 // a variable illnesses that contain all illnesses, as well as all symptoms of each illness
 var illnesses = {
     Depression: {
@@ -120,14 +122,18 @@ var Forms = React.createClass({
         };
     },
     // takes care of all user inputs that are text, such as name, nationality, etc. only setState when clicked on submit.
-    _handleText: function(e) {
+    _submitForm: function(e) {
         e.preventDefault();
 
         var userFormInfo = {
             dateOfBirth: this.refs.userInputBirthDate.value,
             nationality: this.refs.userInputNationality.value,
-            career: this.refs.userInputCareer.value,
-            userInputDescriptionInOwnWords: this.refs.userInputDescriptionInOwnWords.value
+            occupation: this.refs.userInputCareer.value,
+            userInputDescriptionInOwnWords: this.refs.userInputDescriptionInOwnWords.value,
+            gender: this.refs.inputGender.value,
+            income: this.state.income,
+            selectedSymptoms: this.state.selectedSymptoms
+            
         };
 
         var currentUser = fr.firebase.auth().currentUser;
@@ -135,13 +141,14 @@ var Forms = React.createClass({
         var userEmail = fr.firebase.auth().currentUser.email;
         //console.log("currentUser", currentUser);
         //console.log("currentUser UID", uniqueUserId);
-
+        
+        console.log("COMES IN HERE", userFormInfo)
+        
         fr.firebase.database().ref('users/' + uniqueUserId).set({
             'Date of Birth': userFormInfo.dateOfBirth,
             Gender: userFormInfo.gender,
-            'Sexual Orientation': userFormInfo.sexual_orientation,
             Nationality: userFormInfo.nationality,
-            Career: userFormInfo.career,
+            Occupation: userFormInfo.occupation,
             Income: userFormInfo.income,
             'Illnesses & Symptoms': userFormInfo.selectedSymptoms,
             'Description in your own words': userFormInfo.userInputDescriptionInOwnWords
@@ -203,79 +210,186 @@ var Forms = React.createClass({
         }
     },
     render: function() {
-        //console.log("PRINT ALL STATE:", this.state);
+        console.log("PRINT ALL STATE:", this.state);
         var that = this;
         // from here on, every time there is a props called key is to avoid the error of the necessity of unique key
 
         // this part is for Main Symptoms section
         var symptoms = this.state.selectedIllnesses.map(function(illness) {
+
+            //console.log(illness, "THE ILLNESS")
             return (
                 <CheckboxGroup value={that.state.selectedSymptoms[illness.id]} onChange={that._handleSymptoms(illness.id)} key={illness.id}>
                 {
                     illness.symptoms.map(function(symptom) {
-                        return <div key={symptom}><label><Checkbox value={symptom}/> {symptom}</label></div>;
+                        return <div className="checkbox" key={symptom}><label><Checkbox value={symptom}/> {symptom}</label></div>;
                     })
                 }
                 </CheckboxGroup>
-            )
+            );
         });
 
         return (
-            <div className="questionnaire_forms">
             
-                <form onSubmit={this._handleText}>
-                
-                    <h3> Complete this form (All * must be filled)</h3>
-                
-                    *Date of Birth: <input type="text" ref="userInputBirthDate" /> dd/mm/yyyy <br/><br/>
+        <div>
+            
+            <div className="questionnaire_forms">
+                <legend>
+                <div  className="formTitle">
+                    <h2>Questionnaire</h2>
+                    <Link to="/"><button className="btn btn-primary" id="counselorProfileHomepageButton">Homepage</button></Link>
+                </div>
+                </legend>
+                <form onSubmit={this._handleText} className="form-horizontal">
                     
-                    *Gender: <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="gender" value="male" /> Male
-                    <input type="radio" onChange={this._handleChangeRadio} name="gender" value="female" /> Female <br/><br/>
+                    <fieldset className="well well-lg">
 
-                    *Nationality: <br/>
-                    <input type="text" ref="userInputNationality" />  <br/><br/>
                     
-                    *Career: <br/>
-                    <input type="text" ref="userInputCareer" />  <br/><br/>
-                    
-                    Sexual orientation: <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="heterosexual" /> Heterosexual <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="gay" /> Gay <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="lesbian" /> Lesbian <br/> 
-                    <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="bisexual" /> Bisexual <br/> 
-                    <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="transgender" /> Transgender <br/> 
-                    <input type="radio" onChange={this._handleChangeRadio} name="sexual_orientation" value="other" /> Other <br/><br/> 
-                    
-                    Income: <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="income" value="0-20,000" /> $0-$20,000 <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="income" value="20,000-40,000" /> $20,000-$40,000 <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="income" value="40,000-60,000" /> $40,000-$60,000 <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="income" value="60,000-80,000" /> $60,000-$80,000 <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="income" value="80,000-100,000" /> $80,000-$100,000 <br/>
-                    <input type="radio" onChange={this._handleChangeRadio} name="income" value="100,000+" /> $100,000+ <br/><br/>
-                    
-                    Major Illness: (Select all that apply) <br/>
-                    <CheckboxGroup value={this.state.selectedIllnesses} onChange={this._handleIllness} name="major_illnesses">
-                        {
-                            Object.keys(illnesses).map(function(illness) {
-                                return <div key={illness}><label><Checkbox value={illnesses[illness]}/> {illness}</label></div>;
-                            })
-                        }
-                    </CheckboxGroup>
-                    
-                    <br/>
-                    Main Symptoms: (Select all that apply) <br/><br/>
-                    {symptoms}
-                    
-                    <br/><br/>
-                    Description in your own words: <br/>
-                    <input className="descrip_own_words" type="text" ref="userInputDescriptionInOwnWords" />  <br/><br/>
 
-                    <button className="submit_form"> Submit! </button>
+                    <div className="form-group">
+                        <label className="col-md-4 control-label" htmlFor="textinput">Date of Birth:</label>  
+                        <div className="col-md-4">
+                            <input id="textinput" className="textinput" ref="userInputBirthDate" type="text" placeholder="Date of Birth" className="form-control input-md"/>
+                        </div>
+
+                    </div>
+                        
+                        
+                    <div className="form-group">
+                        <label className="col-md-4 control-label" htmlFor="textinput">Gender:</label>  
+                        <div className="col-md-4">
+                            <input id="textinput" className="textinput" ref="inputGender" type="text" placeholder="Gender" className="form-control input-md"/>
+                        </div>
+                    </div>
+                    
+
+                        <div className="form-group">
+                            <label className="col-md-4 control-label" htmlFor="textinput">Nationality:</label>  
+                            <div className="col-md-4">
+                                <input id="textinput" className="textinput" ref="userInputNationality" type="text" placeholder="Nationality" className="form-control input-md"/>
+                            </div>
+                        </div>
+                        
+                        
+                        <div className="form-group">
+                            <label className="col-md-4 control-label" htmlFor="textinput">Occupation:</label>  
+                            <div className="col-md-4">
+                                <input id="textinput" className="textinput" ref="userInputCareer" type="text" placeholder="Occupation" className="form-control input-md"/>
+                            </div>
+
+                        </div>
+                    
+                        
+                        
+                        <div className="form-group">
+                          <label className="col-md-4 control-label" htmlFor="radios">Income:</label>
+                          <div className="col-md-4">
+                          <div className="radio">
+                            <label htmlFor="radios-0">
+                              <input type="radio"  id="radios-0" onChange={this._handleChangeRadio} name="income" value="0-20,000"/>
+                              $0-$20,000
+                            </label>
+                          </div>
+                          <div className="radio">
+                            <label htmlFor="radios-1">
+                              <input type="radio"  id="radios-1" onChange={this._handleChangeRadio} name="income" value="20,000-40,000"/>
+                              $20,000-$40,000
+                            </label>
+                        </div>
+                        <div className="radio">
+                            <label htmlFor="radios-2">
+                              <input type="radio"  id="radios-2" onChange={this._handleChangeRadio} name="income" value="40,000-60,000" />
+                              $40,000-$60,000
+                            </label>
+                          </div>
+                          <div className="radio">
+                            <label htmlFor="radios-3">
+                              <input type="radio"  id="radios-3" onChange={this._handleChangeRadio} name="income" value="60,000-80,000" />
+                               $60,000-$80,000
+                            </label>
+                          </div>
+                          <div className="radio">
+                            <label htmlFor="radios-4">
+                              <input type="radio"  id="radios-4" onChange={this._handleChangeRadio} name="income" value="80,000-100,000" />
+                              $80,000-$100,000
+                            </label>
+                          </div>
+                          <div className="radio">
+                            <label htmlFor="radios-5">
+                              <input type="radio"  id="radios-5"onChange={this._handleChangeRadio} name="income" value="100,000+" />
+                              $100,000+
+                            </label>
+                          </div>
+                          
+                        </div>
+                        </div>
+
+                        
+                        
+                    {/*<!-- Multiple Checkboxes -->*/}
+                    <div className="form-group">
+                      <label className="col-md-4 control-label" htmlFor="checkboxes">Major Illnesses: (Select all that apply)</label>
+                      <div className="col-md-4">
+                      <div className="checkbox">
+                        <label htmlFor="checkboxes-0">
+                            <CheckboxGroup value={this.state.selectedIllnesses} onChange={this._handleIllness} name="major_illnesses">
+                                {
+                                    Object.keys(illnesses).map(function(illness) {
+                                        return <div className="checkbox" key={illness}><label><Checkbox value={illnesses[illness]}/> {illness}</label></div>;
+                                    })
+                                }
+                            </CheckboxGroup>
+                        </label>
+                    	</div>
+                      
+            
+                      </div>
+                    </div>
+
+
+                    {/*<!-- Multiple Checkboxes -->*/}
+                    <div className="form-group">
+                      <label className="col-md-4 control-label" htmlFor="checkboxes">Symptoms: (Select all that apply)</label>
+                      <div className="col-md-4">
+                      <div className="checkbox">
+                        <label htmlFor="checkboxes-0">
+                          {symptoms}
+                        </label>
+                    	</div>
+                      </div>
+                    </div>
+                    
+
+                    
+                      
+                      
+                        
+                        
+                    {/*<!-- Textarea -->*/}
+
+                    <div className="form-group">
+                      <label className="col-md-4 control-label" htmlFor="textarea">Describe your concerns in your own words:</label>
+                      <div className="col-md-4">                     
+                        <textarea className="form-control" id="textarea" name="textarea" ref="userInputDescriptionInOwnWords"></textarea>
+                      </div>
+                    </div>
+                        
+                        
+                    {/*<!-- Button -->*/}
+                    <div className="form-group">
+
+                      <label className="col-md-4 control-label" htmlFor="singlebutton"></label>
+                      <div className="col-md-4">
+                        <button id="singlebutton" name="singlebutton" className="btn btn-primary" onClick={this._submitForm}>Submit and Speak with a Counselor</button>
+                      </div>
+                    </div>
+                    
+                    
+                    </fieldset>
                 </form>
                 
             </div>
+        </div>
 
         );
     }

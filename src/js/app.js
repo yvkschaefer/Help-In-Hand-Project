@@ -23,6 +23,7 @@ var RetrieveInfoFromDatabase = require('./components/RetrieveInfoFromDatabase');
 var Triage = require('./components/Triage');
 var TriageCounselor = require('./components/TriageCounselor');
 var Counselor = require('./components/Counselor');
+var ContactUs = require('./components/ContactUs');
 
 // When the user clicks the hyperlink to complete the form, it will check if the user is logged in.
 // If the user is not logged in, redirect to homepage. If logged in, redirect to the link to complete the form
@@ -35,7 +36,7 @@ fr.firebase.auth().onAuthStateChanged(function(user){
         console.log("User " + user.uid + " is logged in");
     } else {
         localStorage.removeItem('user');
-        browserHistory.push('/');
+        // browserHistory.push('/');
         console.log("User is logged out");
     }
 });
@@ -54,12 +55,13 @@ var routes = (
         <Route path="/" component={App}>
             <IndexRoute component={Homepage} />
             <Route path="forms" component={Forms} onEnter={checkLogin} />
-            <Route path="counselorsProfile" component={CounselorsProfile}/>
+            <Route path="counselorsProfile" component={CounselorsProfile} onEnter={checkLogin}/>
             <Route path="makeCounselorsProfile" component={MakeCounselorsProfile}/>
             <Route path="retrieveInfoFromDatabase" component={RetrieveInfoFromDatabase}/>
-            <Route path="triage" component={Triage} />
-            <Route path="triage-counselor" component={TriageCounselor} />
-            <Route path="counselor" component={Counselor} />
+            <Route path="triage" component={Triage} onEnter={checkLogin}/>
+            <Route path="triage-counselor" component={TriageCounselor} onEnter={checkLogin}/>
+            <Route path="counselor" component={Counselor} onEnter={checkLogin} />
+            <Route path="contactUs" component={ContactUs} />    
         </Route>
     </Router>
 );

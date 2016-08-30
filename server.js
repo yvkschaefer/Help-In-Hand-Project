@@ -1,18 +1,16 @@
-// npm run dev
-// node server.js
-
-// https://final-project-decode-takanarisasaki.c9users.io/
-// https://console.firebase.google.com/project/decodemtl-final-project/database/data
-
-// We are using firebase rather than mySQL to store and retrieve information
-// Firebase can take care of user authentication, which is much simpler to use!
-
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var nodemailer = require('nodemailer');
+
+// create reusable transporter object using the default SMTP transport
+var transporter = nodemailer.createTransport('smtps://helpinhandproject2016%40gmail.com:tkdproject2016@smtp.gmail.com');
 
 app.use('/files', express.static(__dirname + '/public'));
+
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded());
 
 var triage = [];
 var triageCounselors = [];
@@ -41,7 +39,7 @@ function patientNext() {
     // console.log('triage before connection ', triage);
     if (patient) {
       patient.emit('start stream');
-      counselor.emit('start stream');
+      counselor.emit('start stream', patient.formInfo);
 
       counselor.isFree = false;
 
@@ -74,17 +72,18 @@ function triageNext() {
     var triagePatient = getFirstTriagePatient();
 
     if (triagePatient) {
-
-      triagePatient.emit('start stream');
-      triageCounselor.emit('start stream');
-
       triageCounselor.isFree = false;
-
+      
       connections[triagePatient.id] = triageCounselor;
       //inside connections object, it is being assigned a key which is triagePatient.id, 
       //and the value is triageCounselor
-
+      
       connections[triageCounselor.id] = triagePatient;
+      
+      triagePatient.emit('start stream');
+      triageCounselor.emit('start stream', triagePatient.formInfo);
+      
+      // console.log('EMITTING this from triageNext to the triageCounselor ', triageCounselor.triageFormInfo);
       console.log('connected: triage counselor with patient');
     }
     else {
@@ -96,8 +95,25 @@ function triageNext() {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 io.on('connection', function(socket) {
-  socket.on('triage patient', function() {
+  
+  socket.on('triage patient', function(data) {
+    socket.formInfo = data;
     socket.isPatient = true;
     triage.push(socket);
     triageNext();
@@ -124,11 +140,11 @@ io.on('connection', function(socket) {
   });
 
   socket.on('queue', function(counselorsEvaluation) {
-    console.log('triage counselor made an evaluation ', counselorsEvaluation);
+    // console.log('triage counselor made an evaluation ', counselorsEvaluation);
     var patientSocket = connections[socket.id];
     if (patientSocket) {
       socket.isFree = true;
-      console.log('is the triage counselors socket really free ', socket.isFree);
+      // console.log('is the triage counselors socket really free, because it should be ', socket.isFree);
       patientSocket.priority = counselorsEvaluation.priority;
       patients.push(patientSocket);
       patients.sort(function(patient1, patient2) {
@@ -164,7 +180,7 @@ io.on('connection', function(socket) {
     socket.isFree = true;
 
     socket.emit('stop call');
-    patientSocket.emit('call stopped');
+    patientSocket.emit('got hung up on');
 
     connections[socket.id] = null;
     connections[patientSocket.id] = null;
@@ -183,6 +199,7 @@ io.on('connection', function(socket) {
 
     triageNext();
   });
+  
   socket.on('patient ended conversation', function() {
     console.log('server heard that the patient stopped call');
     var counselorSocket = connections[socket.id];
@@ -219,6 +236,34 @@ io.on('connection', function(socket) {
     socket.isFree = false;
     console.log('server heard triageCounselor logged out');
     socket.emit('logged out');
+  });
+});
+
+app.post("/contactUs", function(req, res){
+  // setup e-mail data with unicode symbols
+  
+  console.log(req);
+  var mailOptions = {
+      from: '"Help in Hand" <robot@helpinhand.com>', // sender address
+      to: 'helpinhandproject2016@gmail.com', // list of receivers
+      subject: 'You have a new contact', // Subject line
+      html: `
+<h1>You have a new contact</h1>
+<p>Username: ${req.body.username}</p>
+<p>Email: ${req.body.emailAddress}</p>
+<p>Title: ${req.body.title}</p>
+<p>Message: ${req.body.message}</p>
+  ` // html body
+  };
+  
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, function(error, info){
+      if(error){
+          res.send({error: true});
+      }
+      else {
+        res.send({ok: true});
+      }
   });
 });
 

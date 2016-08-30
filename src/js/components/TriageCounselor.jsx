@@ -1,23 +1,27 @@
-/* global io*/
-/* global navigator*/
 var React = require('react');
 var SimplePeer = require('simple-peer');
 
 var LogoutPage = require('./LogoutPage');
 
+/* global io*/
+/* global navigator*/
+/*global localStorage*/
+
 var TriageCounselor = React.createClass({
     getInitialState: function() {
         return {};
     },
+
     componentDidMount: function() {
         var socket = this.socket = io();
         var that = this;
 
         socket.emit('triage counselor');
 
-        socket.on('start stream', function() {
+        socket.on('start stream', function(data) {
 
             that.setState({
+                data: data,
                 connected: true
             });
             navigator.webkitGetUserMedia({
@@ -39,7 +43,6 @@ var TriageCounselor = React.createClass({
 
                 peer.on('signal', function(data) {
                     console.log('received signal');
-                    console.log('hi I am a peer and I just heard a signal ', peer);
                     socket.emit('stream id', data);
                 });
 
@@ -53,7 +56,6 @@ var TriageCounselor = React.createClass({
                     socket.removeListener('connect peer', onConnectPeer);
                     socket.removeListener('stop call', onStopCall);
                     peer.destroy();
-                    console.log('peer after peer.destroy() ', peer);
                     var tracks = stream.getTracks();
                     tracks.forEach(function(track) {
                         track.stop();
@@ -67,7 +69,6 @@ var TriageCounselor = React.createClass({
 
                 peer.on('stream', function(stream) {
                     console.log('peer data');
-
                     var video = that.refs.videoPlayer;
 
                     video.src = window.URL.createObjectURL(stream);
@@ -83,7 +84,6 @@ var TriageCounselor = React.createClass({
                         track.stop();
                     });
                 });
-
             }, function(err) {
                 console.error(err);
             });
@@ -91,6 +91,7 @@ var TriageCounselor = React.createClass({
 
 
     },
+
     _handleAssign: function() {
         var priority = this.refs.priorityInput.value;
 
@@ -98,49 +99,109 @@ var TriageCounselor = React.createClass({
             priority: priority
         });
     },
+
     _priorityUi: function() {
         return (
-            <div>
-                <input type="text" ref="priorityInput"/>
-                <button onClick={this._handleAssign}>ASSIGN</button>
+            <div className='tCounselorButtonsContainer'>
+                <input type="text" placeholder='1-5'ref="priorityInput" size="3" />
+                <button className='btn btn-primary' onClick={this._handleAssign}>Assign Priority</button>
+                <button className='btn btn-danger' onClick={this._stopCall}>Stop Call</button>
             </div>
         );
     },
-    _stopCall: function(){
+
+    _stopCall: function() {
         this.socket.emit('triage counselor ended conversation');
     },
+
     _endCallUi: function() {
         return (
-            <div>
-                <button ref='endCall' onClick={this._stopCall}>stop call</button>
+            <div className='tCounsButtons'>
+                <button className='btn btn-primary' ref='endCall' onClick={this._stopCall}><h4>stop call</h4></button>
             </div>
         );
     },
+
     _connected: function() {
+        var userInfo = this.state.data;
+        var userInfoToShow;
+
+        if (userInfo) {
+            userInfoToShow = Object.keys(userInfo).map(function(infoKey) {
+
+                if (Object.prototype.toString.call(userInfo[infoKey]) === '[object Object]') {
+                    var illnessAndSymptoms = userInfo['Illnesses & Symptoms'];
+
+                    var illnessToShow = (
+                        <div key={infoKey}>
+                            <p>Illnesses:</p>
+                            <ul>
+                            {
+                                Object.keys(illnessAndSymptoms).map(function(illnessKey) {
+                                return (
+                                    <li key={illnessKey}>
+                                        <p><strong>{illnessKey}</strong></p>
+                                        <p>Symptoms: {illnessAndSymptoms[illnessKey].join(', ')}</p>
+                                    </li>
+                                );
+                            })
+                            }
+                            </ul>
+                        </div>
+                    );
+
+                    return illnessToShow;
+                }
+                else {
+                    return (
+                        <div key={infoKey}> {infoKey}: {userInfo[infoKey]} </div>
+                    );
+                }
+            });
+        }
+        else {
+            userInfoToShow = <div>this patient did not fill out a form</div>;
+        }
         return (
-            <div>
-                <p>You are talking to a patient in triage</p>
-                <video ref="videoPlayer"/>
-                {this._priorityUi()}{this._endCallUi()}
+            <div className='triageCounselorTalking'>
+                <div className='tCounselorAllContents'>
+                    <p className='tCounselorTopText'>You are now connected with a patient</p>
+                    <div className='tCounselorMainContents'>
+                        <div>
+                            <video className='video' ref="videoPlayer"/>
+                            <div className='tCounselorButtonsContainer'>
+                                <div>
+                                    {this._priorityUi()}
+                                </div>
+                            </div>
+                        </div>
+                        <div className='patientIntakeForm'>
+                            <h2>Patient Intake Form</h2>
+                            {userInfoToShow}
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     },
+
     _disconnected: function() {
         return (
-            <div>
+            <div className='tCounselorWaiting'>
                 <p>There are no patients in the queue. Time to browse Reddit!</p>
-                <button onClick={this._logout}>logout</button>
+                <button className='btn btn-default' onClick={this._logout}>logout</button>
             </div>
         );
     },
+
     _logout: function() {
         console.log('logout button was clicked');
-        // this.socket.isFree = false;
         this.socket.emit('triageCounselor logged out');
         this.setState({
             logoutButtonClicked: true
         });
     },
+
     render: function() {
         return (
             <div>
@@ -148,6 +209,7 @@ var TriageCounselor = React.createClass({
             </div>
         );
     }
+
 });
 
 module.exports = TriageCounselor;

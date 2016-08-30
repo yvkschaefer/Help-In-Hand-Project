@@ -9,7 +9,7 @@ var RetrieveInfoFromDatabase = React.createClass({
         return {
             userInfo: {},
             counselorInfo: {}
-        }
+        };
     },
     _handleUserSearch: function() {
         var that = this;
@@ -20,7 +20,7 @@ var RetrieveInfoFromDatabase = React.createClass({
             console.log(snapshot.val());
             that.setState({
                 userInfo: snapshot.val()
-            })
+            });
         });
         
     },
@@ -32,7 +32,7 @@ var RetrieveInfoFromDatabase = React.createClass({
             console.log(snapshot.val());
             that.setState({
                 counselorInfo: snapshot.val()
-            })
+            });
         });
     },
     render: function() {

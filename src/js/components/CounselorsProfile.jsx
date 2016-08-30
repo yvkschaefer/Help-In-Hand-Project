@@ -65,45 +65,94 @@ var fr = require('../../firebase/firebase.js');
 // }];
 
 var CounselorsProfile = React.createClass({
-	getInitialState: function() {
-		return {}
-	},
-	_fetchData: function() {
-		console.log("COMES IN HERE");
+
+	componentWillMount: function() {
+		// console.log("COMES IN HERE FIRST");
 		var that = this;
 		
 		fr.firebase.database().ref('counselors/').on('value', function(snapshot) {
-			console.log("HEYHEY",snapshot.val());
+			//console.log("HEYHEY",snapshot.val());
+			// console.log("COMES IN HERE THIRD BECAUSE OF CALLBACK; render happens before setState beneath");
 			that.setState({
 				listOfCounselors: snapshot.val()
-			})
+			});
 		});
 	},
-	componentWillMount: function() {
-		this._fetchData();
+	_renderContent: function() {
+		
+		if(this.state && this.state.listOfCounselors.length > 0) {
+			
+			console.log("LIST OF COUNSELORS:", this.state.listOfCounselors);
+			
+			return (
+				<div>
+					<div className="counselorsHeaderText">
+					<h1>Our Counselors</h1>
+					<div><Link to="/"><button className="btn btn-primary" id="counselorProfileHomepageButton">Homepage</button></Link></div>
+					</div>	
+					<div className="counselorsProfilePage">
+						{this.state.listOfCounselors.map(function(counselor){
+							return (
+									
+							<div className="profileContainer">
+						        <div className="profileRow">
+						            <div className="team">
+						                <div><img src={counselor.Photo} className="profilePictures"/></div>
+						                <h4 className="profileHeaderStyling">{counselor.Name}</h4>
+						                <p className="profilePStylingOne">Volunteer Counselor</p>
+						                <p className="profilePStylingTwo">{counselor['Patient Comments']}</p>
+						                <p className="profilePStylingTwo">{counselor.Credentials}</p>
+						                <div className="teamsocial">
+						                    <ul>
+						                        <li className="liStyling">
+						                            <a href="#" title="Facebook">
+						                                <div className="facebook-team">
+						                                	<i className="fa fa-facebook"></i>
+						                                </div>
+						                            </a>
+						                        </li>
+						                        <li className="liStyling">
+						                            <a href="#" title="Twitter">
+						                                <div className="twitter-team"><i className="fa fa-twitter"></i></div>
+						                            </a>
+						                        </li>
+						                        <li className="liStyling">
+						                            <a href="#" title="Google">
+						                                <div className="google-team">
+						                                	<i className="fa fa-google-plus"></i>
+						                                </div>
+						                            </a>
+						                        </li>
+						                        <li className="liStyling">
+						                            <a href="#" title="Pinterest">
+						                                <div className="pinterest-team">
+						                                	<i className="fa fa-pinterest"></i>
+						                                </div>
+						                            </a>
+						                        </li>
+						                    </ul>
+						                </div>
+						            </div>
+						        </div>
+    				</div>
+							
+							);
+					
+					})}
+					</div>
+					</div>
+				);
+		} else {
+			return "";
+		}
 	},
 	render: function() {
+		// console.log("COMES IN HERE SECOND");
 		
-		console.log("LIST OF COUNSELORS", this.state.listOfCounselors)
 		
 		return (
 			<div>
-				<div className="counselorsHeaderText"> <h1>Our Counselors</h1> </div>
-
-				<div className="counselorsProfilePage">
-					{this.state.listOfCounselors.map(function(counselor){
-						return (
-							<div className="counselorsInformation" key={counselor.key}>
-								<img src={counselor.photo} className="counselorsProfilePicture" />
-								<div className="counselorsTextInformation">
-									<div className="counselorsName"><p>{counselor.name}</p></div>
-									<div className="patientComments"><p>{counselor.patientComments}</p></div>
-									<div className="counselorsCredentials"><p>{counselor.credentials}</p></div>
-								</div>
-						</div>);
-					})}
-				</div>
-
+				{this._renderContent()}
 			</div>
 		);
 	}

@@ -1,12 +1,10 @@
 var React = require('react');
-var Link = require('react-router').Link;
 
 var StopCall = React.createClass({
     render: function(){
         return(
-            <div>
+            <div className='patientDisconnectedByButton'>
                 <p>You stopped the call</p>
-                <Link to='/'>homepage</Link>
             </div>
         );
     }
