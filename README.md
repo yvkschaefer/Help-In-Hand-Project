@@ -32,21 +32,9 @@ A few notes:
 - At the time of writing, our WebRTC is not available on mobile devices, unless you have the Android 
 Webview browser. 
 - Our WebRTC is best accessed from Chrome browsers.
+- Sometimes the WebRTC glitches on the first try, the time that it asks for access to your camera and microphone. If it doesn't connect properly please refresh the pages. Beyond that other errors we have found with the WebRTC relate to strong firewall settings. These might have to be adjusted locally.
 
 
 Thanks for checking out our project!
 
 yvkschaefer@gmail.com
-
-
-Landing Page:
-
-![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-homepage.png?raw=true "landing page")
-
-Form Example:
-
-![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-form.png?raw=true "form")
-
-WebRTC stream example:  
-
-![Alt text](https://github.com/Help-In-Hand/Help-In-Hand-Project/blob/kara-ReadMe/screencapture-WebRTC.png?raw=true "WebRTC")
