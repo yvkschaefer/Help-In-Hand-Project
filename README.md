@@ -2,6 +2,8 @@
 
 https://calm-badlands-90315.herokuapp.com/
 
+***our site must be accessed over https and not http for the WebRTC to work :) ***
+
 DecodeMTL Final Project
 <br/>August 2016
 
